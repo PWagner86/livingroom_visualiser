@@ -5,3 +5,14 @@ $mainFont: 'Montserrat Alternates', sans-serif;
 
 
 // Mixins
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($justify, $align, $direction){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}

@@ -11,11 +11,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingroom Visualizer</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <?php require_once('./04_includes/font_links.php');?>
     <link rel="stylesheet" href="./02_styling/02_startseite/style.css">
 </head>
 <body>
+
+<!-- header mit Titel ------------------------------------------------------------------------------------------------------------>
+    <header>
+        <h1>Livingroom Viszalizer</h1>
+    </header>
+
+<!-- navigation ------------------------------------------------------------------------------------------------------------------>
+    <nav>
+        <ul>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+        </ul>
+    </nav>
     
 </body>
 </html>
