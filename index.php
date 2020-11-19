@@ -73,12 +73,10 @@
             </div>
 
             <div class="carusell-wrapper">
-                <div class="carusell">
-
-                </div>
+                <img class="preview" src="" alt="Bild von Wohnzimmereinrichtung">
             </div>
 
-            <div class="carusell-left">
+            <div class="carusell-right">
                 <button class="right">></button>
             </div>
 

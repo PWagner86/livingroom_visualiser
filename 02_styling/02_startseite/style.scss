@@ -4,7 +4,7 @@
 body{
 
     header{
-        @include size(100%, 40vh);
+        @include size(100%, 50vh);
         background: url(../../01_pics_&_logo/living_room_start.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -99,20 +99,12 @@ body{
 
             .carusell-wrapper{
                 @include size(40%, 100%);
-                overflow: hidden;
+                @include flex(center, center, row);
 
-                .carusell{
-                    @include size(1000%, 100%);
-                    display: flex;
-
-                    .pic-container{
-                        @include flex(center, center, row);
-
-                        .imp-pic{
-                            @include size(auto, 60%);
-                        }
-                    }
+                .preview{
+                    @include size(auto, 80%);
                 }
+
             }
         }
     }
