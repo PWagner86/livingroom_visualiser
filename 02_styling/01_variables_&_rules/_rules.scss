@@ -14,11 +14,11 @@ body{
 
 h1, h2, h3, h4, h5, h6{
     text-transform: uppercase;
-    color: white;
 }
 
 h1{
     font-size: 6vmin;
+    color: white;
 }
 
 h2{
@@ -43,6 +43,10 @@ h6{
 
 ul{
     list-style: none;
+}
+
+li{
+    color: white;
 }
 
 a{

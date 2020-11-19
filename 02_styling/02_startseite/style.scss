@@ -16,27 +16,103 @@ body{
 
             nav{
                 @include size(100%, 30%);
-                display: flex;
-
-                .logo-wrapper{
-                    @include size(20%, 100%);
-                    @include flex(flex-end, center, row);
-
-                    img{
-                        @include size(auto, 50%);
-                        margin-left: 2rem;
-                    }
-                }
+                @include flex(flex-end, center, row);
 
                 ul{
-                    @include size(80%, 100%);
+                    @include size(50%, 100%);
                     @include flex(space-around, center, row);
+
+                    li{
+                        @include size(100%, 100%);
+                        @include flex(center, center, row);
+                        border-left: solid 3px white;
+                    }
                 }
             }
 
             .titel-wrapper{
                 @include size(100%, 70%);
                 @include flex(center, center, row);
+            }
+        }
+    }
+
+    main{
+        @include size(100%, 80vh);
+        position: relative;
+        background: linear-gradient(black, $darkGrey);
+        display: flex;
+        border-top: solid white 3px;
+        
+
+        .logo-wrapper{
+            @include size(50%, 100%);
+            @include flex(center, center, row);
+
+            img{
+                @include size(auto, 60%);
+            }
+        }
+
+        .intro-text-wrapper{
+            @include size(50%, 100%);
+            @include flex(center, center, row);
+
+            h5{
+                text-align: center;
+                letter-spacing: 0.2rem;
+                margin: 2rem;
+                color: $yellow;
+            }
+        }
+    }
+
+    .impressions-wrapper{
+        @include size(100%, 80vh);
+        background: linear-gradient($darkGrey, rgb(133, 130, 130));
+        display: flex;
+        flex-direction: column;
+
+        .imp-titel-wrapper{
+            @include size(100%, 30%);
+            @include flex(center, center, row);
+
+            h2{
+                position: relative;
+                color: $yellow;
+            }
+        }
+
+        .carusell-container{
+            @include size(100%, 70%);
+            display: flex;
+
+            .carusell-left, 
+            .carusell-right{
+                @include size(30%, 100%);
+                @include flex(center, center, row);
+
+                button{
+                    @include size(20%, 10%);
+                }
+            }
+
+            .carusell-wrapper{
+                @include size(40%, 100%);
+                overflow: hidden;
+
+                .carusell{
+                    @include size(1000%, 100%);
+                    display: flex;
+
+                    .pic-container{
+                        @include flex(center, center, row);
+
+                        .imp-pic{
+                            @include size(auto, 60%);
+                        }
+                    }
+                }
             }
         }
     }
