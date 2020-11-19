@@ -4,6 +4,40 @@
 body{
 
     header{
-        
+        @include size(100%, 40vh);
+        background: url(../../01_pics_&_logo/living_room_start.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        .fade{
+            @include size(100%, 100%);
+            background: rgba(0, 0, 0, 0.363);
+
+            nav{
+                @include size(100%, 30%);
+                display: flex;
+
+                .logo-wrapper{
+                    @include size(20%, 100%);
+                    @include flex(flex-end, center, row);
+
+                    img{
+                        @include size(auto, 50%);
+                        margin-left: 2rem;
+                    }
+                }
+
+                ul{
+                    @include size(80%, 100%);
+                    @include flex(space-around, center, row);
+                }
+            }
+
+            .titel-wrapper{
+                @include size(100%, 70%);
+                @include flex(center, center, row);
+            }
+        }
     }
 }

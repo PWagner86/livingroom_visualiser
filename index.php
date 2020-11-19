@@ -18,18 +18,27 @@
 
 <!-- header mit Titel ------------------------------------------------------------------------------------------------------------>
     <header>
-        <h1>Livingroom Viszalizer</h1>
+        <div class="fade">
+
+<!-- navigation ------------------------------------------------------------------------------------------------------------------>      
+            <nav>
+                <div class="logo-wrapper">
+                    <img src="./01_pics_&_logo/logo.png" alt="Logo der Seite">
+                </div>
+                <ul>
+                    <li>Platzhalter</li>
+                    <li>Platzhalter</li>
+                    <li>Platzhalter</li>
+                    <li>Platzhalter</li>
+                </ul>
+            </nav>
+
+<!-- Titel-Container ------------------------------------------------------------------------------------------------------------>
+            <div class="titel-wrapper">
+                <h1>Livingroom Viszalizer</h1>
+            </div>
+        </div>
     </header>
 
-<!-- navigation ------------------------------------------------------------------------------------------------------------------>
-    <nav>
-        <ul>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-            <li>Placeholder</li>
-        </ul>
-    </nav>
-    
 </body>
 </html>
