@@ -50,7 +50,7 @@ body{
             @include flex(center, center, row);
 
             img{
-                @include size(auto, 60%);
+                @include size(auto, 40%);
             }
         }
 
