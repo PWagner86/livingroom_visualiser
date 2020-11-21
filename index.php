@@ -87,7 +87,21 @@
 
     <!-- footer ---------------------------------------------------------------------------------------------------------------------->
     <footer>
-
+        <div class="social-media-wrapper">
+            <a href="https://www.linkedin.com/in/peter-wagner-925a32145/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/PWagner86" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+        <nav>
+            <ul>
+                <li>Platzhalter</li>
+                <li>Platzhalter</li>
+                <li>Platzhalter</li>
+            </ul>
+        </nav>
+        <div class="copyright-wrapper">
+            <i class="far fa-copyright"></i>
+            <p>Copyright by Peter Wagner</p>
+        </div>
     </footer>
 
 </body>

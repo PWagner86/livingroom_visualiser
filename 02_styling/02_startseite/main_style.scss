@@ -11,7 +11,7 @@ body{
 
         .fade{
             @include size(100%, 100%);
-            background: rgba(0, 0, 0, 0.363);
+            background: rgba(0, 0, 0, 0.507);
 
             nav{
                 @include size(100%, 30%);
@@ -49,7 +49,7 @@ body{
             @include flex(center, center, row);
 
             img{
-                @include size(auto, 50vmin);
+                @include size(auto, 40vmin);
             }
         }
 
@@ -123,6 +123,56 @@ body{
                     box-shadow: 5px 5px 20px 10px black;
                 }
 
+            }
+        }
+    }
+
+    footer{
+        @include size(100%, 30vh);
+        display: flex;
+        background: url(../../01_pics_&_logo/footer.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        .social-media-wrapper{
+            @include size(10%, 100%);
+            @include flex(space-around, center, row);
+
+            a{
+                color: white;
+                font-size: 3.5vmin;
+            }
+        }
+
+        nav{
+            @include size(60%, 100%);
+
+            ul{
+                @include size(100%, 100%);
+                @include flex(space-around, center, row);
+
+                li{
+                    @include size(50%, 50%);
+                    @include flex(center, center, row);
+                    border-left: solid white 3px;
+                }
+            }
+        }
+
+        .copyright-wrapper{
+            @include size(30%, 100%);
+            @include flex(flex-end, center, row);
+
+            i{
+                color: $yellow;
+                font-size: 2.5vmin;
+                margin-right: 1rem;
+            }
+
+            p{
+                margin-right: 2.5rem;
+                color: $yellow;
             }
         }
     }

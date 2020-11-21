@@ -1,6 +1,7 @@
 // Variables
 
 const header = document.querySelector("header");
+const footer = document.querySelector("footer");
 const prev = document.querySelector(".preview");
 const right = document.querySelector(".right");
 const left = document.querySelector(".left");
@@ -9,10 +10,10 @@ let count = 1;
 
 // Events
 
-// Paralaxeffekt im header
+// Paralaxeffekt im header und footer
 window.addEventListener("scroll", () => {
-    let offset = window.pageYOffset;
-    header.style.backgroundPositionY = `${offset * 0.7}px`;
+    const offsetY = window.pageYOffset;
+    header.style.backgroundPositionY = `${offsetY * 0.7}px`;
 })
 
 // nach rechts um nächstes Bild bei Impressionen zu sehen
