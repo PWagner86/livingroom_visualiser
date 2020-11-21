@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingroom Visualizer</title>
     <?php require_once('./04_includes/font_links.php');?>
-    <link rel="stylesheet" href="./02_styling/02_startseite/style.css">
+    <link rel="stylesheet" href="./02_styling/02_startseite/main_style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" defer></script>
     <script src="./03_code/01_startseite/code.js" defer></script>
 </head>
