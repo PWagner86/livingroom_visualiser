@@ -1,12 +1,12 @@
-// Variablen
+// Variablen -------------------------------------------------------->
 $mainFont: 'Montserrat Alternates', sans-serif;
 
-// Farben
+// Farben ----------------------------------------------------------->
 $darkGrey: rgb(34, 31, 31);
 $yellow: #C6AA1E;
 
 
-// Mixins
+// Mixins ----------------------------------------------------------->
 @mixin size($width, $height) {
     width: $width;
     height: $height;
@@ -17,4 +17,26 @@ $yellow: #C6AA1E;
     justify-content: $justify;
     align-items: $align;
     flex-direction: $direction;
+}
+
+@mixin nextPrevBtn{
+    @include size(10vmin, 10vmin);
+    @include flex(center, center, row);
+    border-radius: 50%;
+    border: solid black 3px;
+    background: $darkGrey;
+    color: $yellow;
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    &:hover{
+        background: $yellow;
+        color: $darkGrey;
+        box-shadow: none;
+    }
+    
+    i{
+        font-size: 4vmin;
+    }
+
 }

@@ -26,7 +26,7 @@
             <nav id="header-nav-mobile">
                 <ul>
                     <li class="login-link"><a href="#"><i class="fas fa-lock"></i>Log In</a></li>
-                    <li><a href="">Platzhalter</a></li>
+                    <li><a href="">Registrieren</a></li>
                     <li><a href="">Über</a></li>
                     <li><a href="">News</a></li>
                 </ul>
