@@ -270,11 +270,45 @@ body .impressions-wrapper .carusell-container .carusell-right .right,
 body .impressions-wrapper .carusell-container .carusell-right .left {
   width: 6vmin;
   height: 6vmin;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   border-radius: 50%;
   border: solid black 3px;
   background: #221f1f;
   color: #C6AA1E;
+  -webkit-box-shadow: 5px 5px 10px black;
+          box-shadow: 5px 5px 10px black;
   cursor: pointer;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+body .impressions-wrapper .carusell-container .carusell-left .right:hover,
+body .impressions-wrapper .carusell-container .carusell-left .left:hover,
+body .impressions-wrapper .carusell-container .carusell-right .right:hover,
+body .impressions-wrapper .carusell-container .carusell-right .left:hover {
+  background: #C6AA1E;
+  color: #221f1f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .impressions-wrapper .carusell-container .carusell-left .right i,
+body .impressions-wrapper .carusell-container .carusell-left .left i,
+body .impressions-wrapper .carusell-container .carusell-right .right i,
+body .impressions-wrapper .carusell-container .carusell-right .left i {
+  font-size: 4vmin;
 }
 
 body .impressions-wrapper .carusell-container .carusell-wrapper {
@@ -298,5 +332,7 @@ body .impressions-wrapper .carusell-container .carusell-wrapper {
 body .impressions-wrapper .carusell-container .carusell-wrapper .preview {
   width: auto;
   height: 80%;
+  -webkit-box-shadow: 5px 5px 20px 10px black;
+          box-shadow: 5px 5px 20px 10px black;
 }
 /*# sourceMappingURL=main_style.css.map */

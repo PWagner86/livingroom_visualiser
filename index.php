@@ -69,7 +69,7 @@
         <div class="carusell-container">
 
             <div class="carusell-left">
-                <button class="left"><</button>
+                <div class="left"><i class="fas fa-caret-left"></i></div>
             </div>
 
             <div class="carusell-wrapper">
@@ -77,7 +77,7 @@
             </div>
 
             <div class="carusell-right">
-                <button class="right">></button>
+                <div class="right"><i class="fas fa-caret-right"></i></div>
             </div>
 
         </div>
