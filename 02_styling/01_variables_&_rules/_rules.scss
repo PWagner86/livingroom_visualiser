@@ -54,18 +54,32 @@ li{
     &:hover{
         border-left: solid 3px $yellow
     }
-}
 
-a{  
-    @include size(100%, 100%);
-    @include flex(center, center, row);
-    font-weight: bold;
-    transition: ease-in-out 0.3s;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    &:hover{
-        color: $yellow;
-        text-shadow: 5px 5px 10px black;
+    a{  
+        @include size(100%, 100%);
+        @include flex(center, center, row);
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            color: $yellow;
+            text-shadow: 5px 5px 10px black;
+        }
     }
 }
+
+.login-link{
+                        
+    a{
+
+        i{
+            margin-right: 1rem;
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+

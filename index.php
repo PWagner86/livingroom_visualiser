@@ -1,5 +1,6 @@
 <?php
 
+require_once('./04_includes/header_nav.php');
 
 
 ?>
@@ -13,7 +14,7 @@
     <title>Livingroom Visualizer</title>
     <?php require_once('./04_includes/font_links.php');?>
     <link rel="stylesheet" href="./02_styling/02_startseite/main_style.css">
-    <script src="./03_code/01_startseite/code.js" defer></script>
+    <script src="./03_code//01_startseite/code.js" defer></script>
 </head>
 <body>
 
@@ -22,14 +23,7 @@
         <div class="fade">
 
             <!-- navigation ---------------------------------------------------------------------------------------------------------->      
-            <nav id="header-nav-mobile">
-                <ul>
-                    <li class="login-link"><a href="#"><i class="fas fa-lock"></i>Log In</a></li>
-                    <li><a href="">Registrieren</a></li>
-                    <li><a href="">Über</a></li>
-                    <li><a href="">News</a></li>
-                </ul>
-            </nav>
+            <?php echo createNav('./05_unterseiten/login.php', '#', '#', '#');?>
 
             <!-- Titel-Container ----------------------------------------------------------------------------------------------------->
             <div class="titel-wrapper">
@@ -103,7 +97,6 @@
             <ul>
                 <li><a href="#">AGB</a></li>
                 <li><a href="#">Kontakt</a></li>
-                <li><a href="#">Platzhalter</a></li>
             </ul>
         </nav>
         <div class="copyright-wrapper">
