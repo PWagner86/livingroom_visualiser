@@ -4,11 +4,10 @@
 body{
 
     header{
-        @include size(100%, 50vh);
+        @include size(100%, 70vh);
         background: url(../../01_pics_&_logo/living_room_start.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center center;
 
         .fade{
             @include size(100%, 100%);

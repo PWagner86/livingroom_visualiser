@@ -55,11 +55,10 @@ a {
 
 body header {
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   background: url(../../01_pics_&_logo/living_room_start.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
 }
 
 body header .fade {
