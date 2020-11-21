@@ -22,9 +22,8 @@ body{
                     @include flex(space-around, center, row);
 
                     li{
-                        @include size(100%, 100%);
+                        @include size(100%, 50%);
                         @include flex(center, center, row);
-                        border-left: solid 3px white;
                     }
                 }
             }
@@ -49,7 +48,7 @@ body{
             @include flex(center, center, row);
 
             img{
-                @include size(auto, 40vmin);
+                @include size(auto, 35vmin);
             }
         }
 
@@ -82,12 +81,40 @@ body{
             }
         }
 
-        .carusell-container{
+        .carousel-container{
             @include size(100%, 70%);
             display: flex;
 
-            .carusell-left, 
-            .carusell-right{
+            #carousel-controlle-mobile{
+                @include size(100%, 20%);
+                @include flex(space-around, center, row);
+                display: none;
+
+                .mobile-left,
+                .mobile-right{
+                    @include size(6vmin, 6vmin);
+                    @include flex(center, center, row);
+                    border-radius: 50%;
+                    border: solid black 3px;
+                    background: $darkGrey;
+                    color: $yellow;
+                    box-shadow: 5px 5px 10px black;
+                    cursor: pointer;
+                    transition: ease-in-out 0.3s;
+                    &:hover{
+                        background: $yellow;
+                        color: $darkGrey;
+                        box-shadow: none;
+                    }
+                    
+                    i{
+                        font-size: 4vmin;
+                    }
+                }
+            }
+
+            .carousel-left, 
+            .carousel-right{
                 @include size(30%, 100%);
                 @include flex(center, center, row);
 
@@ -114,12 +141,12 @@ body{
                 }
             }
 
-            .carusell-wrapper{
+            .carousel-wrapper{
                 @include size(40%, 100%);
                 @include flex(center, center, row);
 
                 .preview{
-                    @include size(auto, 80%);
+                    @include size(auto, 70%);
                     box-shadow: 5px 5px 20px 10px black;
                 }
 
@@ -142,6 +169,10 @@ body{
             a{
                 color: white;
                 font-size: 3.5vmin;
+                transition: ease-in-out 0.3s;
+                &:hover{
+                    color: $yellow;
+                }
             }
         }
 
@@ -153,26 +184,92 @@ body{
                 @include flex(space-around, center, row);
 
                 li{
-                    @include size(50%, 50%);
+                    @include size(100%, 50%);
                     @include flex(center, center, row);
-                    border-left: solid white 3px;
                 }
             }
         }
 
         .copyright-wrapper{
             @include size(30%, 100%);
-            @include flex(flex-end, center, row);
+            @include flex(space-around, center, row);
 
             i{
                 color: $yellow;
                 font-size: 2.5vmin;
-                margin-right: 1rem;
             }
 
             p{
-                margin-right: 2.5rem;
                 color: $yellow;
+                font-size: 2vmin;
+                text-align: center;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px){
+        
+    }
+
+    @media screen and (max-width: 992px){
+        header{
+
+            #header-nav-mobile{
+                justify-content: center;
+
+                ul{
+                    @include size(100%, 100%);
+                }
+            }
+        }
+
+        .impressions-wrapper{
+
+            .carousel-container{
+                flex-direction: column;
+
+                .carousel-left,
+                .carousel-right{
+                    display: none;
+                }
+
+                #carousel-controlle-mobile{
+                    display: flex;
+                }
+
+                .carousel-wrapper{
+                    @include size(100%, 80%);
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        main{
+            flex-direction: column;
+
+            .logo-wrapper,
+            .intro-text-wrapper{
+                @include size(100%, 50%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px){
+
+        footer{
+
+            .social-media-wrapper{
+                @include size(20%, 100%);
+            }
+
+            nav{
+                @include size(60%, 100%);
+            }
+
+            .copyright-wrapper{
+                @include size(20%, 100%);
+                @include flex(center, center, column);
             }
         }
     }

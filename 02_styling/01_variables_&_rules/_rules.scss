@@ -49,8 +49,23 @@ ul{
 li{
     color: white;
     font-size: 2vmin;
+    border-left: solid 3px white;
+    transition: ease-in-out 0.3s;
+    &:hover{
+        border-left: solid 3px $yellow
+    }
 }
 
-a{
+a{  
+    @include size(100%, 100%);
+    @include flex(space-around, center, row);
+    font-weight: bold;
+    transition: ease-in-out 0.3s;
     text-decoration: none;
+    color: white;
+    cursor: pointer;
+    &:hover{
+        color: $yellow;
+        text-shadow: 5px 5px 10px black;
+    }
 }

@@ -3,8 +3,13 @@
 const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 const prev = document.querySelector(".preview");
-const right = document.querySelector(".right");
-const left = document.querySelector(".left");
+const rightDesktop = document.querySelector(".carousel-right .right");
+const rightMobile = document.querySelector("#carousel-controlle-mobile .mobile-right");
+const leftDesktop = document.querySelector(".carousel-left .left");
+const leftMobile = document.querySelector("#carousel-controlle-mobile .mobile-left");
+
+const right = [rightDesktop, rightMobile];
+const left = [leftDesktop, leftMobile];
 
 let count = 1;
 
@@ -17,23 +22,27 @@ window.addEventListener("scroll", () => {
 })
 
 // nach rechts um nächstes Bild bei Impressionen zu sehen
-right.addEventListener("click", (e) => {
-   e.preventDefault();
-   count++;
-   if(count > 9){
-       count = 0;
-   }
-   prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
+right.forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.preventDefault();
+        count++;
+        if(count > 9){
+            count = 0;
+        }
+        prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
+    })
 })
 
 // nach links um vorheriges Bild bei impressionen zu sehen
-left.addEventListener("click", (e) => {
-    e.preventDefault();
-    count--;
-    if(count < 0){
-        count = 9;
-    }
-    prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
- })
+left.forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.preventDefault();
+        count--;
+        if(count < 0){
+            count = 9;
+        }
+        prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
+    })
+})
  
 // Funktionen

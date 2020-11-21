@@ -23,12 +23,12 @@
         <div class="fade">
 
             <!-- navigation ---------------------------------------------------------------------------------------------------------->      
-            <nav>
+            <nav id="header-nav-mobile">
                 <ul>
-                    <li>Platzhalter</li>
-                    <li>Platzhalter</li>
-                    <li>Platzhalter</li>
-                    <li>Platzhalter</li>
+                    <li class="login-link"><a href="#"><i class="fas fa-lock"></i>Log In</a></li>
+                    <li><a href="">Platzhalter</a></li>
+                    <li><a href="">Über</a></li>
+                    <li><a href="">News</a></li>
                 </ul>
             </nav>
 
@@ -66,17 +66,26 @@
         </div>
 
         <!-- Bilder-Gallerie-Container ----------------------------------------------------------------------------------------------->
-        <div class="carusell-container">
+        <div class="carousel-container">
 
-            <div class="carusell-left">
+            <div id="carousel-controlle-mobile">
+                <div class="mobile-left left">
+                    <i class="fas fa-caret-left"></i>
+                </div>
+                <div class="mobile-right right">
+                    <i class="fas fa-caret-right"></i>
+                </div>
+            </div>
+
+            <div class="carousel-left">
                 <div class="left"><i class="fas fa-caret-left"></i></div>
             </div>
 
-            <div class="carusell-wrapper">
+            <div class="carousel-wrapper">
                 <img class="preview" src="./01_pics_&_logo/01_impressionen/imp1.jpg" alt="Bild von Wohnzimmereinrichtung">
             </div>
 
-            <div class="carusell-right">
+            <div class="carousel-right">
                 <div class="right"><i class="fas fa-caret-right"></i></div>
             </div>
 
@@ -93,9 +102,9 @@
         </div>
         <nav>
             <ul>
-                <li>Platzhalter</li>
-                <li>Platzhalter</li>
-                <li>Platzhalter</li>
+                <li><a href="#">AGB</a></li>
+                <li><a href="#">Kontakt</a></li>
+                <li><a href="#">Platzhalter</a></li>
             </ul>
         </nav>
         <div class="copyright-wrapper">
