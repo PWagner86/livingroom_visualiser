@@ -20,7 +20,7 @@ $yellow: #C6AA1E;
 }
 
 @mixin nextPrevBtn{
-    @include size(10vmin, 10vmin);
+    @include size(13vmin, 13vmin);
     @include flex(center, center, row);
     border-radius: 50%;
     border: solid black 3px;
@@ -36,7 +36,7 @@ $yellow: #C6AA1E;
     }
     
     i{
-        font-size: 4vmin;
+        font-size: 10vmin;
     }
 
 }
