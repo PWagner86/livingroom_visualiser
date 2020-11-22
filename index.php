@@ -1,6 +1,6 @@
 <?php
 
-require_once('./04_includes/header_nav.php');
+require('./04_includes/header_nav.php');
 
 
 ?>
@@ -13,7 +13,7 @@ require_once('./04_includes/header_nav.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingroom Visualizer</title>
     <?php require_once('./04_includes/font_links.php');?>
-    <link rel="stylesheet" href="./02_styling/02_startseite/main_style.css">
+    <link rel="stylesheet" href="./02_styling/02_startseite/start_style.css">
     <script src="./03_code//01_startseite/code.js" defer></script>
 </head>
 <body>
@@ -88,22 +88,6 @@ require_once('./04_includes/header_nav.php');
 
 
     <!-- footer ---------------------------------------------------------------------------------------------------------------------->
-    <footer>
-        <div class="social-media-wrapper">
-            <a href="https://www.linkedin.com/in/peter-wagner-925a32145/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/PWagner86" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">AGB</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
-        <div class="copyright-wrapper">
-            <i class="far fa-copyright"></i>
-            <p>Copyright by Peter Wagner</p>
-        </div>
-    </footer>
-
+    <?php echo createFooter('#', '#');?>
 </body>
 </html>

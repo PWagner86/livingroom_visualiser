@@ -251,6 +251,7 @@ body .impressions-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-bottom: solid 3px white;
 }
 
 body .impressions-wrapper .imp-titel-wrapper {
@@ -467,6 +468,11 @@ body footer .social-media-wrapper a {
   font-size: 3.5vmin;
 }
 
+body footer .social-media-wrapper a:hover {
+  color: #C6AA1E;
+  text-shadow: 5px 5px 10px black;
+}
+
 body footer nav {
   width: 60%;
   height: 100%;
@@ -601,4 +607,4 @@ body footer .copyright-wrapper p {
             flex-direction: column;
   }
 }
-/*# sourceMappingURL=main_style.css.map */
+/*# sourceMappingURL=start_style.css.map */

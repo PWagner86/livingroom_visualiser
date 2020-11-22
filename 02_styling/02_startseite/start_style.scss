@@ -70,6 +70,7 @@ body{
         background: linear-gradient($darkGrey, rgb(133, 130, 130));
         display: flex;
         flex-direction: column;
+        border-bottom: solid 3px white;
 
         .imp-titel-wrapper{
             @include size(100%, 30%);
@@ -134,6 +135,10 @@ body{
 
             a{
                 font-size: 3.5vmin;
+                &:hover{
+                    color: $yellow;
+                    text-shadow: 5px 5px 10px black;
+                }        
             }
         }
 

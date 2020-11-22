@@ -1,0 +1,90 @@
+// Header und Footer Styling für Unterseiten
+
+@import './rules';
+@import './variables';
+
+header{
+    @include size(100%, 20vh);
+    display: flex;
+
+    .back-to-main{
+        @include size(50%, 100%);
+
+        a{
+            @include size(100%, 100%);
+            @include flex(center, center, row);
+            &:hover{
+                color: $yellow;
+            }
+
+        }
+    }
+
+    nav{
+        @include size(50%, 100%);
+        @include flex(center, center, row);
+
+        ul{
+            @include size(100%, 100%);
+            @include flex(center, center, row);
+
+            li{
+                @include size(100%, 50%);
+                @include flex(center, center, row);
+            }
+        }
+    }
+}
+
+footer{
+    @include size(100%, 30vh);
+    display: flex;
+    background: url(../../01_pics_&_logo/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    .social-media-wrapper{
+        @include size(20%, 100%);
+        @include flex(space-around, center, row);
+
+        a{
+            font-size: 3.5vmin;
+            &:hover{
+                color: $yellow;
+                text-shadow: 5px 5px 10px black;
+            }        
+        }
+    }
+
+    nav{
+        @include size(60%, 100%);
+
+        ul{
+            @include size(100%, 100%);
+            @include flex(space-around, center, row);
+
+            li{
+                @include size(100%, 50%);
+                @include flex(center, center, row);
+            }
+        }
+    }
+
+    .copyright-wrapper{
+        @include size(20%, 100%);
+        @include flex(center, center, row);
+
+        i{
+            color: $yellow;
+            font-size: 2.5vmin;
+        }
+
+        p{
+            color: $yellow;
+            font-size: 2vmin;
+            text-align: center;
+        }
+    }
+}
+
