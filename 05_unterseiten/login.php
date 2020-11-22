@@ -15,7 +15,7 @@ require('../04_includes/header_nav.php');
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '#', '#', '#');?>
+    <?php echo createHeader('../index.php', '#', './registrieren.php', '#', '#');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>

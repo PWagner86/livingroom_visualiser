@@ -23,7 +23,7 @@ require('./04_includes/header_nav.php');
         <div class="fade">
 
             <!-- navigation ---------------------------------------------------------------------------------------------------------->      
-            <?php echo createNav('./05_unterseiten/login.php', '#', '#', '#');?>
+            <?php echo createNav('./05_unterseiten/login.php', './05_unterseiten/registrieren.php', '#', '#');?>
 
             <!-- Titel-Container ----------------------------------------------------------------------------------------------------->
             <div class="titel-wrapper">

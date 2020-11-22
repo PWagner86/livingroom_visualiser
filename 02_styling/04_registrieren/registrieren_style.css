@@ -108,116 +108,6 @@ input {
   font-size: 2vmin;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  max-width: 100%;
-  min-height: 100vh;
-  font-family: "Montserrat Alternates", sans-serif;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  text-transform: uppercase;
-}
-
-h1 {
-  font-size: 6vmin;
-  color: white;
-}
-
-h2 {
-  font-size: 5vmin;
-}
-
-h3 {
-  font-size: 4vmin;
-}
-
-h4 {
-  font-size: 3vmin;
-}
-
-h5 {
-  font-size: 2vmin;
-}
-
-h6 {
-  font-size: 1vmin;
-}
-
-ul {
-  list-style: none;
-}
-
-li {
-  color: white;
-  font-size: 2vmin;
-  border-left: solid 3px white;
-  -webkit-transition: ease-in-out 0.3s;
-  transition: ease-in-out 0.3s;
-}
-
-li:hover {
-  border-left: solid 3px #C6AA1E;
-}
-
-li a {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-li a:hover {
-  color: #C6AA1E;
-  text-shadow: 5px 5px 10px black;
-}
-
-.login-link a i {
-  margin-right: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  -webkit-transition: ease-in-out 0.3s;
-  transition: ease-in-out 0.3s;
-}
-
-form {
-  border: solid 3px white;
-  border-radius: 1rem;
-}
-
-input {
-  border: none;
-  border-bottom: solid 3px #C6AA1E;
-  background: #221f1f;
-  color: #C6AA1E;
-  font-family: "Montserrat Alternates", sans-serif;
-  text-align: center;
-  font-size: 2vmin;
-}
-
 header {
   width: 100%;
   height: 20vh;
@@ -452,11 +342,117 @@ footer .copyright-wrapper p {
   text-align: center;
 }
 
-body {
-  background: #221f1f;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body header .login-link a {
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  font-family: "Montserrat Alternates", sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 6vmin;
+  color: white;
+}
+
+h2 {
+  font-size: 5vmin;
+}
+
+h3 {
+  font-size: 4vmin;
+}
+
+h4 {
+  font-size: 3vmin;
+}
+
+h5 {
+  font-size: 2vmin;
+}
+
+h6 {
+  font-size: 1vmin;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  color: white;
+  font-size: 2vmin;
+  border-left: solid 3px white;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+li:hover {
+  border-left: solid 3px #C6AA1E;
+}
+
+li a {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+li a:hover {
+  color: #C6AA1E;
+  text-shadow: 5px 5px 10px black;
+}
+
+.login-link a i {
+  margin-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+form {
+  border: solid 3px white;
+  border-radius: 1rem;
+}
+
+input {
+  border: none;
+  border-bottom: solid 3px #C6AA1E;
+  background: #221f1f;
+  color: #C6AA1E;
+  font-family: "Montserrat Alternates", sans-serif;
+  text-align: center;
+  font-size: 2vmin;
+}
+
+body header .registrieren-link a {
   color: #C6AA1E;
   text-shadow: 5px 5px 10px black;
 }
@@ -481,109 +477,4 @@ body main {
   border-top: solid 3px white;
   border-bottom: solid 3px white;
 }
-
-body main form {
-  width: 80vmin;
-  height: 80%;
-}
-
-body main form .login-titel-wrapper,
-body main form .submit-wrapper {
-  width: 100%;
-  height: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-body main form .login-titel-wrapper h3,
-body main form .submit-wrapper h3 {
-  color: #C6AA1E;
-}
-
-body main form .username-wrapper,
-body main form .password-wrapper {
-  width: 100%;
-  height: 30%;
-}
-
-body main form .username-wrapper .error,
-body main form .password-wrapper .error {
-  width: 100%;
-  height: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-body main form .username-wrapper .input-wrapper,
-body main form .password-wrapper .input-wrapper {
-  width: 100%;
-  height: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-body main form .username-wrapper .input-wrapper label,
-body main form .password-wrapper .input-wrapper label {
-  margin-left: 2rem;
-  color: #C6AA1E;
-  font-size: 2vmin;
-}
-
-body main form .username-wrapper .input-wrapper input,
-body main form .password-wrapper .input-wrapper input {
-  width: 50%;
-  height: 50%;
-  margin-right: 2rem;
-}
-
-body main form .submit-wrapper input {
-  width: 30%;
-  height: 50%;
-  text-transform: uppercase;
-  font-weight: bold;
-  border: solid 3px white;
-  border-radius: 2rem;
-  -webkit-transition: ease-in-out 0.3s;
-  transition: ease-in-out 0.3s;
-  cursor: pointer;
-}
-
-body main form .submit-wrapper input:hover {
-  background: #C6AA1E;
-  color: black;
-  border: solid 3px black;
-}
-/*# sourceMappingURL=login_style.css.map */
+/*# sourceMappingURL=registrieren_style.css.map */

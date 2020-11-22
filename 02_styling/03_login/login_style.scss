@@ -5,14 +5,21 @@
 body{
     background: $darkGrey;
 
+    header{
+
+        .login-link{
+            
+            a{
+                @include activeLink;
+            }
+        }
+    }
+
     main{
-        @include size(100%, 70vh);
-        @include flex(center, center, row);
+        @include main;
 
         form{
-            @include size(60vmin, 50vmin);
-            border: solid 3px white;
-            border-radius: 1rem;
+            @include size(80vmin, 80%);
 
             .login-titel-wrapper,
             .submit-wrapper{
@@ -35,10 +42,10 @@ body{
 
                 .input-wrapper{
                     @include size(100%, 70%);
-                    @include flex(flex-end, center, row);
+                    @include flex(space-between, center, row);
 
                     label{
-                        margin-right: 2rem;
+                        margin-left: 2rem;
                         color: $yellow;
                         font-size: 2vmin;
                     }

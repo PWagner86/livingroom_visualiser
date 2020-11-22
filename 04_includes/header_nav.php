@@ -7,9 +7,9 @@ function createNav($login, $register, $about, $news){
         <nav id="header-nav-mobile">;
             <ul>
                 <li class="login-link"><a href='.$login.'><i class="fas fa-lock"></i>Log In</a></li>
-                <li><a href='.$register.'>Registrieren</a></li>
-                <li><a href='.$about.'>Über</a></li>
-                <li><a href='.$news.'>News</a></li>
+                <li class="registrieren-link"><a href='.$register.'>Registrieren</a></li>
+                <li class="about-link"><a href='.$about.'>Über</a></li>
+                <li class="news-link"><a href='.$news.'>News</a></li>
             </ul>
         </nav>
     ';
@@ -24,14 +24,14 @@ function createHeader($main, $login, $register, $about, $news){
         <header>
             <div class="fade">
                 <div class="back-to-main">
-                    <a href="'.$main.'"><i class="fas fa-caret-left"></i>zurück zur Hauptseite</a>
+                    <a href="'.$main.'"><i class="fas fa-caret-left"></i>Startseite</a>
                 </div>
                 <nav id="header-nav-mobile">;
                     <ul>
                         <li class="login-link"><a href='.$login.'><i class="fas fa-lock"></i>Log In</a></li>
-                        <li><a href='.$register.'>Registrieren</a></li>
-                        <li><a href='.$about.'>Über</a></li>
-                        <li><a href='.$news.'>News</a></li>
+                        <li class="registrieren-link"><a href='.$register.'>Registrieren</a></li>
+                        <li class="about-link"><a href='.$about.'>Über</a></li>
+                        <li class="news-link"><a href='.$news.'>News</a></li>
                     </ul>
                 </nav>
             </div>

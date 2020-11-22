@@ -40,3 +40,16 @@ $yellow: #C6AA1E;
     }
 
 }
+
+@mixin activeLink{
+    color: $yellow;
+    text-shadow: 5px 5px 10px black;
+}
+
+@mixin main{
+    @include size(100%, 70vh);
+    @include flex(center, center, row);
+    background: $darkGrey;
+    border-top: solid 3px white;
+    border-bottom: solid 3px white;
+}
