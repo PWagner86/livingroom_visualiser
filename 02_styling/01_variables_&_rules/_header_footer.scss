@@ -5,39 +5,54 @@
 
 header{
     @include size(100%, 20vh);
-    display: flex;
+    @include flex(space-between, center, row);
+    background: url(../../01_pics_&_logo/living_room_start.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-    .back-to-main{
-        @include size(50%, 100%);
+    .fade{
+        @include size(100%, 100%);
+        @include flex(space-between, center, row);
+        background: rgba(0, 0, 0, 0.507);
 
-        a{
-            @include size(100%, 100%);
-            @include flex(center, center, row);
-            &:hover{
-                color: $yellow;
-            }
-
-        }
-    }
-
-    nav{
-        @include size(50%, 100%);
-        @include flex(center, center, row);
-
-        ul{
-            @include size(100%, 100%);
-            @include flex(center, center, row);
-
-            li{
-                @include size(100%, 50%);
+        .back-to-main{
+            @include size(30%, 100%);
+    
+            a{
+                @include size(100%, 100%);
                 @include flex(center, center, row);
+                font-size: 2vmin;
+                &:hover{
+                    color: $yellow;
+                }
+    
+                i{
+                    margin-right: 1rem;
+                }
+    
             }
         }
+    
+        nav{
+            @include size(60%, 100%);
+            @include flex(center, center, row);
+    
+            ul{
+                @include size(100%, 100%);
+                @include flex(center, center, row);
+    
+                li{
+                    @include size(100%, 50%);
+                    @include flex(center, center, row);
+                }
+            }
+        }    
     }
 }
 
 footer{
-    @include size(100%, 30vh);
+    @include size(100%, 10vh);
     display: flex;
     background: url(../../01_pics_&_logo/footer.jpg);
     background-size: cover;

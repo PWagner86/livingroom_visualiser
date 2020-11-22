@@ -83,3 +83,13 @@ a{
     transition: ease-in-out 0.3s;
 }
 
+input{
+    border: none;
+    border-bottom: solid 3px $yellow;
+    background: $darkGrey;
+    color: $yellow;
+    font-family: $mainFont;
+    text-align: center;
+    font-size: 2vmin;
+}
+
