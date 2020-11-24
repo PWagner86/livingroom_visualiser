@@ -37,7 +37,7 @@ require('./04_includes/header_nav.php');
 
         <!-- Logo-Container ---------------------------------------------------------------------------------------------------------->
         <div class="logo-wrapper">
-            <img src="./01_pics_&_logo/logo.png" alt="Logo der Seite">
+            <img src="./01_pics_&_logo/logo_new.png" alt="Logo der Seite">
         </div>
 
         <!-- Text-Container ---------------------------------------------------------------------------------------------------------->
