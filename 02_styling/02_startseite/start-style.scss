@@ -60,7 +60,7 @@ body{
                 text-align: center;
                 letter-spacing: 0.2rem;
                 margin: 2rem;
-                color: $yellow;
+                color: $mainColor;
             }
         }
     }
@@ -78,7 +78,7 @@ body{
 
             h2{
                 position: relative;
-                color: $yellow;
+                color: $mainColor;
             }
         }
 
@@ -136,7 +136,7 @@ body{
             a{
                 font-size: 3.5vmin;
                 &:hover{
-                    color: $yellow;
+                    color: $mainColor;
                     text-shadow: 5px 5px 10px black;
                 }        
             }
@@ -161,12 +161,12 @@ body{
             @include flex(center, center, row);
 
             i{
-                color: $yellow;
+                color: $mainColor;
                 font-size: 2.5vmin;
             }
 
             p{
-                color: $yellow;
+                color: $mainColor;
                 font-size: 2vmin;
                 text-align: center;
             }

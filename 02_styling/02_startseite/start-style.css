@@ -54,7 +54,7 @@ li {
 }
 
 li:hover {
-  border-left: solid 3px #C6AA1E;
+  border-left: solid 3px #278ACC;
 }
 
 li a {
@@ -78,7 +78,7 @@ li a {
 }
 
 li a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -100,9 +100,9 @@ form {
 
 input {
   border: none;
-  border-bottom: solid 3px #C6AA1E;
+  border-bottom: solid 3px #278ACC;
   background: #221f1f;
-  color: #C6AA1E;
+  color: #278ACC;
   font-family: "Montserrat Alternates", sans-serif;
   text-align: center;
   font-size: 2vmin;
@@ -251,7 +251,7 @@ body main .intro-text-wrapper h5 {
   text-align: center;
   letter-spacing: 0.2rem;
   margin: 2rem;
-  color: #C6AA1E;
+  color: #278ACC;
 }
 
 body .impressions-wrapper {
@@ -289,7 +289,7 @@ body .impressions-wrapper .imp-titel-wrapper {
 
 body .impressions-wrapper .imp-titel-wrapper h2 {
   position: relative;
-  color: #C6AA1E;
+  color: #278ACC;
 }
 
 body .impressions-wrapper .carousel-container {
@@ -338,7 +338,7 @@ body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile
   border-radius: 50%;
   border: solid black 3px;
   background: #221f1f;
-  color: #C6AA1E;
+  color: #278ACC;
   -webkit-box-shadow: 5px 5px 10px black;
           box-shadow: 5px 5px 10px black;
   cursor: pointer;
@@ -348,7 +348,7 @@ body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile
 
 body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile-left:hover,
 body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile-right:hover {
-  background: #C6AA1E;
+  background: #278ACC;
   color: #221f1f;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -400,7 +400,7 @@ body .impressions-wrapper .carousel-container .carousel-right .left {
   border-radius: 50%;
   border: solid black 3px;
   background: #221f1f;
-  color: #C6AA1E;
+  color: #278ACC;
   -webkit-box-shadow: 5px 5px 10px black;
           box-shadow: 5px 5px 10px black;
   cursor: pointer;
@@ -412,7 +412,7 @@ body .impressions-wrapper .carousel-container .carousel-left .right:hover,
 body .impressions-wrapper .carousel-container .carousel-left .left:hover,
 body .impressions-wrapper .carousel-container .carousel-right .right:hover,
 body .impressions-wrapper .carousel-container .carousel-right .left:hover {
-  background: #C6AA1E;
+  background: #278ACC;
   color: #221f1f;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -484,7 +484,7 @@ body footer .social-media-wrapper a {
 }
 
 body footer .social-media-wrapper a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -547,12 +547,12 @@ body footer .copyright-wrapper {
 }
 
 body footer .copyright-wrapper i {
-  color: #C6AA1E;
+  color: #278ACC;
   font-size: 2.5vmin;
 }
 
 body footer .copyright-wrapper p {
-  color: #C6AA1E;
+  color: #278ACC;
   font-size: 2vmin;
   text-align: center;
 }
@@ -622,4 +622,4 @@ body footer .copyright-wrapper p {
             flex-direction: column;
   }
 }
-/*# sourceMappingURL=start_style.css.map */
+/*# sourceMappingURL=start-style.css.map */

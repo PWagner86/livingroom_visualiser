@@ -3,7 +3,7 @@ $mainFont: 'Montserrat Alternates', sans-serif;
 
 // Farben ----------------------------------------------------------->
 $darkGrey: rgb(34, 31, 31);
-$yellow: #C6AA1E;
+$mainColor: #278ACC;
 
 
 // Mixins ----------------------------------------------------------->
@@ -25,12 +25,12 @@ $yellow: #C6AA1E;
     border-radius: 50%;
     border: solid black 3px;
     background: $darkGrey;
-    color: $yellow;
+    color: $mainColor;
     box-shadow: 5px 5px 10px black;
     cursor: pointer;
     transition: ease-in-out 0.3s;
     &:hover{
-        background: $yellow;
+        background: $mainColor;
         color: $darkGrey;
         box-shadow: none;
     }
@@ -42,7 +42,7 @@ $yellow: #C6AA1E;
 }
 
 @mixin activeLink{
-    color: $yellow;
+    color: $mainColor;
     text-shadow: 5px 5px 10px black;
 }
 

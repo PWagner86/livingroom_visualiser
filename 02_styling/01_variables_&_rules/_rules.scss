@@ -52,7 +52,7 @@ li{
     border-left: solid 3px white;
     transition: ease-in-out 0.3s;
     &:hover{
-        border-left: solid 3px $yellow
+        border-left: solid 3px $mainColor
     }
 
     a{  
@@ -61,7 +61,7 @@ li{
         font-weight: bold;
         cursor: pointer;
         &:hover{
-            color: $yellow;
+            color: $mainColor;
             text-shadow: 5px 5px 10px black;
         }
     }
@@ -90,9 +90,9 @@ form{
 
 input{
     border: none;
-    border-bottom: solid 3px $yellow;
+    border-bottom: solid 3px $mainColor;
     background: $darkGrey;
-    color: $yellow;
+    color: $mainColor;
     font-family: $mainFont;
     text-align: center;
     font-size: 2vmin;

@@ -27,7 +27,7 @@ body{
                 @include flex(center, center, row);
 
                 h3{
-                    color: $yellow;
+                    color: $mainColor;
                 }
             }
 
@@ -46,7 +46,7 @@ body{
 
                     label{
                         margin-left: 2rem;
-                        color: $yellow;
+                        color: $mainColor;
                         font-size: 2vmin;
                     }
 
@@ -68,7 +68,7 @@ body{
                     transition: ease-in-out 0.3s;
                     cursor: pointer;
                     &:hover{
-                        background: $yellow;
+                        background: $mainColor;
                         color: black;
                         border: solid 3px black;
                     }

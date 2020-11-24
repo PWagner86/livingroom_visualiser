@@ -13,7 +13,7 @@ require('./04_includes/header_nav.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livingroom Visualizer</title>
     <?php require_once('./04_includes/font_links.php');?>
-    <link rel="stylesheet" href="./02_styling/02_startseite/start_style.css">
+    <link rel="stylesheet" href="./02_styling/02_startseite/start-style.css">
     <script src="./03_code//01_startseite/code.js" defer></script>
 </head>
 <body>

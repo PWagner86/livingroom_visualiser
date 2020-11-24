@@ -54,7 +54,7 @@ li {
 }
 
 li:hover {
-  border-left: solid 3px #C6AA1E;
+  border-left: solid 3px #278ACC;
 }
 
 li a {
@@ -78,7 +78,7 @@ li a {
 }
 
 li a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -100,9 +100,9 @@ form {
 
 input {
   border: none;
-  border-bottom: solid 3px #C6AA1E;
+  border-bottom: solid 3px #278ACC;
   background: #221f1f;
-  color: #C6AA1E;
+  color: #278ACC;
   font-family: "Montserrat Alternates", sans-serif;
   text-align: center;
   font-size: 2vmin;
@@ -164,7 +164,7 @@ li {
 }
 
 li:hover {
-  border-left: solid 3px #C6AA1E;
+  border-left: solid 3px #278ACC;
 }
 
 li a {
@@ -188,7 +188,7 @@ li a {
 }
 
 li a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -210,9 +210,9 @@ form {
 
 input {
   border: none;
-  border-bottom: solid 3px #C6AA1E;
+  border-bottom: solid 3px #278ACC;
   background: #221f1f;
-  color: #C6AA1E;
+  color: #278ACC;
   font-family: "Montserrat Alternates", sans-serif;
   text-align: center;
   font-size: 2vmin;
@@ -284,7 +284,7 @@ header .fade .back-to-main a {
 }
 
 header .fade .back-to-main a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
 }
 
 header .fade .back-to-main a i {
@@ -379,7 +379,7 @@ footer .social-media-wrapper a {
 }
 
 footer .social-media-wrapper a:hover {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -442,12 +442,12 @@ footer .copyright-wrapper {
 }
 
 footer .copyright-wrapper i {
-  color: #C6AA1E;
+  color: #278ACC;
   font-size: 2.5vmin;
 }
 
 footer .copyright-wrapper p {
-  color: #C6AA1E;
+  color: #278ACC;
   font-size: 2vmin;
   text-align: center;
 }
@@ -457,7 +457,7 @@ body {
 }
 
 body header .login-link a {
-  color: #C6AA1E;
+  color: #278ACC;
   text-shadow: 5px 5px 10px black;
 }
 
@@ -508,7 +508,7 @@ body main form .submit-wrapper {
 
 body main form .login-titel-wrapper h3,
 body main form .submit-wrapper h3 {
-  color: #C6AA1E;
+  color: #278ACC;
 }
 
 body main form .username-wrapper,
@@ -558,7 +558,7 @@ body main form .password-wrapper .input-wrapper {
 body main form .username-wrapper .input-wrapper label,
 body main form .password-wrapper .input-wrapper label {
   margin-left: 2rem;
-  color: #C6AA1E;
+  color: #278ACC;
   font-size: 2vmin;
 }
 
@@ -582,7 +582,7 @@ body main form .submit-wrapper input {
 }
 
 body main form .submit-wrapper input:hover {
-  background: #C6AA1E;
+  background: #278ACC;
   color: black;
   border: solid 3px black;
 }
