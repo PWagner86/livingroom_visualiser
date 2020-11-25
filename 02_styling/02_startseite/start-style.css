@@ -335,7 +335,7 @@ body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile
       -ms-flex-direction: row;
           flex-direction: row;
   border-radius: 50%;
-  border: solid black 3px;
+  border: solid white 3px;
   background: #221f1f;
   color: #278ACC;
   -webkit-box-shadow: 5px 5px 10px black;
@@ -348,9 +348,10 @@ body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile
 body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile-left:hover,
 body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile-right:hover {
   background: #278ACC;
-  color: #221f1f;
+  color: black;
   -webkit-box-shadow: none;
           box-shadow: none;
+  border: solid black 3px;
 }
 
 body .impressions-wrapper .carousel-container #carousel-controlle-mobile .mobile-left i,
@@ -397,7 +398,7 @@ body .impressions-wrapper .carousel-container .carousel-right .left {
       -ms-flex-direction: row;
           flex-direction: row;
   border-radius: 50%;
-  border: solid black 3px;
+  border: solid white 3px;
   background: #221f1f;
   color: #278ACC;
   -webkit-box-shadow: 5px 5px 10px black;
@@ -412,9 +413,10 @@ body .impressions-wrapper .carousel-container .carousel-left .left:hover,
 body .impressions-wrapper .carousel-container .carousel-right .right:hover,
 body .impressions-wrapper .carousel-container .carousel-right .left:hover {
   background: #278ACC;
-  color: #221f1f;
+  color: black;
   -webkit-box-shadow: none;
           box-shadow: none;
+  border: solid black 3px;
 }
 
 body .impressions-wrapper .carousel-container .carousel-left .right i,

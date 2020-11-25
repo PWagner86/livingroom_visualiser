@@ -455,7 +455,6 @@ body {
 
 body header .login-link a {
   color: #278ACC;
-  text-shadow: 5px 5px 10px black;
 }
 
 body main {
@@ -575,6 +574,7 @@ body main form .submit-wrapper input {
   border-radius: 2rem;
   -webkit-transition: ease-in-out 0.3s;
   transition: ease-in-out 0.3s;
+  background: #221f1f;
   cursor: pointer;
 }
 
