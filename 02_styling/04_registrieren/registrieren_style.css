@@ -79,7 +79,6 @@ li a {
 
 li a:hover {
   color: #278ACC;
-  text-shadow: 5px 5px 10px black;
 }
 
 .login-link a i {
@@ -270,7 +269,6 @@ footer .social-media-wrapper a {
 
 footer .social-media-wrapper a:hover {
   color: #278ACC;
-  text-shadow: 5px 5px 10px black;
 }
 
 footer nav {
@@ -423,7 +421,6 @@ li a {
 
 li a:hover {
   color: #278ACC;
-  text-shadow: 5px 5px 10px black;
 }
 
 .login-link a i {
