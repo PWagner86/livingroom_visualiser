@@ -54,19 +54,7 @@ body{
             .submit-wrapper{
                 
                 input{
-                    @include size(30%, 50%);
-                    text-transform: uppercase;
-                    font-weight: bold;
-                    border: solid 3px white;
-                    border-radius: 2rem;
-                    transition: ease-in-out 0.3s;
-                    background: $darkGrey;
-                    cursor: pointer;
-                    &:hover{
-                        background: $mainColor;
-                        color: black;
-                        border: solid 3px black;
-                    }
+                    @include submitBtn;
                 }
             }
         }
