@@ -18,7 +18,7 @@ body{
         @include main;
 
         form{
-            @include size(150vmin, 80%);
+            @include size(90%, 80%);
             @include flex(center, center, row);
             flex-wrap: wrap;
 
@@ -42,6 +42,13 @@ body{
             .submit-wrapper{
                 @include size(100%, 16.66%);
                 @include flex(center, center, row);
+            }
+
+            .register-titel-wrapper{
+
+                h3{
+                    color: $mainColor;
+                }
             }
 
             .submit-wrapper{

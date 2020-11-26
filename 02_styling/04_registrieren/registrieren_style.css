@@ -485,7 +485,7 @@ body main {
 }
 
 body main form {
-  width: 150vmin;
+  width: 90%;
   height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -576,6 +576,10 @@ body main form .submit-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+body main form .register-titel-wrapper h3 {
+  color: #278ACC;
 }
 
 body main form .submit-wrapper input {
