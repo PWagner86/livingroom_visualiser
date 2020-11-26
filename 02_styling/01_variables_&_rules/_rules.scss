@@ -87,6 +87,11 @@ form{
     border-radius: 1rem;
 }
 
+label{
+    color: $mainColor;
+    font-size: 2vmin;
+}
+
 input{
     border: none;
     border-bottom: solid 3px $mainColor;

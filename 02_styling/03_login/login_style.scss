@@ -20,6 +20,7 @@ body{
 
         form{
             @include size(80vmin, 80%);
+            @include flex(center, center, column);
 
             .login-titel-wrapper,
             .submit-wrapper{
@@ -31,9 +32,9 @@ body{
                 }
             }
 
-            .username-wrapper,
+            .email-wrapper,
             .password-wrapper{
-                @include size(100%, 30%);
+                @include size(70%, 30%);
 
                 .error{
                     @include size(100%, 30%);
@@ -44,15 +45,8 @@ body{
                     @include size(100%, 70%);
                     @include flex(space-between, center, row);
 
-                    label{
-                        margin-left: 2rem;
-                        color: $mainColor;
-                        font-size: 2vmin;
-                    }
-
                     input{
-                        @include size(50%, 50%);
-                        margin-right: 2rem;
+                        @include size(50%, 30%);
                     }
                 }
             }

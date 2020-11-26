@@ -16,5 +16,52 @@ body{
 
     main{
         @include main;
+
+        form{
+            @include size(150vmin, 80%);
+            @include flex(center, center, row);
+            flex-wrap: wrap;
+
+            .reg-wrapper{
+                @include size(30%, 16.66%);
+                @include flex(center, center, column);
+                margin: 0 1rem;
+
+                .error{
+                    @include size(100%, 30%);
+                    @include flex(center, center, row);
+                }
+
+                .input-wrapper{
+                    @include size(100%, 70%);
+                    @include flex(space-between, center, row);
+                }
+            }
+
+            .register-titel-wrapper,
+            .submit-wrapper{
+                @include size(100%, 16.66%);
+                @include flex(center, center, row);
+            }
+
+            .submit-wrapper{
+
+                input{
+                    @include size(30%, 50%);
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    border: solid 3px white;
+                    border-radius: 2rem;
+                    transition: ease-in-out 0.3s;
+                    background: $darkGrey;
+                    cursor: pointer;
+                    &:hover{
+                        background: $mainColor;
+                        color: black;
+                        border: solid 3px black;
+                    }
+                }
+            }
+        }
     }
 }

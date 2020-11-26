@@ -25,12 +25,12 @@ require('../04_includes/header_nav.php');
             <div class="login-titel-wrapper">
                 <h3>Log In</h3>
             </div>
-            <div class="username-wrapper">
+            <div class="email-wrapper">
                 <div class="error">
 
                 </div>
-                <div class="username-input-wrapper input-wrapper">
-                    <label for="benutzername">Benutzername :</label>
+                <div class="email-input-wrapper input-wrapper">
+                    <label for="email">E-Mail :</label>
                     <input type="text" name="benutzername" id="">
                 </div>
             </div>
