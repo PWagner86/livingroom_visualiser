@@ -4,7 +4,7 @@ function createNav($login, $register, $about, $news){
 
     $nav = '
     
-        <nav id="header-nav-mobile">;
+        <nav id="header-nav-mobile">
             <ul>
                 <li class="login-link"><a href='.$login.'><i class="fas fa-lock"></i>Log In</a></li>
                 <li class="registrieren-link"><a href='.$register.'>Registrieren</a></li>
