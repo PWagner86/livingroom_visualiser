@@ -29,7 +29,20 @@ body{
 
         .about-wrapper{
             @include size(80%, 80%);
-            @include flex(center, center, row);
+            @include flex(space-around, center, column);
+
+            .pic-wrapper{
+                @include size(12vmax, 12vmax);
+                background: url(../../01_pics_&_logo/ich.jpg);
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+
+            h5{
+                text-align: center;
+            }
         }
     }
 }

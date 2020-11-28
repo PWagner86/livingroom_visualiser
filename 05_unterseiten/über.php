@@ -24,8 +24,15 @@ require('../04_includes/header_nav.php');
             <h3>Über</h3>
         </div>
         <div class="about-wrapper">
+
+            <div class="pic-wrapper">
+
+            </div>
             <h5>
-                Livingroom Visualizer ist ein Schulprojekt, welches auf PHP,
+                Mein Name ist Peter Wagner 
+                <br>
+                <br>
+                Ich bin der Entwickler von Livingroom Visualizer, einem Schulprojekt, welches auf PHP,
                 mySQL, HTML, Javascript und SASS basiert. Die Idee dahinter ist,
                 ein CMS zu erstellen, bei dem der Benutzer verschiedene Änderungen,
                 Benutzerverwaltungen, Ergänzungen usw. tätigen kann.
