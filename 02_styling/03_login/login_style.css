@@ -37,12 +37,18 @@ h5 {
   font-size: 1.5vmax;
   letter-spacing: 0.1rem;
   margin: 2rem;
-  color: #278ACC;
+  color: white;
+  text-transform: none;
 }
 
 h6 {
   font-size: 2vmin;
   font-weight: bold;
+}
+
+span {
+  text-transform: uppercase;
+  color: #278ACC;
 }
 
 ul {
@@ -102,7 +108,7 @@ form {
 }
 
 label {
-  color: #278ACC;
+  color: white;
   font-size: 2vmin;
 }
 
@@ -155,12 +161,18 @@ h5 {
   font-size: 1.5vmax;
   letter-spacing: 0.1rem;
   margin: 2rem;
-  color: #278ACC;
+  color: white;
+  text-transform: none;
 }
 
 h6 {
   font-size: 2vmin;
   font-weight: bold;
+}
+
+span {
+  text-transform: uppercase;
+  color: #278ACC;
 }
 
 ul {
@@ -220,7 +232,7 @@ form {
 }
 
 label {
-  color: #278ACC;
+  color: white;
   font-size: 2vmin;
 }
 

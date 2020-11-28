@@ -29,10 +29,10 @@ require('../04_includes/header_nav.php');
 
             </div>
             <h5>
-                Mein Name ist Peter Wagner 
+                Mein Name ist <span>Peter Wagner </span> 
                 <br>
                 <br>
-                Ich bin der Entwickler von Livingroom Visualizer, einem Schulprojekt, welches auf PHP,
+                Ich bin der Entwickler von <span>Livingroom Visualizer</span>, einem Schulprojekt, welches auf PHP,
                 mySQL, HTML, Javascript und SASS basiert. Die Idee dahinter ist,
                 ein CMS zu erstellen, bei dem der Benutzer verschiedene Änderungen,
                 Benutzerverwaltungen, Ergänzungen usw. tätigen kann.
