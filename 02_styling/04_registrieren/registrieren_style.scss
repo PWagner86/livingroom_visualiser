@@ -60,7 +60,7 @@ body{
                 .agb-input-wrapper{
 
                     input{
-                        @include size(50%, 50%)
+                        @include size(50%, 50%);
                     }
                 }
             }
