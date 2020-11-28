@@ -23,10 +23,10 @@ require('../04_includes/header_nav.php');
 
         <form action="registrieren.php" method="post">
 
-            <div class="register-titel-wrapper">
+            <div class="register-titel-wrapper" id="mobile-register-titel">
                 <h3>Registrieren</h3>
             </div>
-            <div class="first-name-wrapper reg-wrapper">
+            <div class="first-name-wrapper reg-wrapper" id="mobile-first-name">
                 <div class="error">
 
                 </div>
@@ -36,7 +36,7 @@ require('../04_includes/header_nav.php');
                 </div>
             </div>
             </div>
-            <div class="last-name-wrapper reg-wrapper">
+            <div class="last-name-wrapper reg-wrapper" id="mobile-last-name">
                 <div class="error">
 
                 </div>
@@ -45,9 +45,9 @@ require('../04_includes/header_nav.php');
                     <input type="text" name="nachname">
                 </div>
             </div>
-            <div class="placeholder-wrapper reg-wrapper"></div>
+            <div class="placeholder-wrapper reg-wrapper" id="mobile-placeholder"></div>
             </div>
-            <div class="adresse-wrapper reg-wrapper">
+            <div class="adresse-wrapper reg-wrapper" id="mobile-adresse">
                 <div class="error">
 
                 </div>
@@ -57,7 +57,7 @@ require('../04_includes/header_nav.php');
                 </div>
             </div>
             </div>
-            <div class="plz-wrapper reg-wrapper">
+            <div class="plz-wrapper reg-wrapper" id="mobile-plz">
                 <div class="error">
 
                 </div>
@@ -67,7 +67,7 @@ require('../04_includes/header_nav.php');
                 </div>
             </div>
             </div>
-            <div class="city-wrapper reg-wrapper">
+            <div class="city-wrapper reg-wrapper" id="mobile-city">
                 <div class="error">
 
                 </div>
@@ -77,7 +77,7 @@ require('../04_includes/header_nav.php');
                 </div>
             </div>
             </div>
-            <div class="email-wrapper reg-wrapper">
+            <div class="email-wrapper reg-wrapper" id="mobile-email">
                 <div class="error">
               
                 </div>
@@ -87,7 +87,7 @@ require('../04_includes/header_nav.php');
                 </div>
             </div>
             </div>
-            <div class="password-wrapper reg-wrapper">
+            <div class="password-wrapper reg-wrapper" id="mobile-password">
                 <div class="error">
 
                 </div>
@@ -96,16 +96,16 @@ require('../04_includes/header_nav.php');
                     <input type="password" name="passwort">
                 </div>
             </div>
-            <div class="second-password-wrapper reg-wrapper">
+            <div class="second-password-wrapper reg-wrapper" id="mobile-second-password">
                 <div class="error">
 
                 </div>
                 <div class="second-password-input-wrapper input-wrapper">
-                    <label for="passwort2">Passwort wiederholen :</label>
+                    <label for="passwort2">Passwort <br> wiederholen :</label>
                     <input type="password" name="passwort2">
                 </div>
             </div>
-            <div class="agb-wrapper reg-wrapper">
+            <div class="agb-wrapper reg-wrapper" id="mobile-agb">
                 <div class="error">
 
                 </div>
@@ -114,7 +114,7 @@ require('../04_includes/header_nav.php');
                     <input type="checkbox" name="agb">
                 </div>
             </div>
-            <div class="submit-wrapper reg-wrapper">
+            <div class="submit-wrapper reg-wrapper" id="mobile-submit">
                 <input type="submit" value="Registrieren">
             </div>
 

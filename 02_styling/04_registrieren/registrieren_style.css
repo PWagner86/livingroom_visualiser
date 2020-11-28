@@ -505,7 +505,7 @@ body main form {
 }
 
 body main form .reg-wrapper {
-  width: 30%;
+  width: 25%;
   height: 16.66%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,7 +520,7 @@ body main form .reg-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 1rem;
+  margin: 0 3rem;
 }
 
 body main form .reg-wrapper .error {
@@ -557,6 +557,11 @@ body main form .reg-wrapper .input-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+body main form .reg-wrapper .input-wrapper input {
+  width: 60%;
+  height: 30%;
 }
 
 body main form .register-titel-wrapper,
@@ -599,5 +604,32 @@ body main form .submit-wrapper input:hover {
   background: #278ACC;
   color: black;
   border: solid 3px black;
+}
+
+@media screen and (max-width: 1300px) {
+  body form {
+    overflow: auto;
+  }
+  body form #mobile-register-titel {
+    width: 100%;
+    height: 10%;
+  }
+  body form #mobile-first-name,
+  body form #mobile-last-name,
+  body form #mobile-adresse,
+  body form #mobile-plz,
+  body form #mobile-city,
+  body form #mobile-email,
+  body form #mobile-password,
+  body form #mobile-second-password,
+  body form #mobile-agb,
+  body form #mobile-submit {
+    width: 90%;
+    height: 15%;
+    margin: 0;
+  }
+  body form #mobile-placeholder {
+    display: none;
+  }
 }
 /*# sourceMappingURL=registrieren_style.css.map */

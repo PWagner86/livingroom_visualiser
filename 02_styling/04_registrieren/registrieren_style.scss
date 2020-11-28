@@ -23,9 +23,9 @@ body{
             flex-wrap: wrap;
 
             .reg-wrapper{
-                @include size(30%, 16.66%);
+                @include size(25%, 16.66%);
                 @include flex(center, center, column);
-                margin: 0 1rem;
+                margin: 0 3rem;
 
                 .error{
                     @include size(100%, 30%);
@@ -35,6 +35,10 @@ body{
                 .input-wrapper{
                     @include size(100%, 70%);
                     @include flex(space-between, center, row);
+
+                    input{
+                        @include size(60%, 30%);
+                    }
                 }
             }
 
@@ -58,5 +62,45 @@ body{
                 }
             }
         }
+    }
+
+    @media screen and (max-width: 1300px){
+        form{
+            overflow: auto;
+
+            #mobile-register-titel{
+                @include size(100%, 10%);
+            }
+
+            #mobile-first-name,
+            #mobile-last-name,
+            #mobile-adresse,
+            #mobile-plz,
+            #mobile-city,
+            #mobile-email,
+            #mobile-password,
+            #mobile-second-password,
+            #mobile-agb,
+            #mobile-submit{
+                @include size(90%, 15%);
+                margin: 0;
+            }
+
+            #mobile-placeholder{
+                display: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px){
+        
+    }
+
+
+    @media screen and (max-width: 768px){
+
+    }
+
+    @media screen and (max-width: 576px){
     }
 }
