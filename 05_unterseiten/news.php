@@ -29,6 +29,7 @@ require('../04_includes/header_nav.php');
                     <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
+                    <h6>Placeholder-Titel</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
                 </div>
             </div>
@@ -37,6 +38,7 @@ require('../04_includes/header_nav.php');
                     <img src="../01_pics_&_logo/01_impressionen/imp1.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
+                    <h6>Placeholder-Titel</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
                 </div>
             </div>
@@ -47,6 +49,7 @@ require('../04_includes/header_nav.php');
                     <img src="../01_pics_&_logo/01_impressionen/imp8.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
+                    <h6>Placeholder-Titel</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
                 </div>
             </div>
@@ -56,6 +59,7 @@ require('../04_includes/header_nav.php');
                     <img src="../01_pics_&_logo/01_impressionen/imp1.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
+                    <h6>Placeholder-Titel</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
                 </div>
             </div>
@@ -64,6 +68,7 @@ require('../04_includes/header_nav.php');
                     <img src="../01_pics_&_logo/01_impressionen/imp2.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
+                    <h6>Placeholder-Titel</h6>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
                 </div>
             </div>

@@ -52,6 +52,12 @@ body{
                 }
 
                 .text-container{
+                    @include flex(space-around, center, column);
+
+                    h6{
+                        color: $mainColor;
+                        margin-bottom: 1rem;
+                    }
 
                     p{
                         color: $mainColor;
