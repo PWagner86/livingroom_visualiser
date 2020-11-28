@@ -35,17 +35,19 @@ body{
                 @include size(100%, auto);
                 @include flex(space-around, center, row);
                 margin-bottom: 3rem;
+                border-bottom: dotted $mainColor 3px;
 
                 .pic-container,
                 .text-container{
                     @include size(40%, 90%);
-                    @include flex(center, center, row);
+                    @include flex(center, center, column);
                 }
 
                 .pic-container{
 
                     img{
                         @include size(90%, auto);
+                        margin-bottom: 1rem;
                     }
                 }
 

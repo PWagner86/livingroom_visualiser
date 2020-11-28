@@ -34,7 +34,17 @@ require('../04_includes/header_nav.php');
             </div>
             <div class="news-container">
                 <div class="pic-container">
-                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                    <img src="../01_pics_&_logo/01_impressionen/imp1.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp6.jpg" alt="Testbild">
+                    <img src="../01_pics_&_logo/01_impressionen/imp7.jpg" alt="Testbild">
+                    <img src="../01_pics_&_logo/01_impressionen/imp8.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
@@ -43,6 +53,7 @@ require('../04_includes/header_nav.php');
             <div class="news-container">
                 <div class="pic-container">
                     <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                    <img src="../01_pics_&_logo/01_impressionen/imp1.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
@@ -50,15 +61,7 @@ require('../04_includes/header_nav.php');
             </div>
             <div class="news-container">
                 <div class="pic-container">
-                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
-                </div>
-                <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
-                </div>
-            </div>
-            <div class="news-container">
-                <div class="pic-container">
-                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                    <img src="../01_pics_&_logo/01_impressionen/imp2.jpg" alt="Testbild">
                 </div>
                 <div class="text-container">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
