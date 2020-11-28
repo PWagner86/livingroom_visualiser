@@ -9,18 +9,18 @@ require('../04_includes/header_nav.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über</title>
+    <title>News</title>
     <?php require_once('../04_includes/font_links.php');?>
-    <link rel="stylesheet" href="../02_styling/05_über/über_style.css">
+    <link rel="stylesheet" href="../02_styling/06_news/news_style.css">
 </head>
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', './registrieren.php', '#', './news.php');?>
+    <?php echo createHeader('../index.php', './login.php', './registrieren.php', './über.php', '#');?>
 
     <!-- main -->
     <main>
-
+        
     </main>
 
 

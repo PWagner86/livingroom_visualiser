@@ -16,7 +16,7 @@ require('../04_includes/header_nav.php');
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '#', './über.php', '#');?>
+    <?php echo createHeader('../index.php', './login.php', '#', './über.php', './news.php');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>

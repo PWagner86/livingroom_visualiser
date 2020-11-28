@@ -1,0 +1,21 @@
+@import '../01_variables_&_rules/header_footer';
+@import '../01_variables_&_rules/rules';
+@import '../01_variables_&_rules/variables';
+
+body{
+
+    header{
+
+        .news-link{
+
+            a{
+                @include activeLink;
+            }
+        }
+    }
+
+
+    main{
+        @include main;
+    }
+}
