@@ -20,7 +20,12 @@ require('../04_includes/header_nav.php');
 
     <!-- main -->
     <main>
-
+        <div class="about-titel-wrapper">
+            <h3>Über</h3>
+        </div>
+        <div class="about-wrapper">
+            
+        </div>
     </main>
 
 

@@ -14,8 +14,21 @@ body{
         }
     }
 
-
     main{
         @include main;
+        flex-direction: column;
+
+        .news-titel-wrapper{
+            @include size(100%, 20%);
+            @include flex(center, center, row);
+
+            h3{
+                color: $mainColor;
+            }
+        }
+
+        .news-wrapper{
+            @include size(100%, 80%);
+        }
     }
 }
