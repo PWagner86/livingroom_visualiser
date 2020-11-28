@@ -561,7 +561,7 @@ body main form .reg-wrapper .input-wrapper {
 
 body main form .reg-wrapper .input-wrapper input {
   width: 60%;
-  height: 30%;
+  height: 60%;
 }
 
 body main form .register-titel-wrapper,
@@ -585,6 +585,11 @@ body main form .submit-wrapper {
 
 body main form .register-titel-wrapper h3 {
   color: #278ACC;
+}
+
+body main form .agb-wrapper .agb-input-wrapper input {
+  width: 50%;
+  height: 50%;
 }
 
 body main form .submit-wrapper input {
