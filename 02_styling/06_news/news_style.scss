@@ -29,6 +29,34 @@ body{
 
         .news-wrapper{
             @include size(100%, 80%);
+            overflow: auto;
+
+            .news-container{
+                @include size(100%, auto);
+                @include flex(space-around, center, row);
+                margin-bottom: 3rem;
+
+                .pic-container,
+                .text-container{
+                    @include size(40%, 90%);
+                    @include flex(center, center, row);
+                }
+
+                .pic-container{
+
+                    img{
+                        @include size(90%, auto);
+                    }
+                }
+
+                .text-container{
+
+                    p{
+                        color: $mainColor;
+                        font-size: 2vmin;
+                    }
+                }
+            }
         }
     }
 }

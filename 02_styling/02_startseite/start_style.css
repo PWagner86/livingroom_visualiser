@@ -34,7 +34,11 @@ h4 {
 }
 
 h5 {
-  font-size: 2vmin;
+  font-size: 1.5vmax;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  margin: 2rem;
+  color: #278ACC;
 }
 
 h6 {
@@ -249,13 +253,6 @@ body main .intro-text-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-}
-
-body main .intro-text-wrapper h5 {
-  text-align: center;
-  letter-spacing: 0.2rem;
-  margin: 2rem;
-  color: #278ACC;
 }
 
 body .impressions-wrapper {

@@ -29,6 +29,8 @@ body{
 
         .about-wrapper{
             @include size(100%, 80%);
+            @include flex(center, center, row);
+
         }
     }
 }

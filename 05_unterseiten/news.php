@@ -24,7 +24,48 @@ require('../04_includes/header_nav.php');
             <h3>News</h3>
         </div>
         <div class="news-wrapper">
-            
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+            <div class="news-container">
+                <div class="pic-container">
+                    <img src="../01_pics_&_logo/01_impressionen/imp0.jpg" alt="Testbild">
+                </div>
+                <div class="text-container">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id et explicabo aliquid expedita corporis vero quisquam exercitationem aperiam, nulla quae tenetur nesciunt doloribus officia excepturi ratione voluptatem. Ipsam, sapiente cumque!</p>
+                </div>
+            </div>
+
+
         </div>
     </main>
 
