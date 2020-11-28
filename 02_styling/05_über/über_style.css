@@ -35,8 +35,7 @@ h4 {
 
 h5 {
   font-size: 1.5vmax;
-  text-align: center;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   margin: 2rem;
   color: #278ACC;
 }
@@ -386,8 +385,7 @@ h4 {
 
 h5 {
   font-size: 1.5vmax;
-  text-align: center;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   margin: 2rem;
   color: #278ACC;
 }
@@ -517,7 +515,7 @@ body main .about-titel-wrapper h3 {
 }
 
 body main .about-wrapper {
-  width: 100%;
+  width: 80%;
   height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
