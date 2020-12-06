@@ -122,6 +122,10 @@ input {
   font-size: 2vmin;
 }
 
+.error p {
+  color: #cc1b1b;
+}
+
 header {
   width: 100%;
   height: 20vh;
@@ -477,6 +481,10 @@ input {
   font-family: "Montserrat Alternates", sans-serif;
   text-align: center;
   font-size: 2vmin;
+}
+
+.error p {
+  color: #cc1b1b;
 }
 
 body header .about-link a {
