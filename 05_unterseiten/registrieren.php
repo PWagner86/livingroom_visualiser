@@ -3,8 +3,9 @@
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
 
+if( isset($_POST['registrieren'])){
 
-if( isset($_POST['vorname']) &&
+    if( isset($_POST['vorname']) &&
     isset($_POST['nachname']) &&
     isset($_POST['adresse']) &&
     isset($_POST['plz']) &&
@@ -12,16 +13,7 @@ if( isset($_POST['vorname']) &&
     isset($_POST['email']) &&
     isset($_POST['passwort'])&&
     isset($_POST['passwort2'])&&
-    isset($_POST['agb'])&&
-    !empty($_POST['vorname'])&&
-    !empty($_POST['nachname'])&&
-    !empty($_POST['adresse'])&&
-    !empty($_POST['plz'])&&
-    !empty($_POST['ort'])&&
-    !empty($_POST['email'])&&
-    !empty($_POST['passwort'])&&
-    !empty($_POST['passwort2'])&&
-    !empty($_POST['agb'])
+    isset($_POST['agb'])
 ){
     $vorname = $_POST['vorname'];
     $nachname = $_POST['nachname'];
@@ -40,9 +32,11 @@ if( isset($_POST['vorname']) &&
     // header('Location: login.php');
 
     echo 'Sie sind registriert und können sich nun einloggen.';
-}else{
-    echo 'Etwas ist schiefgelaufen';
+    }else{
+        echo 'Etwas ist schiefgelaufen';
+    }
 }
+
 
 ?>
 
@@ -69,7 +63,7 @@ if( isset($_POST['vorname']) &&
                 <h3>Registrieren</h3>
             </div>
             <div class="first-name-wrapper reg-wrapper" id="mobile-first-name">
-            <?php if(empty($_POST['vorname'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['vorname'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Vornamen eingeben</p>'?>
                 </div>
@@ -81,7 +75,7 @@ if( isset($_POST['vorname']) &&
             </div>
             </div>
             <div class="last-name-wrapper reg-wrapper" id="mobile-last-name">
-            <?php if(empty($_POST['nachname'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['nachname'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Nachname eingeben</p>'?>
                 </div>
@@ -94,7 +88,7 @@ if( isset($_POST['vorname']) &&
             <div class="placeholder-wrapper reg-wrapper" id="mobile-placeholder"></div>
             </div>
             <div class="adresse-wrapper reg-wrapper" id="mobile-adresse">
-            <?php if(empty($_POST['adresse'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['adresse'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Adresse eingeben</p>'?>
                 </div>
@@ -106,7 +100,7 @@ if( isset($_POST['vorname']) &&
             </div>
             </div>
             <div class="plz-wrapper reg-wrapper" id="mobile-plz">
-            <?php if(empty($_POST['plz'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['plz'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Postleitzahl eingeben</p>'?>
                 </div>
@@ -118,7 +112,7 @@ if( isset($_POST['vorname']) &&
             </div>
             </div>
             <div class="city-wrapper reg-wrapper" id="mobile-city">
-            <?php if(empty($_POST['ort'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['ort'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Ort eingeben</p>'?>
                 </div>
@@ -130,7 +124,7 @@ if( isset($_POST['vorname']) &&
             </div>
             </div>
             <div class="email-wrapper reg-wrapper" id="mobile-email">
-            <?php if(empty($_POST['email'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['email'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte gültige E-Mail eingeben</p>'?>
                 </div>
@@ -142,7 +136,7 @@ if( isset($_POST['vorname']) &&
             </div>
             </div>
             <div class="password-wrapper reg-wrapper" id="mobile-password">
-            <?php if(empty($_POST['passwort'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['passwort'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Passwort eingeben</p>'?>
                 </div>
@@ -153,7 +147,7 @@ if( isset($_POST['vorname']) &&
                 </div>
             </div>
             <div class="second-password-wrapper reg-wrapper" id="mobile-second-password">
-            <?php if(empty($_POST['passwort2'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['passwort2'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte Passwort nochmals eingeben</p>'?>
                 </div>
@@ -164,7 +158,7 @@ if( isset($_POST['vorname']) &&
                 </div>
             </div>
             <div class="agb-wrapper reg-wrapper" id="mobile-agb">
-            <?php if(empty($_POST['agb'])){?>
+            <?php if(isset($_POST['registrieren']) && empty($_POST['agb'])){?>
                 <div class="error">
                 <?php echo '<p>Bitte AGBs bestätigen</p>'?>
                 </div>
@@ -175,7 +169,7 @@ if( isset($_POST['vorname']) &&
                 </div>
             </div>
             <div class="submit-wrapper reg-wrapper" id="mobile-submit">
-                <input type="submit" value="Registrieren">
+                <input type="submit" name="registrieren" value="Registrieren">
             </div>
 
         </form>
