@@ -1,6 +1,35 @@
 <?php
 
 require('../04_includes/header_nav.php');
+require_once('../04_includes/mysql_connection.php');
+
+
+if( isset($_POST['vorname']) &&
+    isset($_POST['nachname']) &&
+    isset($_POST['adresse']) &&
+    isset($_POST['plz']) &&
+    isset($_POST['ort']) &&
+    isset($_POST['email']) &&
+    isset($_POST['passwort'])
+){
+    $vorname = $_POST['vorname'];
+    $nachname = $_POST['nachname'];
+    $adresse = $_POST['adresse'];
+    $plz = $_POST['plz'];
+    $ort = $_POST['ort'];
+    $email = $_POST['email'];
+    $passwort_hash = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    $statement = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
+    mysqli_stmt_execute($statement);
+
+    // header('Location: login.php');
+
+    echo 'Sie sind registriert und können sich nun einloggen.';
+}
 
 ?>
 
