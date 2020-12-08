@@ -5,33 +5,34 @@ require_once('../04_includes/mysql_connection.php');
 
 if( isset($_POST['registrieren'])){
 
-    if( isset($_POST['vorname']) &&
-    isset($_POST['nachname']) &&
-    isset($_POST['adresse']) &&
-    isset($_POST['plz']) &&
-    isset($_POST['ort']) &&
-    isset($_POST['email']) &&
-    isset($_POST['passwort'])&&
-    isset($_POST['passwort2'])&&
-    isset($_POST['agb'])
-){
-    $vorname = $_POST['vorname'];
-    $nachname = $_POST['nachname'];
-    $adresse = $_POST['adresse'];
-    $plz = $_POST['plz'];
-    $ort = $_POST['ort'];
-    $email = $_POST['email'];
-    $passwort_hash = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
+    if( 
+        isset($_POST['vorname']) &&
+        isset($_POST['nachname']) &&
+        isset($_POST['adresse']) &&
+        isset($_POST['plz']) &&
+        isset($_POST['ort']) &&
+        isset($_POST['email']) &&
+        isset($_POST['passwort'])&&
+        isset($_POST['passwort2'])&&
+        isset($_POST['agb'])
+    ){
+        $vorname = trim(filter_var($_POST['vorname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
+        $nachname = trim(filter_var($_POST['nachname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
+        $adresse = trim(filter_var($_POST['adresse'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $plz = trim(filter_var($_POST['plz'], FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $ort = trim(filter_var($_POST['ort'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+        $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+        $passwort_hash = trim(password_hash($_POST['passwort'], PASSWORD_DEFAULT));
 
-    $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-    $statement = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
-    mysqli_stmt_execute($statement);
+        $statement = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
+        mysqli_stmt_execute($statement);
 
-    // header('Location: login.php');
+        // header('Location: login.php');
 
-    echo 'Sie sind registriert und können sich nun einloggen.';
+        echo 'Sie sind registriert und können sich nun einloggen.';
     }else{
         echo 'Etwas ist schiefgelaufen';
     }
