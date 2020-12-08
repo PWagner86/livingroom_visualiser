@@ -3,39 +3,66 @@
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
 
+$vorname = "";
+$nachname = "";
+$adresse = "";
+$plz = "";
+$ort = "";
+$email = "";
+$errors = array(
+    'vorname'=>'',
+    'nachname'=>'',
+    'adresse'=>'',
+    'plz'=>'',
+    'ort'=>'',
+    'email'=>'',
+    'passwort'=>'',
+    'passwort2'=>'',
+    'agb'=>''
+);
+
 if( isset($_POST['registrieren'])){
 
-    if( 
-        isset($_POST['vorname']) &&
-        isset($_POST['nachname']) &&
-        isset($_POST['adresse']) &&
-        isset($_POST['plz']) &&
-        isset($_POST['ort']) &&
-        isset($_POST['email']) &&
-        isset($_POST['passwort'])&&
-        isset($_POST['passwort2'])&&
-        isset($_POST['agb'])
-    ){
-        $vorname = trim(filter_var($_POST['vorname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
-        $nachname = trim(filter_var($_POST['nachname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
-        $adresse = trim(filter_var($_POST['adresse'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-        $plz = trim(filter_var($_POST['plz'], FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-        $ort = trim(filter_var($_POST['ort'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-        $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
-        $passwort_hash = trim(password_hash($_POST['passwort'], PASSWORD_DEFAULT));
-
-        $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-        $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
-        mysqli_stmt_execute($statement);
-
-        // header('Location: login.php');
-
-        echo 'Sie sind registriert und können sich nun einloggen.';
+    if(empty($_POST['vorname'])){
+        $errors['vorname'] = 'Bitte Vornamen eingeben';
     }else{
-        echo 'Etwas ist schiefgelaufen';
+        $vorname = $_POST['vorname'];
+        if(trim(filter_var($vorname, FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING))){
+            $errors['vorname'] = "Bitte gültigen Vornamen eingeben";
+        }
     }
+
+    // if( 
+    //     isset($_POST['vorname']) &&
+    //     isset($_POST['nachname']) &&
+    //     isset($_POST['adresse']) &&
+    //     isset($_POST['plz']) &&
+    //     isset($_POST['ort']) &&
+    //     isset($_POST['email']) &&
+    //     isset($_POST['passwort'])&&
+    //     isset($_POST['passwort2'])&&
+    //     isset($_POST['agb'])
+    // ){
+    //     $vorname = trim(filter_var($_POST['vorname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
+    //     $nachname = trim(filter_var($_POST['nachname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
+    //     $adresse = trim(filter_var($_POST['adresse'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    //     $plz = trim(filter_var($_POST['plz'], FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    //     $ort = trim(filter_var($_POST['ort'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
+    //     $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
+    //     $passwort_hash = trim(password_hash($_POST['passwort'], PASSWORD_DEFAULT));
+
+    //     $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+    //     $statement = mysqli_prepare($conn, $query);
+    //     mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
+    //     mysqli_stmt_execute($statement);
+
+    //     // header('Location: login.php');
+
+    //     echo 'Sie sind registriert und können sich nun einloggen.';
+    // }else{
+    //     echo 'Etwas ist schiefgelaufen';
+    // }
 }
 
 
@@ -71,7 +98,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>
                 <div class="first-name-input-wrapper input-wrapper">
                     <label for="vorname">Vorname :</label>
-                    <input type="text" name="vorname">
+                    <input type="text" name="vorname" value="<?php echo $vorname?>">
                 </div>
             </div>
             </div>
@@ -83,7 +110,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>    
                 <div class="last-name-input-wrapper input-wrapper">
                     <label for="nachname">Nachname :</label>
-                    <input type="text" name="nachname">
+                    <input type="text" name="nachname" value="<?php echo $nachname?>">
                 </div>
             </div>
             <div class="placeholder-wrapper reg-wrapper" id="mobile-placeholder"></div>
@@ -96,7 +123,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>    
                 <div class="adresse-input-wrapper input-wrapper">
                     <label for="adresse">Adresse :</label>
-                    <input type="text" name="adresse">
+                    <input type="text" name="adresse" value="<?php echo $adresse?>">
                 </div>
             </div>
             </div>
@@ -108,7 +135,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>    
                 <div class="plz-name-input-wrapper input-wrapper">
                     <label for="plz">PLZ :</label>
-                    <input type="number" name="plz">
+                    <input type="number" name="plz" value="<?php echo $plz?>">
                 </div>
             </div>
             </div>
@@ -120,7 +147,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>
                 <div class="city-input-wrapper input-wrapper">
                     <label for="ort">Ort :</label>
-                    <input type="text" name="ort">
+                    <input type="text" name="ort" value="<?php echo $ort?>">
                 </div>
             </div>
             </div>
@@ -132,7 +159,7 @@ if( isset($_POST['registrieren'])){
             <?php }?>
                 <div class="email-input-wrapper input-wrapper">
                     <label for="email">E-Mail :</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="<?php echo $email?>">
                 </div>
             </div>
             </div>
