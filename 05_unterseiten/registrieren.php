@@ -27,42 +27,92 @@ if( isset($_POST['registrieren'])){
         $errors['vorname'] = 'Bitte Vornamen eingeben';
     }else{
         $vorname = $_POST['vorname'];
-        if(trim(filter_var($vorname, FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING))){
-            $errors['vorname'] = "Bitte gültigen Vornamen eingeben";
+        if(!trim(preg_match('/^[a-zA-Z]+$/', $vorname))){
+            $errors['vorname'] = 'Bitte gültigen Vornamen eingeben';
         }
     }
 
-    // if( 
-    //     isset($_POST['vorname']) &&
-    //     isset($_POST['nachname']) &&
-    //     isset($_POST['adresse']) &&
-    //     isset($_POST['plz']) &&
-    //     isset($_POST['ort']) &&
-    //     isset($_POST['email']) &&
-    //     isset($_POST['passwort'])&&
-    //     isset($_POST['passwort2'])&&
-    //     isset($_POST['agb'])
-    // ){
-    //     $vorname = trim(filter_var($_POST['vorname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
-    //     $nachname = trim(filter_var($_POST['nachname'], FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_SANITIZE_STRING));
-    //     $adresse = trim(filter_var($_POST['adresse'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-    //     $plz = trim(filter_var($_POST['plz'], FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-    //     $ort = trim(filter_var($_POST['ort'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-    //     $email = trim(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
-    //     $passwort_hash = trim(password_hash($_POST['passwort'], PASSWORD_DEFAULT));
+    if(empty($_POST['nachname'])){
+        $errors['nachname'] = 'Bitte Nachname eingeben';
+    }else{
+        $nachname = $_POST['nachname'];
+        if(!trim(preg_match('/^[a-zA-Z]+$/', $nachname))){
+            $errors['nachname'] = 'Bitte gültigen Nachnamen eingeben';
+        }
+    }
 
-    //     $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    if(empty($_POST['adresse'])){
+        $errors['adresse'] = 'Bitte Adresse eingeben';
+    }else{
+        $adresse = $_POST['adresse'];
+        if(!trim(filter_var($adresse, FILTER_SANITIZE_FULL_SPECIAL_CHARS))){
+            $errors['adresse'] = 'Bitte gültigen Adresse eingeben';
+        }
+    }
 
-    //     $statement = mysqli_prepare($conn, $query);
-    //     mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
-    //     mysqli_stmt_execute($statement);
+    if(empty($_POST['plz'])){
+        $errors['plz'] = 'Bitte Postleitzahl eingeben';
+    }else{
+        $plz = $_POST['plz'];
+        if(!trim(filter_var($plz, FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS))){
+            $errors['plz'] = 'Bitte gültigen Postleitzahl eingeben';
+        }
+    }
 
-    //     // header('Location: login.php');
+    if(empty($_POST['ort'])){
+        $errors['ort'] = 'Bitte Wohnort eingeben';
+    }else{
+        $ort = $_POST['ort'];
+        if(!trim(preg_match('/^[a-zA-Z]+$/', $ort))){
+            $errors['ort'] = 'Bitte gültigen Wohnort eingeben';
+        }
+    }
 
-    //     echo 'Sie sind registriert und können sich nun einloggen.';
-    // }else{
-    //     echo 'Etwas ist schiefgelaufen';
-    // }
+    if(empty($_POST['email'])){
+        $errors['email'] = 'Bitte E-Mail eingeben';
+    }else{
+        $email = $_POST['email'];
+        if(!trim(filter_var($email, FILTER_VALIDATE_EMAIL))){
+            $errors['email'] = 'Bitte gültigen E-Mail eingeben';
+        }
+    }
+
+    if(empty($_POST['passwort'])){
+        $errors['passwort'] = 'Bitte Passwort eingeben';
+    }else{
+        $passwort_hash = trim($_POST['passwort']);
+        if(!trim(($passwort_hash))){
+            $errors['passwort'] = 'Bitte gültiges Passwort eingeben';
+        }
+    }
+
+    if(empty($_POST['passwort2'])){
+        $errors['passwort2'] = 'Bitte Passwort wiederholen';
+    }else{
+        $passwort2 = trim($_POST['passwort2']);
+        if($passwort2 !== $passwort_hash){
+            $errors['passwort2'] = 'Passwort stimmt nicht überein';
+        }else{
+            $passwort_hash = password_hash($passwort_hash, PASSWORD_DEFAULT);
+            $passwort2 = password_hash($passwort2, PASSWORD_DEFAULT);
+        }
+    }
+
+    if(!isset($_POST['agb'])){
+        $errors['agb'] = 'Bitte AGB bestätigen';
+    }
+
+    if(array_filter($errors)){
+        echo 'Etwas ist schief gelaufen';
+    }else{
+        $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+        $statement = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
+        mysqli_stmt_execute($statement);
+    
+        header('Location: login.php');
+    }
 }
 
 
@@ -91,11 +141,9 @@ if( isset($_POST['registrieren'])){
                 <h3>Registrieren</h3>
             </div>
             <div class="first-name-wrapper reg-wrapper" id="mobile-first-name">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['vorname'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Vornamen eingeben</p>'?>
+                    <?php echo '<p>'.$errors["vorname"].'</p>'?>
                 </div>
-            <?php }?>
                 <div class="first-name-input-wrapper input-wrapper">
                     <label for="vorname">Vorname :</label>
                     <input type="text" name="vorname" value="<?php echo $vorname?>">
@@ -103,11 +151,10 @@ if( isset($_POST['registrieren'])){
             </div>
             </div>
             <div class="last-name-wrapper reg-wrapper" id="mobile-last-name">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['nachname'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Nachname eingeben</p>'?>
+                    <?php echo '<p>'.$errors["nachname"].'</p>'?>
                 </div>
-            <?php }?>    
+
                 <div class="last-name-input-wrapper input-wrapper">
                     <label for="nachname">Nachname :</label>
                     <input type="text" name="nachname" value="<?php echo $nachname?>">
@@ -116,11 +163,10 @@ if( isset($_POST['registrieren'])){
             <div class="placeholder-wrapper reg-wrapper" id="mobile-placeholder"></div>
             </div>
             <div class="adresse-wrapper reg-wrapper" id="mobile-adresse">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['adresse'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Adresse eingeben</p>'?>
+                    <?php echo '<p>'.$errors["adresse"].'</p>'?>
                 </div>
-            <?php }?>    
+
                 <div class="adresse-input-wrapper input-wrapper">
                     <label for="adresse">Adresse :</label>
                     <input type="text" name="adresse" value="<?php echo $adresse?>">
@@ -128,11 +174,10 @@ if( isset($_POST['registrieren'])){
             </div>
             </div>
             <div class="plz-wrapper reg-wrapper" id="mobile-plz">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['plz'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Postleitzahl eingeben</p>'?>
+                    <?php echo '<p>'.$errors["plz"].'</p>'?>
                 </div>
-            <?php }?>    
+
                 <div class="plz-name-input-wrapper input-wrapper">
                     <label for="plz">PLZ :</label>
                     <input type="number" name="plz" value="<?php echo $plz?>">
@@ -140,11 +185,10 @@ if( isset($_POST['registrieren'])){
             </div>
             </div>
             <div class="city-wrapper reg-wrapper" id="mobile-city">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['ort'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Ort eingeben</p>'?>
+                    <?php echo '<p>'.$errors["ort"].'</p>'?>
                 </div>
-            <?php }?>
+
                 <div class="city-input-wrapper input-wrapper">
                     <label for="ort">Ort :</label>
                     <input type="text" name="ort" value="<?php echo $ort?>">
@@ -152,11 +196,10 @@ if( isset($_POST['registrieren'])){
             </div>
             </div>
             <div class="email-wrapper reg-wrapper" id="mobile-email">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['email'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte gültige E-Mail eingeben</p>'?>
+                    <?php echo '<p>'.$errors["email"].'</p>'?>
                 </div>
-            <?php }?>
+
                 <div class="email-input-wrapper input-wrapper">
                     <label for="email">E-Mail :</label>
                     <input type="email" name="email" value="<?php echo $email?>">
@@ -164,33 +207,27 @@ if( isset($_POST['registrieren'])){
             </div>
             </div>
             <div class="password-wrapper reg-wrapper" id="mobile-password">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['passwort'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Passwort eingeben</p>'?>
+                    <?php echo '<p>'.$errors["passwort"].'</p>'?>
                 </div>
-            <?php }?>
                 <div class="password-input-wrapper input-wrapper">
                     <label for="passwort">Passwort :</label>
                     <input type="password" name="passwort">
                 </div>
             </div>
             <div class="second-password-wrapper reg-wrapper" id="mobile-second-password">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['passwort2'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte Passwort nochmals eingeben</p>'?>
+                    <?php echo '<p>'.$errors["passwort2"].'</p>'?>
                 </div>
-            <?php }?>
                 <div class="second-password-input-wrapper input-wrapper">
                     <label for="passwort2">Passwort <br> wiederholen :</label>
                     <input type="password" name="passwort2">
                 </div>
             </div>
             <div class="agb-wrapper reg-wrapper" id="mobile-agb">
-            <?php if(isset($_POST['registrieren']) && empty($_POST['agb'])){?>
                 <div class="error">
-                <?php echo '<p>Bitte AGBs bestätigen</p>'?>
+                    <?php echo '<p>'.$errors["agb"].'</p>'?>
                 </div>
-            <?php }?>
                 <div class="agb-input-wrapper input-wrapper">
                     <label for="agb">Ich habe die AGB gelesen :</label>
                     <input type="checkbox" name="agb">
