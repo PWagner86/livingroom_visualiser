@@ -124,7 +124,7 @@ in die Datenbank übertragen.
         $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
+        mysqli_stmt_bind_param($statement, 'sssisss', filter_var($vorname, FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($nachname, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $adresse, $plz, filter_var($ort, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $email, $passwort_hash);
         mysqli_stmt_execute($statement);
     
         header('Location: login.php');
