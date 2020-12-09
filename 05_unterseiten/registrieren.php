@@ -3,12 +3,15 @@
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
 
+// Leere Variablen um am Anfang nicht im Form anzuzeigen.----------------------->
 $vorname = "";
 $nachname = "";
 $adresse = "";
 $plz = "";
 $ort = "";
 $email = "";
+
+// Ein Array das Error-Meldungen sammelt.---------------------------------------->
 $errors = array(
     'vorname'=>'',
     'nachname'=>'',
@@ -20,6 +23,14 @@ $errors = array(
     'passwort2'=>'',
     'agb'=>''
 );
+
+/*
+--------------------------------------------------------------------------------->
+Wenn der Registrierbutton gedrückt wird, werden sämtliche Eingaben geprüft.
+Gibt es Fehler werden diese im Formular angezeigt, ansonsten wird der Benutzer auf
+die Log In Seite transferiert
+--------------------------------------------------------------------------------->
+*/
 
 if( isset($_POST['registrieren'])){
 
@@ -101,7 +112,12 @@ if( isset($_POST['registrieren'])){
     if(!isset($_POST['agb'])){
         $errors['agb'] = 'Bitte AGB bestätigen';
     }
-
+/*
+--------------------------------------------------------------------------------->
+Sind alle Felder korrekt ausgefüllt, werden die Daten
+in die Datenbank übertragen.
+--------------------------------------------------------------------------------->
+*/
     if(array_filter($errors)){
         echo 'Etwas ist schief gelaufen';
     }else{
@@ -137,9 +153,12 @@ if( isset($_POST['registrieren'])){
 
         <form action="registrieren.php" method="post">
 
+            <!-- Titel ----------------------------------------------------------->
             <div class="register-titel-wrapper" id="mobile-register-titel">
                 <h3>Registrieren</h3>
             </div>
+
+            <!-- Vorname ----------------------------------------------------------->
             <div class="first-name-wrapper reg-wrapper" id="mobile-first-name">
                 <div class="error">
                     <?php echo '<p>'.$errors["vorname"].'</p>'?>
@@ -150,6 +169,8 @@ if( isset($_POST['registrieren'])){
                 </div>
             </div>
             </div>
+
+            <!-- Nachname ----------------------------------------------------------->
             <div class="last-name-wrapper reg-wrapper" id="mobile-last-name">
                 <div class="error">
                     <?php echo '<p>'.$errors["nachname"].'</p>'?>
@@ -160,8 +181,12 @@ if( isset($_POST['registrieren'])){
                     <input type="text" name="nachname" value="<?php echo $nachname?>">
                 </div>
             </div>
+
+            <!-- Platzhalter (rein für die Ästhetik) ----------------------------------------------------------->
             <div class="placeholder-wrapper reg-wrapper" id="mobile-placeholder"></div>
             </div>
+
+            <!-- Adresse ----------------------------------------------------------->
             <div class="adresse-wrapper reg-wrapper" id="mobile-adresse">
                 <div class="error">
                     <?php echo '<p>'.$errors["adresse"].'</p>'?>
@@ -173,6 +198,8 @@ if( isset($_POST['registrieren'])){
                 </div>
             </div>
             </div>
+
+            <!-- Postleitzahl ----------------------------------------------------------->
             <div class="plz-wrapper reg-wrapper" id="mobile-plz">
                 <div class="error">
                     <?php echo '<p>'.$errors["plz"].'</p>'?>
@@ -184,6 +211,8 @@ if( isset($_POST['registrieren'])){
                 </div>
             </div>
             </div>
+
+            <!-- Ort ----------------------------------------------------------->
             <div class="city-wrapper reg-wrapper" id="mobile-city">
                 <div class="error">
                     <?php echo '<p>'.$errors["ort"].'</p>'?>
@@ -195,6 +224,8 @@ if( isset($_POST['registrieren'])){
                 </div>
             </div>
             </div>
+
+            <!-- E-Mail ----------------------------------------------------------->
             <div class="email-wrapper reg-wrapper" id="mobile-email">
                 <div class="error">
                     <?php echo '<p>'.$errors["email"].'</p>'?>
@@ -206,6 +237,8 @@ if( isset($_POST['registrieren'])){
                 </div>
             </div>
             </div>
+
+            <!-- Passwort ----------------------------------------------------------->
             <div class="password-wrapper reg-wrapper" id="mobile-password">
                 <div class="error">
                     <?php echo '<p>'.$errors["passwort"].'</p>'?>
@@ -215,6 +248,8 @@ if( isset($_POST['registrieren'])){
                     <input type="password" name="passwort">
                 </div>
             </div>
+
+            <!-- Passwort erneut ----------------------------------------------------------->
             <div class="second-password-wrapper reg-wrapper" id="mobile-second-password">
                 <div class="error">
                     <?php echo '<p>'.$errors["passwort2"].'</p>'?>
@@ -224,6 +259,8 @@ if( isset($_POST['registrieren'])){
                     <input type="password" name="passwort2">
                 </div>
             </div>
+
+            <!-- AGB ----------------------------------------------------------->
             <div class="agb-wrapper reg-wrapper" id="mobile-agb">
                 <div class="error">
                     <?php echo '<p>'.$errors["agb"].'</p>'?>
@@ -233,6 +270,8 @@ if( isset($_POST['registrieren'])){
                     <input type="checkbox" name="agb">
                 </div>
             </div>
+
+            <!-- Submit ----------------------------------------------------------->
             <div class="submit-wrapper reg-wrapper" id="mobile-submit">
                 <input type="submit" name="registrieren" value="Registrieren">
             </div>
