@@ -37,54 +37,72 @@ if( isset($_POST['registrieren'])){
     if(empty($_POST['vorname'])){
         $errors['vorname'] = 'Bitte Vornamen eingeben';
     }else{
-        $vorname = $_POST['vorname'];
-        if(!trim(preg_match('/^[a-zA-Z]+$/', $vorname))){
+        $vorname = trim($_POST['vorname']);
+        if(!preg_match('/^[a-zA-Z]+$/', $vorname)){
             $errors['vorname'] = 'Bitte gültigen Vornamen eingeben';
+        }else{
+            $voranme = htmlspecialchars($vorname);
+            $vorname = filter_var($vorname, FILTER_SANITIZE_STRING);
         }
     }
 
     if(empty($_POST['nachname'])){
         $errors['nachname'] = 'Bitte Nachname eingeben';
     }else{
-        $nachname = $_POST['nachname'];
-        if(!trim(preg_match('/^[a-zA-Z]+$/', $nachname))){
+        $nachname = trim($_POST['nachname']);
+        if(!preg_match('/^[a-zA-Z]+$/', $nachname)){
             $errors['nachname'] = 'Bitte gültigen Nachnamen eingeben';
+        }else{
+            $nachname = htmlspecialchars($nachname);
+            $nachname = filter_var($nachname, FILTER_SANITIZE_STRING);
         }
     }
 
     if(empty($_POST['adresse'])){
         $errors['adresse'] = 'Bitte Adresse eingeben';
     }else{
-        $adresse = $_POST['adresse'];
-        if(!trim(filter_var($adresse, FILTER_SANITIZE_FULL_SPECIAL_CHARS))){
+        $adresse = trim($_POST['adresse']);
+        if(!filter_var($adresse, FILTER_SANITIZE_STRING)){
             $errors['adresse'] = 'Bitte gültigen Adresse eingeben';
+        }else{
+            $adresse = htmlspecialchars($adresse);
+            $adresse = filter_var($adresse, FILTER_SANITIZE_STRING);
         }
     }
 
     if(empty($_POST['plz'])){
         $errors['plz'] = 'Bitte Postleitzahl eingeben';
     }else{
-        $plz = $_POST['plz'];
-        if(!trim(filter_var($plz, FILTER_VALIDATE_INT, FILTER_SANITIZE_FULL_SPECIAL_CHARS))){
+        $plz = trim($_POST['plz']);
+        // Regex von hier: https://jonaswitmer.ch/projekte/18-regex-fuer-schweizer-postleitzahlen-und-telefonnummern
+        if(!preg_match('/([1-468][0-9]|[57][0-7]|9[0-6])[0-9]{2}/', $plz)){
             $errors['plz'] = 'Bitte gültigen Postleitzahl eingeben';
+        }else{
+            $plz = htmlspecialchars($plz);
+            $plz = filter_var($plz, FILTER_VALIDATE_NUMBER_INT);
         }
     }
 
     if(empty($_POST['ort'])){
         $errors['ort'] = 'Bitte Wohnort eingeben';
     }else{
-        $ort = $_POST['ort'];
-        if(!trim(preg_match('/^[a-zA-Z]+$/', $ort))){
+        $ort = trim($_POST['ort']);
+        if(!preg_match('/^[a-zA-Z]+$/', $ort)){
             $errors['ort'] = 'Bitte gültigen Wohnort eingeben';
+        }else{
+            $ort = htmlspecialchars($ort);
+            $ort = filter_var($ort, FILTER_SANITIZE_STRING);
         }
     }
 
     if(empty($_POST['email'])){
         $errors['email'] = 'Bitte E-Mail eingeben';
     }else{
-        $email = $_POST['email'];
-        if(!trim(filter_var($email, FILTER_VALIDATE_EMAIL))){
+        $email = trim($_POST['email']);
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $errors['email'] = 'Bitte gültigen E-Mail eingeben';
+        }else{
+            $email = filter_var($email, FILTER_VALIDATE_EMAIL);
         }
     }
 
@@ -92,8 +110,11 @@ if( isset($_POST['registrieren'])){
         $errors['passwort'] = 'Bitte Passwort eingeben';
     }else{
         $passwort_hash = trim($_POST['passwort']);
-        if(!trim(($passwort_hash))){
+        if(!filter_var($passwort_hash, FILTER_SANITIZE_STRING)){
             $errors['passwort'] = 'Bitte gültiges Passwort eingeben';
+        }else{
+            $passwort_hash = htmlspecialchars($passwort_hash);
+            $passwort_hash = filter_var($passwort_hash, FILTER_SANITIZE_STRING);
         }
     }
 
@@ -101,10 +122,12 @@ if( isset($_POST['registrieren'])){
         $errors['passwort2'] = 'Bitte Passwort wiederholen';
     }else{
         $passwort2 = trim($_POST['passwort2']);
-        if($passwort2 !== $passwort_hash){
+        if($passwort2 !== $passwort_hash || !filter_var($passwort2, FILTER_SANITIZE_STRING)){
             $errors['passwort2'] = 'Passwort stimmt nicht überein';
         }else{
             $passwort_hash = password_hash($passwort_hash, PASSWORD_DEFAULT);
+            $passwort2 = htmlspecialchars($passwort2);
+            $passwort2 = filter_var($passwort2, FILTER_SANITIZE_STRING);
             $passwort2 = password_hash($passwort2, PASSWORD_DEFAULT);
         }
     }
@@ -124,7 +147,7 @@ in die Datenbank übertragen.
         $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'sssisss', filter_var($vorname, FILTER_SANITIZE_FULL_SPECIAL_CHARS), filter_var($nachname, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $adresse, $plz, filter_var($ort, FILTER_SANITIZE_FULL_SPECIAL_CHARS), $email, $passwort_hash);
+        mysqli_stmt_bind_param($statement, 'sssisss', $vorname, $nachname, $adresse, $plz, $ort, $email, $passwort_hash);
         mysqli_stmt_execute($statement);
     
         header('Location: login.php');
@@ -207,7 +230,7 @@ in die Datenbank übertragen.
 
                 <div class="plz-name-input-wrapper input-wrapper">
                     <label for="plz">PLZ :</label>
-                    <input type="number" name="plz" value="<?php echo $plz?>">
+                    <input type="number" name="plz" value="<?php echo $plz?>" placeholder="z.B. 8400">
                 </div>
             </div>
             </div>
