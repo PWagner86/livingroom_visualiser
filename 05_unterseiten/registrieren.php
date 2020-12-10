@@ -10,6 +10,7 @@ $adresse = "";
 $plz = "";
 $ort = "";
 $email = "";
+$errormsg = "";
 
 // Ein Array das Error-Meldungen sammelt.---------------------------------------->
 $errors = array(
@@ -135,7 +136,7 @@ in die Datenbank übertragen.
 --------------------------------------------------------------------------------->
 */
     if(array_filter($errors)){
-        echo 'Etwas ist schief gelaufen';
+        $errormsg = "Etwas ist schief gelaufen";
     }else{
         $query = "INSERT INTO `user` (`vorname`, `nachname`, `adresse`, `plz`, `ort`, `email`, `passwort`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -171,6 +172,7 @@ in die Datenbank übertragen.
 
             <!-- Titel ----------------------------------------------------------->
             <div class="register-titel-wrapper" id="mobile-register-titel">
+                <?= "<p>$errormsg</p>";?>
                 <h3>Registrieren</h3>
             </div>
 

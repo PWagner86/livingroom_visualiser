@@ -49,10 +49,22 @@ body{
             }
 
             .register-titel-wrapper{
+                position: relative;
 
                 h3{
                     color: $mainColor;
                 }
+
+                p{
+                    position: absolute;
+                    left: 5%;
+                    color: $errorColor;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 1.5vmin;
+                }
+
+
             }
 
             .agb-wrapper{

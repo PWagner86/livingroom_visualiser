@@ -611,8 +611,21 @@ body main form .submit-wrapper {
           flex-direction: row;
 }
 
+body main form .register-titel-wrapper {
+  position: relative;
+}
+
 body main form .register-titel-wrapper h3 {
   color: #278ACC;
+}
+
+body main form .register-titel-wrapper p {
+  position: absolute;
+  left: 5%;
+  color: #cc1b1b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5vmin;
 }
 
 body main form .agb-wrapper .agb-input-wrapper input {
