@@ -23,7 +23,9 @@ function sanitizing($var, $sani){
     global $sanitize;
 
     $var = htmlspecialchars($var);
+    $var = strip_tags($var);
     $var = filter_var($var, $sanitize[$sani]);
+    return $var;
 }
 
 ?>
