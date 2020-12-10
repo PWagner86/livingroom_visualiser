@@ -1,7 +1,7 @@
 <?php
 
 require('../04_includes/header_nav.php');
-require_once('../04_includes/mysql_connection.php');
+require('../04_includes/mysql_connection.php');
 
 // Leere Variablen um am Anfang nicht im Form anzuzeigen.----------------------->
 $vorname = "";
@@ -41,8 +41,7 @@ if( isset($_POST['registrieren'])){
         if(!preg_match('/^[a-zA-Z]+$/', $vorname)){
             $errors['vorname'] = 'Bitte gültigen Vornamen eingeben';
         }else{
-            $voranme = htmlspecialchars($vorname);
-            $vorname = filter_var($vorname, FILTER_SANITIZE_STRING);
+            sanitizing($vorname, 'string');
         }
     }
 
@@ -53,8 +52,7 @@ if( isset($_POST['registrieren'])){
         if(!preg_match('/^[a-zA-Z]+$/', $nachname)){
             $errors['nachname'] = 'Bitte gültigen Nachnamen eingeben';
         }else{
-            $nachname = htmlspecialchars($nachname);
-            $nachname = filter_var($nachname, FILTER_SANITIZE_STRING);
+            sanitizing($nachname, 'string');
         }
     }
 
@@ -62,11 +60,10 @@ if( isset($_POST['registrieren'])){
         $errors['adresse'] = 'Bitte Adresse eingeben';
     }else{
         $adresse = trim($_POST['adresse']);
-        if(!filter_var($adresse, FILTER_SANITIZE_STRING)){
+        if(!filter_var($adresse, $sanitize['string'])){
             $errors['adresse'] = 'Bitte gültigen Adresse eingeben';
         }else{
-            $adresse = htmlspecialchars($adresse);
-            $adresse = filter_var($adresse, FILTER_SANITIZE_STRING);
+            sanitizing($adresse, 'string');
         }
     }
 
@@ -78,8 +75,7 @@ if( isset($_POST['registrieren'])){
         if(!preg_match('/([1-468][0-9]|[57][0-7]|9[0-6])[0-9]{2}/', $plz)){
             $errors['plz'] = 'Bitte gültigen Postleitzahl eingeben';
         }else{
-            $plz = htmlspecialchars($plz);
-            $plz = filter_var($plz, FILTER_VALIDATE_NUMBER_INT);
+            sanitizing($plz, 'int');
         }
     }
 
@@ -90,8 +86,7 @@ if( isset($_POST['registrieren'])){
         if(!preg_match('/^[a-zA-Z]+$/', $ort)){
             $errors['ort'] = 'Bitte gültigen Wohnort eingeben';
         }else{
-            $ort = htmlspecialchars($ort);
-            $ort = filter_var($ort, FILTER_SANITIZE_STRING);
+            sanitizing($ort, 'string');
         }
     }
 
@@ -102,7 +97,7 @@ if( isset($_POST['registrieren'])){
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
             $errors['email'] = 'Bitte gültigen E-Mail eingeben';
         }else{
-            $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+            sanitizing($email, 'email');
         }
     }
 
@@ -113,8 +108,7 @@ if( isset($_POST['registrieren'])){
         if(!filter_var($passwort_hash, FILTER_SANITIZE_STRING)){
             $errors['passwort'] = 'Bitte gültiges Passwort eingeben';
         }else{
-            $passwort_hash = htmlspecialchars($passwort_hash);
-            $passwort_hash = filter_var($passwort_hash, FILTER_SANITIZE_STRING);
+            sanitizing($passwort_hash, 'string');
         }
     }
 
@@ -126,8 +120,7 @@ if( isset($_POST['registrieren'])){
             $errors['passwort2'] = 'Passwort stimmt nicht überein';
         }else{
             $passwort_hash = password_hash($passwort_hash, PASSWORD_DEFAULT);
-            $passwort2 = htmlspecialchars($passwort2);
-            $passwort2 = filter_var($passwort2, FILTER_SANITIZE_STRING);
+            sanitizing($passwort2, 'string');
             $passwort2 = password_hash($passwort2, PASSWORD_DEFAULT);
         }
     }
