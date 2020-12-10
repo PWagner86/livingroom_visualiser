@@ -95,7 +95,7 @@ if( isset($_POST['registrieren'])){
         $errors['email'] = 'Bitte E-Mail eingeben';
     }else{
         $email = trim($_POST['email']);
-        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        if(!filter_var($email, $sanitize['email'])){
             $errors['email'] = 'Bitte gültigen E-Mail eingeben';
         }else{
             sanitizing($email, 'email');
@@ -106,7 +106,7 @@ if( isset($_POST['registrieren'])){
         $errors['passwort'] = 'Bitte Passwort eingeben';
     }else{
         $passwort_hash = trim($_POST['passwort']);
-        if(!filter_var($passwort_hash, FILTER_SANITIZE_STRING)){
+        if(!filter_var($passwort_hash, $sanitize['string'])){
             $errors['passwort'] = 'Bitte gültiges Passwort eingeben';
         }else{
             sanitizing($passwort_hash, 'string');
@@ -117,7 +117,7 @@ if( isset($_POST['registrieren'])){
         $errors['passwort2'] = 'Bitte Passwort wiederholen';
     }else{
         $passwort2 = trim($_POST['passwort2']);
-        if($passwort2 !== $passwort_hash || !filter_var($passwort2, FILTER_SANITIZE_STRING)){
+        if($passwort2 !== $passwort_hash || !filter_var($passwort2, $sanitize['string'])){
             $errors['passwort2'] = 'Passwort stimmt nicht überein';
         }else{
             $passwort_hash = password_hash($passwort_hash, PASSWORD_DEFAULT);
