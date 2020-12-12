@@ -15,8 +15,8 @@ session_start();
     <title>Visualizer</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/07_visualizer/visualizer_style.css">
-    <script type="module" src="https://unpkg.com/three"></script>
-    <script type="module" src="../03_code/03_visualizer/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js" defer></script>
+    <script src="../03_code/03_visualizer/main.js" defer></script>
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
