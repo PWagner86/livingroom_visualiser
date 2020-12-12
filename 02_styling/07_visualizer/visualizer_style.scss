@@ -4,7 +4,8 @@
 
 body{
 
-    .vis{
+    .scene{
         @include size(100%, 70vh);
+        overflow: hidden;
     }
 }
