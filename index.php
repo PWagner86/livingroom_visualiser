@@ -1,6 +1,8 @@
 <?php
 
 require('./04_includes/header_nav.php');
+session_start();
+$username = $_SESSION['username'];
 
 
 ?>

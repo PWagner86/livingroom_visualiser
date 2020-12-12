@@ -167,7 +167,7 @@ in die Datenbank übertragen.
 
     <!-- main -------------------------------------------------------------------->
     <main>
-        <?= "<p class='error-msg'>$errormsg</p>";?>
+        <?="<p class='error-msg'>$errormsg</p>";?>
         <form action="registrieren.php" method="post">
 
             <!-- Titel ----------------------------------------------------------->

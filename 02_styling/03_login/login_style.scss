@@ -17,6 +17,7 @@ body{
 
     main{
         @include main;
+        position: relative;        
 
         form{
             @include size(80vmin, 80%);

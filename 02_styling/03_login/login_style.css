@@ -127,6 +127,18 @@ input {
   font-size: 2.5vmin;
 }
 
+.error-msg {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  color: #cc1b1b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5vmin;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -254,6 +266,18 @@ input {
 .error p {
   color: #cc1b1b;
   font-size: 2.5vmin;
+}
+
+.error-msg {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  color: #cc1b1b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5vmin;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 header {
@@ -516,6 +540,7 @@ body main {
   background: #221f1f;
   border-top: solid 3px white;
   border-bottom: solid 3px white;
+  position: relative;
 }
 
 body main form {

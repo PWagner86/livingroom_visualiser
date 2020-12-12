@@ -18,18 +18,6 @@ body{
         @include main;
         position: relative;
 
-        .error-msg{
-            position: absolute;
-            left: 50%;
-            top: 5%;
-            color: $errorColor;
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 2.5vmin;
-            transform: translate(-50%, -50%);
-        }
-
-
         form{
             @include size(90%, 80%);
             @include flex(center, center, row);

@@ -2,6 +2,31 @@
 
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
+$loginErr = "";
+session_start();
+if(isset($_POST['login'])){
+    $email = trim($_POST['email']);
+    $password = trim($_POST['passwort']);
+
+    $query = "SELECT * FROM `user` WHERE `email` = '$email'";
+    $rs = mysqli_query($conn, $query);
+    $numRows = mysqli_num_rows($rs);
+
+    // echo $query;
+    // echo $numRows;
+
+    if($numRows == 1){
+        $row = mysqli_fetch_assoc($rs);
+        if(password_verify($password, $row['passwort'])){
+            header("Location: ../index.php");
+        }else{
+            $loginErr = "E-Mail oder Passwort ist falsch";
+        }
+    }else{
+        $loginErr = "E-Mail oder Passwort ist falsch";
+    }
+}
+
 
 ?>
 
@@ -20,7 +45,7 @@ require_once('../04_includes/mysql_connection.php');
 
     <!-- main -------------------------------------------------------------------->
     <main>
-
+        <?="<p class='error-msg'>$loginErr</p>";?>
         <!-- form ---------------------------------------------------------------->
         <form action="login.php" method="post">
             <div class="login-titel-wrapper">
@@ -32,7 +57,7 @@ require_once('../04_includes/mysql_connection.php');
                 </div>
                 <div class="email-input-wrapper input-wrapper">
                     <label for="email">E-Mail :</label>
-                    <input type="text" name="benutzername" id="">
+                    <input type="email" name="email" id="">
                 </div>
             </div>
             <div class="password-wrapper">
@@ -45,7 +70,7 @@ require_once('../04_includes/mysql_connection.php');
                 </div>
             </div>
             <div class="submit-wrapper">
-                <input type="submit" value="Log In">
+                <input type="submit" name="login" value="Log In">
             </div>
         </form>
     </main>
