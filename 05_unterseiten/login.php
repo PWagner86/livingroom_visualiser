@@ -2,8 +2,10 @@
 
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
-$loginErr = "";
 session_start();
+
+$loginErr = "";
+
 if(isset($_POST['login'])){
     $email = trim($_POST['email']);
     $password = trim($_POST['passwort']);
@@ -18,6 +20,7 @@ if(isset($_POST['login'])){
     if($numRows == 1){
         $row = mysqli_fetch_assoc($rs);
         if(password_verify($password, $row['passwort'])){
+            $_SESSION['state'] = 'Loged in';
             header("Location: ../index.php");
         }else{
             $loginErr = "E-Mail oder Passwort ist falsch";
@@ -41,7 +44,7 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', './registrieren.php', './über.php', './news.php');?>
+    <?php echo createHeader('../index.php', '#', '#', './registrieren.php', '#','./über.php', './news.php');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>

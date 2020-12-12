@@ -1,6 +1,7 @@
 <?php
 
 require('../04_includes/header_nav.php');
+session_start();
 
 ?>
 
@@ -16,7 +17,7 @@ require('../04_includes/header_nav.php');
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', './registrieren.php', './über.php', '#');?>
+    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', '#', './über.php', '#');?>
 
     <!-- main -->
     <main>

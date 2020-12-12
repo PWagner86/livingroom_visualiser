@@ -1,8 +1,15 @@
 <?php
 
-function createNav($login, $register, $about, $news){
+// $optional = array(
+//     'login' => false,
+//     'register' => true,
+//     'visualizer' => true
+// );
 
-    $nav = '
+function createNav($login, $logout, $register, $visualizer, $about, $news){
+    
+    if(!$_SESSION){
+        $nav = '
     
         <nav id="header-nav-mobile">
             <ul>
@@ -12,15 +19,31 @@ function createNav($login, $register, $about, $news){
                 <li class="news-link"><a href='.$news.'>News</a></li>
             </ul>
         </nav>
-    ';
+        ';
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in'){
+        $nav = '
+    
+        <nav id="header-nav-mobile">
+            <ul>
+                <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
+                <li class="registrieren-link"><a href='.$visualizer.'>Visualizer</a></li>
+                <li class="about-link"><a href='.$about.'>Über</a></li>
+                <li class="news-link"><a href='.$news.'>News</a></li>
+            </ul>
+        </nav>
+        ';
+    }
 
     return $nav;
 }
 
 
-function createHeader($main, $login, $register, $about, $news){
+function createHeader($main, $login, $logout, $register, $visualizer, $about, $news){
 
-    $header = '
+    global $optional;
+
+    if(!$_SESSION){
+        $header = '
         <header>
             <div class="fade">
                 <div class="back-to-main">
@@ -36,7 +59,27 @@ function createHeader($main, $login, $register, $about, $news){
                 </nav>
             </div>
         </header>
-    ';
+        ';
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in'){
+        $header = '
+        <header>
+            <div class="fade">
+                <div class="back-to-main">
+                    <a href="'.$main.'"><i class="fas fa-caret-left"></i>Startseite</a>
+                </div>
+                <nav id="header-nav-mobile">;
+                    <ul>
+                        <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
+                        <li class="registrieren-link"><a href='.$visualizer.'>Visualizer</a></li>
+                        <li class="about-link"><a href='.$about.'>Über</a></li>
+                        <li class="news-link"><a href='.$news.'>News</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        ';
+    }
+
 
     return $header;
 }

@@ -2,7 +2,6 @@
 
 require('./04_includes/header_nav.php');
 session_start();
-$username = $_SESSION['username'];
 
 
 ?>
@@ -25,7 +24,7 @@ $username = $_SESSION['username'];
         <div class="fade">
 
             <!-- navigation ---------------------------------------------------------------------------------------------------------->      
-            <?php echo createNav('./05_unterseiten/login.php', './05_unterseiten/registrieren.php', './05_unterseiten/über.php', './05_unterseiten/news.php');?>
+            <?php echo createNav('./05_unterseiten/login.php', './04_includes/logout.php', './05_unterseiten/registrieren.php', '#', './05_unterseiten/über.php', './05_unterseiten/news.php');?>
 
             <!-- Titel-Container ----------------------------------------------------------------------------------------------------->
             <div class="titel-wrapper">

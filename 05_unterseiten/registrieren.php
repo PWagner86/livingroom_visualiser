@@ -2,6 +2,7 @@
 
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
+session_start();
 
 // Leere Variablen um am Anfang nicht im Form anzuzeigen.----------------------->
 $vorname = "";
@@ -163,7 +164,7 @@ in die Datenbank übertragen.
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '#', './über.php', './news.php');?>
+    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>
