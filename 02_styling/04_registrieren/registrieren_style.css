@@ -124,6 +124,7 @@ input {
 
 .error p {
   color: #cc1b1b;
+  font-size: 2.5vmin;
 }
 
 header {
@@ -485,6 +486,7 @@ input {
 
 .error p {
   color: #cc1b1b;
+  font-size: 2.5vmin;
 }
 
 body header .registrieren-link a {
@@ -510,6 +512,19 @@ body main {
   background: #221f1f;
   border-top: solid 3px white;
   border-bottom: solid 3px white;
+  position: relative;
+}
+
+body main .error-msg {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  color: #cc1b1b;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5vmin;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 body main form {
@@ -617,15 +632,6 @@ body main form .register-titel-wrapper {
 
 body main form .register-titel-wrapper h3 {
   color: #278ACC;
-}
-
-body main form .register-titel-wrapper p {
-  position: absolute;
-  left: 5%;
-  color: #cc1b1b;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.5vmin;
 }
 
 body main form .agb-wrapper .agb-input-wrapper input {

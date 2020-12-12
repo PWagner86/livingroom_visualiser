@@ -167,12 +167,11 @@ in die Datenbank übertragen.
 
     <!-- main -------------------------------------------------------------------->
     <main>
-
+        <?= "<p class='error-msg'>$errormsg</p>";?>
         <form action="registrieren.php" method="post">
 
             <!-- Titel ----------------------------------------------------------->
             <div class="register-titel-wrapper" id="mobile-register-titel">
-                <?= "<p>$errormsg</p>";?>
                 <h3>Registrieren</h3>
             </div>
 
