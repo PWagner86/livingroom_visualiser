@@ -5,10 +5,25 @@ require_once('../04_includes/mysql_connection.php');
 session_start();
 
 $loginErr = "";
+/*
+-------------------------------------------------------------------------------------------->
+Login Prozess wird hier gestartet
+-------------------------------------------------------------------------------------------->
+*/
 
 if(isset($_POST['login'])){
+
+    /*
+    -------------------------------------------------------------------------------------------->
+    Userinput wird desinfiziert und mit 
+    Datenbank verglichen
+    -------------------------------------------------------------------------------------------->
+    */
+    
     $email = trim($_POST['email']);
     $password = trim($_POST['passwort']);
+    sanitizing($email, 'email');
+    sanitizing($password, 'string');
 
     $query = "SELECT * FROM `user` WHERE `email` = '$email'";
     $rs = mysqli_query($conn, $query);

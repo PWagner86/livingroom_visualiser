@@ -1,5 +1,5 @@
 <?php
-
+// Ausloggen
 session_start();
 
 $_SESSION = array();
