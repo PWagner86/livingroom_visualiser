@@ -17,7 +17,7 @@ session_start();
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', '#', './über.php', '#');?>
+    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './über.php', '#');?>
 
     <!-- main -->
     <main>

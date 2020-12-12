@@ -1,0 +1,10 @@
+@import '../01_variables_&_rules/header_footer';
+@import '../01_variables_&_rules/rules';
+@import '../01_variables_&_rules/variables';
+
+body{
+
+    .vis{
+        @include size(100%, 70vh);
+    }
+}
