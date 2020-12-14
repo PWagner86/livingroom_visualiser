@@ -1,5 +1,5 @@
 
-THREE.GLTFLoader = ( function () {
+export default THREE.GLTFLoader = ( function () {
 
 	function GLTFLoader( manager ) {
 

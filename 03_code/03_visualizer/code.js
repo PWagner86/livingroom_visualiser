@@ -1,11 +1,13 @@
+// import GLTF from './GLTFLoader.js';
+import Controls from './OrbitControls.js'
+
 // Variables
-let container = document.querySelector(".scene")
+const container = document.querySelector(".scene")
 
 // Funktion was alles geladen werden soll
 function init(){
     
     let scene = new THREE.Scene();
-    let loader = new THREE.GLTFLoader();
 
     // Raum erstellen
 
