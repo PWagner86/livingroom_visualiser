@@ -1,14 +1,15 @@
-// import GLTF from './GLTFLoader.js';
-import Controls from './OrbitControls.js'
+import GLTF from './GLTFLoader.js';
+import Controls from './OrbitControls.js';
+import * as model from './Model.js';
 
 // Variables
-const container = document.querySelector(".scene")
+const container = document.querySelector(".scene");
+const scene = new THREE.Scene();
+
 
 // Funktion was alles geladen werden soll
 function init(){
     
-    let scene = new THREE.Scene();
-
     // Raum erstellen
 
     let ground = getPlane(15, 8, 'rgb(124, 119, 119)');
@@ -32,6 +33,11 @@ function init(){
     scene.add(backWall);
     scene.add(pointLight);
 
+    const gaming_stuhl = new model.Model(0.15, 0.15, 0.15, -6, -Math.PI/2, "gaming_stuhl");
+
+    console.log(gaming_stuhl);
+
+    gaming_stuhl.loadModel();
 
     // Kamera
     let camera = new THREE.PerspectiveCamera(
