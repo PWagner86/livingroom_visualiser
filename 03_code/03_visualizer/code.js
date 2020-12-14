@@ -17,7 +17,6 @@ class Model{
         this.posx = posx;
         this.roty = roty;
         this.modelFolder = modelFolder;
-        
     }
 
     loadModel(){
