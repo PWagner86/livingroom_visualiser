@@ -1,10 +1,41 @@
 import GLTF from './GLTFLoader.js';
 import Controls from './OrbitControls.js';
-import * as model from './Model.js';
 
 // Variables
 const container = document.querySelector(".scene");
 const scene = new THREE.Scene();
+const loader = new THREE.GLTFLoader();
+const path = "../03_code/03_visualizer/3dmodels/";
+
+
+// 3D Model Klasse
+class Model{
+    constructor(x, y, z, posx, roty, modelFolder, ){
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.posx = posx;
+        this.roty = roty;
+        this.modelFolder = modelFolder;
+        
+    }
+
+    loadModel(){
+        loader.load(`${path}/${this.modelFolder}/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            gltf.scene.castShadow = true;
+            gltf.scene.scale.x = this.x;
+            gltf.scene.scale.y = this.y;
+            gltf.scene.scale.z = this.z;
+            gltf.scene.position.x = this.posx;
+            gltf.scene.rotation.y = this.roty;
+        })
+    }
+
+    removeModel(){
+       scene.remove(gltf.scene) ;
+    }
+}
 
 
 // Funktion was alles geladen werden soll
@@ -33,10 +64,8 @@ function init(){
     scene.add(backWall);
     scene.add(pointLight);
 
-    const gaming_stuhl = new model.Model(0.15, 0.15, 0.15, -6, -Math.PI/2, "gaming_stuhl");
-
-    console.log(gaming_stuhl);
-
+    // Gaming Stuhl erstellen
+    const gaming_stuhl = new Model(0.15, 0.15, 0.15, -6, -Math.PI/2, "gaming_stuhl");
     gaming_stuhl.loadModel();
 
     // Kamera
