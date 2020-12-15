@@ -1,11 +1,5 @@
 <?php
 
-// $optional = array(
-//     'login' => false,
-//     'register' => true,
-//     'visualizer' => true
-// );
-
 function createNav($login, $logout, $register, $visualizer, $about, $news){
     
     if(!$_SESSION){
@@ -39,8 +33,6 @@ function createNav($login, $logout, $register, $visualizer, $about, $news){
 
 
 function createHeader($main, $login, $logout, $register, $visualizer, $about, $news){
-
-    global $optional;
 
     if(!$_SESSION){
         $header = '
