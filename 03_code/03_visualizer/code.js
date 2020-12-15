@@ -3,18 +3,21 @@ import Controls from './OrbitControls.js';
 
 // Variables
 const container = document.querySelector(".scene");
+const testBtn = document.querySelector(".test");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
 const path = "../03_code/03_visualizer/3dmodels/";
+let modelScene;
 
 
 // 3D Model Klasse
 class Model{
-    constructor(x, y, z, posx, roty, modelFolder, ){
+    constructor(x, y, z, posx, posz, roty, modelFolder){
         this.x = x;
         this.y = y;
         this.z = z;
         this.posx = posx;
+        this.posz = posz;
         this.roty = roty;
         this.modelFolder = modelFolder;
     }
@@ -22,18 +25,48 @@ class Model{
     loadModel(){
         loader.load(`${path}/${this.modelFolder}/scene.gltf`, (gltf) => {
             scene.add(gltf.scene);
-            gltf.scene.castShadow = true;
-            gltf.scene.scale.x = this.x;
-            gltf.scene.scale.y = this.y;
-            gltf.scene.scale.z = this.z;
-            gltf.scene.position.x = this.posx;
-            gltf.scene.rotation.y = this.roty;
+            modelScene = gltf.scene;
+            modelScene.castShadow = true;
+            modelScene.scale.x = this.x;
+            modelScene.scale.y = this.y;
+            modelScene.scale.z = this.z;
+            modelScene.position.x = this.posx;
+            modelScene.position.z = this.posz;
+            modelScene.rotation.y = this.roty;
         })
     }
 
     removeModel(){
-       scene.remove(gltf.scene) ;
+       scene.remove(modelScene);
     }
+
+    toRight(){
+        let move = 0.1;
+        modelScene.position.x += move;
+    }
+
+    toLeft(){
+        let move = 0.1;
+        modelScene.position.x -= move;
+    }
+
+    toBack(){
+        let move = 0.1;
+        modelScene.position.z -= move;
+    }
+
+    toFront(){
+        let move = 0.1;
+        modelScene.position.z += move;
+    }
+
+    rotate(){
+        let move = Math.PI/4;
+        modelScene.rotation.y += move;
+    }
+
+
+
 }
 
 
@@ -64,8 +97,18 @@ function init(){
     scene.add(pointLight);
 
     // Gaming Stuhl erstellen
-    const gaming_stuhl = new Model(0.15, 0.15, 0.15, -6, -Math.PI/2, "gaming_stuhl");
+    const gaming_stuhl = new Model(0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
     gaming_stuhl.loadModel();
+    // Lounge erstellen
+    const lounge = new Model(0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
+    lounge.loadModel();
+
+
+    testBtn.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        gaming_stuhl.rotate();
+    })
 
     // Kamera
     let camera = new THREE.PerspectiveCamera(

@@ -23,6 +23,12 @@ session_start();
     <!-- header ------------------------------------------------------------------>
     <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
     <div class="scene">
+        <select name="möbel">
+            <option value="gaming-stuhl">Gaming Stuhl</option>
+            <option value="lounge">Lounge</option>
+        </select>
+
+        <button class="test">Test</button>
     </div>
     <!-- footer ------------------------------------------------------------------>
     <?php echo createFooter('#', '#')?>

@@ -7,5 +7,20 @@ body{
     .scene{
         @include size(100%, 70vh);
         overflow: hidden;
+        position: relative;
+
+        select{
+            position: absolute;
+            @include size(10%, 5%);
+            left: 1%;
+            top: 3%;
+        }
+
+        .test{
+            position: absolute;
+            @include size(10vmin, 5vmin);
+            left: 15%;
+            top: 3%;
+        }
     }
 }
