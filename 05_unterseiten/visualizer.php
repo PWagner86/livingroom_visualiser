@@ -1,9 +1,8 @@
 <?php
-
+require_once('../04_includes/access.php');
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
 session_start();
-
 
 ?>
 
