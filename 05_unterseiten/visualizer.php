@@ -28,6 +28,7 @@ session_start();
             <option value="Gaming Stuhl">Gaming Stuhl</option>
             <option value="Lounge">Lounge</option>
             <option value="Sci-Fy">Sci-Fy</option>
+            <option value="Bar">Bar</option>
         </select>
 
         <ul class="remove">

@@ -101,9 +101,10 @@ function init(){
     const gaming_stuhl = new Model("Gaming Stuhl", 0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
     // Lounge erstellen
     const lounge = new Model("Lounge", 0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
-    // SciFy Möbel
+    // SciFy Möbel erstellen
     const scify = new Model("Sci-Fy", 0.008, 0.008, 0.008, -2, 2, -Math.PI/0.5, "sci-fy_einrichtung");
-    
+    // Bar erstellen
+    const bar = new Model("Bar", 0.75, 0.75, 0.75, 5, -2.5, -Math.PI, "bar_einrichtung");
 
    select.addEventListener("change", () => {
     switch(select.value){
@@ -118,6 +119,11 @@ function init(){
         case "Sci-Fy":
             scify.loadModel();
             createListItem("Sci-Fy");
+            break;
+        case "Bar":
+            bar.loadModel();
+            createListItem("Bar");
+            break;
     }
    })
 

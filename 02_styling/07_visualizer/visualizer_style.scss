@@ -27,12 +27,16 @@ body{
 
         .remove{
             position: absolute;
-            @include size(10%, auto);
+            @include size(10%, 80%);
             left: 1%;
             top: 20%;
+            overflow: auto;
             
             li{
                 border: none;
+                margin: 1rem 0;
+                color: $mainColor;
+                font-weight: bold;
             }
             // &:hover{
 
