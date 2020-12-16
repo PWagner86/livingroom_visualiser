@@ -3,6 +3,7 @@ import Controls from './OrbitControls.js';
 
 // Variables
 const container = document.querySelector(".scene");
+const select = document.querySelector("select");
 const testBtn = document.querySelector(".test");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
