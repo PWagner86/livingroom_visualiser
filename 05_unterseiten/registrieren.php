@@ -1,8 +1,8 @@
 <?php
 
+session_start();
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
-session_start();
 
 // Leere Variablen um am Anfang nicht im Form anzuzeigen.----------------------->
 $vorname = "";
