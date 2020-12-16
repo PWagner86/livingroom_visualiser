@@ -115,9 +115,9 @@ function init(){
             lounge.loadModel();
             createListItem("Lounge");
             break;
-        case "Scy-Fi":
+        case "Sci-Fy":
             scify.loadModel();
-            createListItem("Scy-Fi");
+            createListItem("Sci-Fy");
     }
    })
 
