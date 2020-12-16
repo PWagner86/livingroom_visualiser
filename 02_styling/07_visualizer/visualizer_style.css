@@ -522,8 +522,10 @@ body .scene {
 
 body .scene select {
   position: absolute;
-  width: 10%;
-  height: 5%;
+  width: 15%;
+  height: 10%;
+  font-size: 2vmin;
+  font-family: "Montserrat Alternates", sans-serif;
   left: 1%;
   top: 3%;
 }
@@ -532,7 +534,19 @@ body .scene .test {
   position: absolute;
   width: 10vmin;
   height: 5vmin;
-  left: 15%;
+  left: 20%;
   top: 3%;
+}
+
+body .scene .remove {
+  position: absolute;
+  width: 10%;
+  height: auto;
+  left: 1%;
+  top: 20%;
+}
+
+body .scene .remove li {
+  border: none;
 }
 /*# sourceMappingURL=visualizer_style.css.map */

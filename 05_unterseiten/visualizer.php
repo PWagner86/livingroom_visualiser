@@ -24,9 +24,15 @@ session_start();
     <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
     <div class="scene">
         <select name="möbel">
-            <option value="gaming-stuhl">Gaming Stuhl</option>
-            <option value="lounge">Lounge</option>
+            <option value="text">Hier Möbel auswählen</option>
+            <option value="Gaming Stuhl">Gaming Stuhl</option>
+            <option value="Lounge">Lounge</option>
+            <option value="Sci-Fy">Sci-Fy</option>
         </select>
+
+        <ul class="remove">
+        
+        </ul>
 
         <button class="test">Test</button>
     </div>

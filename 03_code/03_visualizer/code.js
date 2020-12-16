@@ -4,16 +4,20 @@ import Controls from './OrbitControls.js';
 // Variables
 const container = document.querySelector(".scene");
 const select = document.querySelector("select");
+const list = document.querySelector(".remove");
 const testBtn = document.querySelector(".test");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
 const path = "../03_code/03_visualizer/3dmodels/";
 let modelScene;
+let itemList = [];
 
+// console.log(select.value);
 
 // 3D Model Klasse
 class Model{
-    constructor(x, y, z, posx, posz, roty, modelFolder){
+    constructor(name, x, y, z, posx, posz, roty, modelFolder){
+        this.name = name;
         this.x = x;
         this.y = y;
         this.z = z;
@@ -65,15 +69,11 @@ class Model{
         let move = Math.PI/4;
         modelScene.rotation.y += move;
     }
-
-
-
 }
-
 
 // Funktion was alles geladen werden soll
 function init(){
-    
+
     // Raum erstellen
 
     let ground = getPlane(15, 8, 'rgb(124, 119, 119)');
@@ -98,11 +98,29 @@ function init(){
     scene.add(pointLight);
 
     // Gaming Stuhl erstellen
-    const gaming_stuhl = new Model(0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
-    gaming_stuhl.loadModel();
+    const gaming_stuhl = new Model("Gaming Stuhl", 0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
     // Lounge erstellen
-    const lounge = new Model(0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
-    lounge.loadModel();
+    const lounge = new Model("Lounge", 0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
+    // SciFy Möbel
+    const scify = new Model("Sci-Fy", 0.008, 0.008, 0.008, -2, 2, -Math.PI/0.5, "sci-fy_einrichtung");
+    
+
+   select.addEventListener("change", () => {
+    switch(select.value){
+        case "Gaming Stuhl":
+            gaming_stuhl.loadModel();
+            createListItem("Gaming Stuhl");
+            break;
+        case "Lounge":
+            lounge.loadModel();
+            createListItem("Lounge");
+            break;
+        case "Scy-Fi":
+            scify.loadModel();
+            createListItem("Scy-Fi");
+    }
+   })
+
 
 
     testBtn.addEventListener("click", (e) => {
@@ -168,4 +186,18 @@ function getPointLight(intensity){
     var light = new THREE.PointLight(0xffffff, intensity);
 
     return light;
+}
+
+
+function createListItem(item){
+
+    if(!itemList.includes(item)){
+        const listItem = document.createElement("li");
+        itemList.push(item);
+        listItem.innerHTML = item;
+        list.appendChild(listItem);
+    }else{
+        return;
+    }
+    console.log(itemList);
 }

@@ -11,7 +11,9 @@ body{
 
         select{
             position: absolute;
-            @include size(10%, 5%);
+            @include size(15%, 10%);
+            font-size: 2vmin;
+            font-family: $mainFont;
             left: 1%;
             top: 3%;
         }
@@ -19,8 +21,22 @@ body{
         .test{
             position: absolute;
             @include size(10vmin, 5vmin);
-            left: 15%;
+            left: 20%;
             top: 3%;
+        }
+
+        .remove{
+            position: absolute;
+            @include size(10%, auto);
+            left: 1%;
+            top: 20%;
+            
+            li{
+                border: none;
+            }
+            // &:hover{
+
+            // }
         }
     }
 }
