@@ -33,7 +33,7 @@ require('../04_includes/mysql_connection.php');
 
         <div class="move-wrapper">
             <div class="title-wrapper">
-                <h6>Test</h6>
+                <h6>Lounge</h6>
             </div>
             <div class="button-wrapper">
                 <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
