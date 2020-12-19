@@ -24,8 +24,9 @@ body{
         }
 
         .move-wrapper{
+            display: none;
             position: absolute;
-            @include size(30vmin, 30vmin);
+            @include size(40vmin, 40vmin);
             right: 5%;
             top: 3%;
 
@@ -36,6 +37,7 @@ body{
                 h6{
                     color: white;
                     text-transform: none;
+                    font-size: 4vmin;
                 }
             }
 
@@ -52,7 +54,7 @@ body{
                     cursor: pointer;
 
                     i{
-                        font-size: 6vmin;
+                        font-size: 8vmin;
                         color: $mainColor;
                         transition: ease-in-out 0.3s;
 
@@ -103,9 +105,20 @@ body{
             
             li{
                 border: none;
-                margin: 1rem 0;
-                color: $mainColor;
-                font-weight: bold;
+                @include size(100%, 10vmin);
+                @include flex(center, center, row);
+
+                button{
+                    @include submitBtn;
+                    @include size(80%, 50%);
+                    background: $mainColor;
+                    color: white;
+                    &:hover{
+                        box-shadow: 0 0 10px 5px white;
+                        border: solid 3px white;
+                        color: white;
+                    }
+                }
             }
         }
     }

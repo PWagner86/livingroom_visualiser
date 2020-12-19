@@ -31,9 +31,9 @@ require('../04_includes/mysql_connection.php');
             <option value="Bar">Bar</option>
         </select>
 
-        <div class="move-wrapper">
+        <div class="move-wrapper gaming">
             <div class="title-wrapper">
-                <h6>Lounge</h6>
+                <h6>Gaming Stuhl</h6>
             </div>
             <div class="button-wrapper">
                 <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
@@ -43,6 +43,20 @@ require('../04_includes/mysql_connection.php');
                 <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
             </div>
         </div>
+
+        <div class="move-wrapper sci-fy">
+            <div class="title-wrapper">
+                <h6>Sci-Fy</h6>
+            </div>
+            <div class="button-wrapper">
+                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
+                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
+                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
+                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
+            </div>
+        </div>
+
 
         <ul class="remove">
         

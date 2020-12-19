@@ -5,19 +5,23 @@ import Controls from './OrbitControls.js';
 const container = document.querySelector(".scene");
 const select = document.querySelector("select");
 const list = document.querySelector(".remove");
+let moveContainer = document.querySelector(".move-wrapper");
 let titel = document.querySelector(".move-wrapper .title-wrapper h6");
 let right = document.querySelector(".button-wrapper .right");
 let front = document.querySelector(".button-wrapper .front");
-let rotate = document.querySelector(".button-wrapper .rotate");
+let turn = document.querySelector(".button-wrapper .rotate");
 let left = document.querySelector(".button-wrapper .left");
 let back = document.querySelector(".button-wrapper .back");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
 const path = "../03_code/03_visualizer/3dmodels/";
+let gaming_stuhl;
+let lounge;
+let scify;
+let bar;
 let modelScene;
 let itemList = [];
 
-// console.log(select.value);
 
 // 3D Model Klasse
 class Model{
@@ -104,34 +108,36 @@ function init(){
     scene.add(pointLight);
 
     // Gaming Stuhl erstellen
-    const gaming_stuhl = new Model("Gaming Stuhl", 0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
+    gaming_stuhl = new Model("Gaming Stuhl", 0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
     // Lounge erstellen
-    const lounge = new Model("Lounge", 0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
+    lounge = new Model("Lounge", 0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
     // SciFy Möbel erstellen
-    const scify = new Model("Sci-Fy", 0.008, 0.008, 0.008, -2, 2, -Math.PI/0.5, "sci-fy_einrichtung");
+    scify = new Model("Sci-Fy", 0.008, 0.008, 0.008, -2, 2, -Math.PI/0.5, "sci-fy_einrichtung");
     // Bar erstellen
-    const bar = new Model("Bar", 0.75, 0.75, 0.75, 5, -2.5, -Math.PI, "bar_einrichtung");
+    bar = new Model("Bar", 0.75, 0.75, 0.75, 5, -2.5, -Math.PI, "bar_einrichtung");
 
-   select.addEventListener("change", () => {
-    switch(select.value){
-        case "Gaming Stuhl":
-            gaming_stuhl.loadModel();
-            createListItem("Gaming Stuhl");
-            break;
-        case "Lounge":
-            lounge.loadModel();
-            createListItem("Lounge");
-            break;
-        case "Sci-Fy":
-            scify.loadModel();
-            createListItem("Sci-Fy");
-            break;
-        case "Bar":
-            bar.loadModel();
-            createListItem("Bar");
-            break;
-    }
-   })
+
+
+    select.addEventListener("change", () => {
+        switch(select.value){
+            case "Gaming Stuhl":
+                gaming_stuhl.loadModel();
+                createListItem("Gaming Stuhl");
+                break;
+            case "Lounge":
+                lounge.loadModel();
+                createListItem("Lounge");
+                break;
+            case "Sci-Fy":
+                scify.loadModel();
+                createListItem("Sci-Fy");
+                break;
+            case "Bar":
+                bar.loadModel();
+                createListItem("Bar");
+                break;
+        }
+    })
 
     // Kamera
     let camera = new THREE.PerspectiveCamera(
@@ -197,11 +203,58 @@ function createListItem(item){
 
     if(!itemList.includes(item)){
         const listItem = document.createElement("li");
+        const liBtn = document.createElement("button");
         itemList.push(item);
-        listItem.innerHTML = item;
+        liBtn.innerHTML = item;
         list.appendChild(listItem);
+        listItem.appendChild(liBtn)
+
+        if(liBtn !== null){
+            liBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                switch(liBtn.innerHTML){
+                    case "Gaming Stuhl":
+                        const gaming_controlles = document.querySelector(".gaming");
+                        moveModel(gaming_stuhl, gaming_controlles);
+                        break;
+                    case "Sci-Fy":
+                        const sci_fy_controlles = document.querySelector(".sci-fy");
+                        moveModel(scify, sci_fy_controlles);
+                        break;
+                }
+            })
+        }
     }else{
         return;
     }
-    console.log(itemList);
+    // console.log(itemList);
+}
+
+function moveModel(model, controlles){
+    controlles.style.display = "block";
+
+    right.addEventListener("click", (e) => {
+        e.preventDefault();
+        model.toRight();
+    })
+
+    front.addEventListener("click", (e) => {
+        e.preventDefault();
+        model.toFront();
+    })
+
+    turn.addEventListener("click", (e) => {
+        e.preventDefault();
+        model.rotate();
+    })
+
+    left.addEventListener("click", (e) => {
+        e.preventDefault();
+        model.toLeft();
+    })
+
+    back.addEventListener("click", (e) => {
+        e.preventDefault();
+        model.toBack();
+    })
 }
