@@ -21,6 +21,7 @@ require('../04_includes/mysql_connection.php');
 <body>
     <!-- header ------------------------------------------------------------------>
     <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
+
     <div class="scene">
         <select name="möbel">
             <option value="text">Hier Möbel auswählen</option>
@@ -30,11 +31,23 @@ require('../04_includes/mysql_connection.php');
             <option value="Bar">Bar</option>
         </select>
 
+        <div class="move-wrapper">
+            <div class="title-wrapper">
+                <h6>Test</h6>
+            </div>
+            <div class="button-wrapper">
+                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
+                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
+                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
+                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
+            </div>
+        </div>
+
         <ul class="remove">
         
         </ul>
 
-        <button class="test">Test</button>
     </div>
     <!-- footer ------------------------------------------------------------------>
     <?php echo createFooter('#', '#')?>

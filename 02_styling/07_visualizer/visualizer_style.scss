@@ -11,19 +11,88 @@ body{
 
         select{
             position: absolute;
-            @include size(15%, 10%);
+            @include size(17%, 7%);
             font-size: 2vmin;
             font-family: $mainFont;
             left: 1%;
             top: 3%;
+            border: solid 3px white;
+            border-radius: 2rem;
+            background: $mainColor;
+            color: white;
         }
 
-        .test{
+        .move-wrapper{
             position: absolute;
-            @include size(10vmin, 5vmin);
+            @include size(15vmin, 15vmin);
             left: 20%;
             top: 3%;
+
+            .title-wrapper{
+                @include size(100%, 20%);
+                @include flex(center, center, row);
+
+                h6{
+                    color: white;
+                }
+            }
+
+            .button-wrapper{
+                @include size(100%, 80%);
+                position: absolute;
+
+                button{
+                    position: absolute;
+                    @include size(33.33%, 33.33%);
+                    @include flex(center, center, row);
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+
+                    i{
+                        font-size: 3vmin;
+                        color: $mainColor;
+                        transition: ease-in-out 0.3s;
+
+                        &:hover{
+                            text-shadow: 0 0 20px white;
+                        }
+                    }
+                }
+
+                .right{
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .front{
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .rotate{
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                .left{
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .back{
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
         }
+
 
         .remove{
             position: absolute;

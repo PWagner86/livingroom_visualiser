@@ -5,7 +5,6 @@ import Controls from './OrbitControls.js';
 const container = document.querySelector(".scene");
 const select = document.querySelector("select");
 const list = document.querySelector(".remove");
-const testBtn = document.querySelector(".test");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
 const path = "../03_code/03_visualizer/3dmodels/";
@@ -32,6 +31,7 @@ class Model{
             scene.add(gltf.scene);
             modelScene = gltf.scene;
             modelScene.castShadow = true;
+            modelScene.receiveShadow = true;
             modelScene.scale.x = this.x;
             modelScene.scale.y = this.y;
             modelScene.scale.z = this.z;
@@ -127,14 +127,6 @@ function init(){
     }
    })
 
-
-
-    testBtn.addEventListener("click", (e) => {
-
-        e.preventDefault();
-        gaming_stuhl.rotate();
-    })
-
     // Kamera
     let camera = new THREE.PerspectiveCamera(
         45,
@@ -148,11 +140,11 @@ function init(){
 
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-    let renderer = new THREE.WebGLRenderer({antialias: true, alpha: false});
+    const renderer = new THREE.WebGLRenderer({antialias: true, alpha: false});
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    let controls = new THREE.OrbitControls(camera, renderer.domElement);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
     
     update(renderer, scene, camera, controls);
 
