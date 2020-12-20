@@ -1,85 +1,52 @@
 import GLTF from './GLTFLoader.js';
 import Controls from './OrbitControls.js';
+import {
+    container,
+    path,
+    gamingBtn,
+    gamingCtr,
+    gamingControlles,
+    gamingRight,
+    gamingFront,
+    gamingRotate,
+    gamingLeft,
+    gamingBack,
+    sciFyBtn,
+    sciFyCtr,
+    sciFyControlles,
+    sciFyRight,
+    sciFyFront,
+    sciFyRotate,
+    sciFyLeft,
+    sciFyBack,
+    loungeBtn,
+    loungeCtr,
+    loungeControlles,
+    loungeRight,
+    loungeFront,
+    loungeRotate,
+    loungeLeft,
+    loungeBack,
+    btnShowHide,
+    getCtr,
+    toRight,
+    toFront,
+    rotate,
+    toLeft,
+    toBack,
+
+} from './variables&functions.js';
 
 // Variables
-const container = document.querySelector(".scene");
-const select = document.querySelector("select");
-const list = document.querySelector(".remove");
-let moveContainer = document.querySelector(".move-wrapper");
-let titel = document.querySelector(".move-wrapper .title-wrapper h6");
-let right = document.querySelector(".button-wrapper .right");
-let front = document.querySelector(".button-wrapper .front");
-let turn = document.querySelector(".button-wrapper .rotate");
-let left = document.querySelector(".button-wrapper .left");
-let back = document.querySelector(".button-wrapper .back");
 const scene = new THREE.Scene();
 const loader = new THREE.GLTFLoader();
-const path = "../03_code/03_visualizer/3dmodels/";
-let gaming_stuhl;
-let lounge;
+let gamingStuhl;
 let scify;
+let lounge;
 let bar;
 let modelScene;
-let itemList = [];
 
 
-// 3D Model Klasse
-class Model{
-    constructor(name, x, y, z, posx, posz, roty, modelFolder){
-        this.name = name;
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.posx = posx;
-        this.posz = posz;
-        this.roty = roty;
-        this.modelFolder = modelFolder;
-    }
-
-    loadModel(){
-        loader.load(`${path}/${this.modelFolder}/scene.gltf`, (gltf) => {
-            scene.add(gltf.scene);
-            modelScene = gltf.scene;
-            modelScene.castShadow = true;
-            modelScene.receiveShadow = true;
-            modelScene.scale.x = this.x;
-            modelScene.scale.y = this.y;
-            modelScene.scale.z = this.z;
-            modelScene.position.x = this.posx;
-            modelScene.position.z = this.posz;
-            modelScene.rotation.y = this.roty;
-        })
-    }
-
-    removeModel(){
-       scene.remove(modelScene);
-    }
-
-    toRight(){
-        let move = 0.1;
-        modelScene.position.x += move;
-    }
-
-    toLeft(){
-        let move = 0.1;
-        modelScene.position.x -= move;
-    }
-
-    toBack(){
-        let move = 0.1;
-        modelScene.position.z -= move;
-    }
-
-    toFront(){
-        let move = 0.1;
-        modelScene.position.z += move;
-    }
-
-    rotate(){
-        let move = Math.PI/4;
-        modelScene.rotation.y += move;
-    }
-}
 
 // Funktion was alles geladen werden soll
 function init(){
@@ -107,38 +74,83 @@ function init(){
     scene.add(backWall);
     scene.add(pointLight);
 
-    // Gaming Stuhl erstellen
-    gaming_stuhl = new Model("Gaming Stuhl", 0.15, 0.15, 0.15, -6, 0, -Math.PI/2, "gaming_stuhl");
-    // Lounge erstellen
-    lounge = new Model("Lounge", 0.1, 0.1, 0.1, 3, 2, -Math.PI/0.5, "lounge");
-    // SciFy Möbel erstellen
-    scify = new Model("Sci-Fy", 0.008, 0.008, 0.008, -2, 2, -Math.PI/0.5, "sci-fy_einrichtung");
-    // Bar erstellen
-    bar = new Model("Bar", 0.75, 0.75, 0.75, 5, -2.5, -Math.PI, "bar_einrichtung");
+    // Gaming Stuhl ----------------------------------------------------------------->
+    gamingBtn.addEventListener("click", () => {
+        loader.load(`${path}/gaming_stuhl/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            gamingStuhl = gltf.scene;
+            gamingStuhl.castShadow = true;
+            gamingStuhl.receiveShadow = true;
+            gamingStuhl.scale.x = 0.15;
+            gamingStuhl.scale.y = 0.15;
+            gamingStuhl.scale.z = 0.15;
+            gamingStuhl.position.x = -6;
+            gamingStuhl.position.z = 0;
+            gamingStuhl.rotation.y = -Math.PI/2;
+        })
+
+        btnShowHide(gamingBtn, gamingCtr);
+    });
+
+    gamingCtr.addEventListener("click", () => getCtr(gamingControlles));
+    gamingRight.addEventListener("click", () => toRight(gamingStuhl));
+    gamingFront.addEventListener("click", () => toFront(gamingStuhl));
+    gamingRotate.addEventListener("click", () => rotate(gamingStuhl));
+    gamingLeft.addEventListener("click", () => toLeft(gamingStuhl));
+    gamingBack.addEventListener("click", () => toBack(gamingStuhl));
 
 
+    // Sci-Fy -------------------------------------------------------------------------->
+    sciFyBtn.addEventListener("click", () => {
+        loader.load(`${path}/sci-fy_einrichtung/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            scify = gltf.scene;
+            scify.castShadow = true;
+            scify.receiveShadow = true;
+            scify.scale.x = 0.008;
+            scify.scale.y = 0.008;
+            scify.scale.z = 0.008;
+            scify.position.x = -2;
+            scify.position.z = 2;
+            scify.rotation.y = -Math.PI/0.5;
+        })
 
-    select.addEventListener("change", () => {
-        switch(select.value){
-            case "Gaming Stuhl":
-                gaming_stuhl.loadModel();
-                createListItem("Gaming Stuhl");
-                break;
-            case "Lounge":
-                lounge.loadModel();
-                createListItem("Lounge");
-                break;
-            case "Sci-Fy":
-                scify.loadModel();
-                createListItem("Sci-Fy");
-                break;
-            case "Bar":
-                bar.loadModel();
-                createListItem("Bar");
-                break;
-        }
-    })
+        btnShowHide(sciFyBtn, sciFyCtr);
+    });
 
+    sciFyCtr.addEventListener("click", () => getCtr(sciFyControlles));
+    sciFyRight.addEventListener("click", () => toRight(scify));
+    sciFyFront.addEventListener("click", () => toFront(scify));
+    sciFyRotate.addEventListener("click", () => rotate(scify));
+    sciFyLeft.addEventListener("click", () => toLeft(scify));
+    sciFyBack.addEventListener("click", () => toBack(scify));
+
+
+    // Sci-Fy -------------------------------------------------------------------------->
+    loungeBtn.addEventListener("click", () => {
+        loader.load(`${path}/lounge/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            lounge = gltf.scene;
+            lounge.castShadow = true;
+            lounge.receiveShadow = true;
+            lounge.scale.x = 0.1;
+            lounge.scale.y = 0.1;
+            lounge.scale.z = 0.1;
+            lounge.position.x = 3;
+            lounge.position.z = 2;
+            lounge.rotation.y = -Math.PI/0.5;
+        })
+
+        btnShowHide(loungeBtn, loungeCtr);
+    });
+
+    loungeCtr.addEventListener("click", () => getCtr(loungeControlles));
+    loungeRight.addEventListener("click", () => toRight(lounge));
+    loungeFront.addEventListener("click", () => toFront(lounge));
+    loungeRotate.addEventListener("click", () => rotate(lounge));
+    loungeLeft.addEventListener("click", () => toLeft(lounge));
+    loungeBack.addEventListener("click", () => toBack(lounge));
+    
     // Kamera
     let camera = new THREE.PerspectiveCamera(
         45,
@@ -198,63 +210,3 @@ function getPointLight(intensity){
     return light;
 }
 
-
-function createListItem(item){
-
-    if(!itemList.includes(item)){
-        const listItem = document.createElement("li");
-        const liBtn = document.createElement("button");
-        itemList.push(item);
-        liBtn.innerHTML = item;
-        list.appendChild(listItem);
-        listItem.appendChild(liBtn)
-
-        if(liBtn !== null){
-            liBtn.addEventListener("click", (e) => {
-                e.preventDefault();
-                switch(liBtn.innerHTML){
-                    case "Gaming Stuhl":
-                        const gaming_controlles = document.querySelector(".gaming");
-                        moveModel(gaming_stuhl, gaming_controlles);
-                        break;
-                    case "Sci-Fy":
-                        const sci_fy_controlles = document.querySelector(".sci-fy");
-                        moveModel(scify, sci_fy_controlles);
-                        break;
-                }
-            })
-        }
-    }else{
-        return;
-    }
-    // console.log(itemList);
-}
-
-function moveModel(model, controlles){
-    controlles.style.display = "block";
-
-    right.addEventListener("click", (e) => {
-        e.preventDefault();
-        model.toRight();
-    })
-
-    front.addEventListener("click", (e) => {
-        e.preventDefault();
-        model.toFront();
-    })
-
-    turn.addEventListener("click", (e) => {
-        e.preventDefault();
-        model.rotate();
-    })
-
-    left.addEventListener("click", (e) => {
-        e.preventDefault();
-        model.toLeft();
-    })
-
-    back.addEventListener("click", (e) => {
-        e.preventDefault();
-        model.toBack();
-    })
-}

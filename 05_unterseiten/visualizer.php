@@ -23,13 +23,22 @@ require('../04_includes/mysql_connection.php');
     <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
 
     <div class="scene">
-        <select name="möbel">
-            <option value="text">Hier Möbel auswählen</option>
-            <option value="Gaming Stuhl">Gaming Stuhl</option>
-            <option value="Lounge">Lounge</option>
-            <option value="Sci-Fy">Sci-Fy</option>
-            <option value="Bar">Bar</option>
-        </select>
+
+        <div class="spawn">
+            <div class="gaming-wrapper btn-wrapper">
+                <button class="gaming-btn spawn">Gaming Stuhl</button>
+                <button class="gaming-ctr controlle">Gaming Stuhl<br>Controlle</button>
+            </div>
+            <div class="scify-wrapper btn-wrapper">
+                <button class="scify-btn spawn">Sci-Fy Möbel</button>
+                <button class="scify-ctr controlle">Sci-Fy Mögel<br>Controlle</button>
+            </div>
+            <div class="lounge-wrapper btn-wrapper">
+                <button class="lounge-btn spawn">Lounge</button>
+                <button class="lounge-ctr controlle">Lounge<br>Controlle</button>
+            </div>
+
+        </div>
 
         <div class="move-wrapper gaming">
             <div class="title-wrapper">
@@ -57,10 +66,19 @@ require('../04_includes/mysql_connection.php');
             </div>
         </div>
 
+        <div class="move-wrapper lounge">
+            <div class="title-wrapper">
+                <h6>Lounge</h6>
+            </div>
+            <div class="button-wrapper">
+                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
+                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
+                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
+                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
+            </div>
+        </div>
 
-        <ul class="remove">
-        
-        </ul>
 
     </div>
     <!-- footer ------------------------------------------------------------------>

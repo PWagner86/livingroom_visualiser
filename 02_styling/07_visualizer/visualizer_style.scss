@@ -9,18 +9,48 @@ body{
         overflow: hidden;
         position: relative;
 
-        select{
+        .spawn{
             position: absolute;
-            @include size(30vmin, 10vmin);
-            font-size: 2vmin;
-            font-family: $mainFont;
-            left: 1%;
-            top: 3%;
+            @include size(20%, 100%);
+            @include flex(space-around, center, column);
             border: solid 3px white;
-            border-radius: 2rem;
-            background: $mainColor;
-            color: white;
-            cursor: pointer;
+
+            .btn-wrapper{
+                position: relative;
+                @include size(100%, 10%);
+                @include flex(center, center, row);
+
+                .spawn,
+                .controlle{
+                    position: absolute;
+                    @include size(70%, 90%);
+                    @include flex(center, center, row);
+                    font-family: $mainFont;
+                    font-weight: bold;
+                    font-size: 2vmin;
+                    border-radius: 2rem;
+                    cursor: pointer;
+                    transition: ease-in-out 0.3s;
+                    &:hover{
+                        box-shadow: 0 0 10px 10px $mainColor;
+                    }
+                }
+
+                .spawn{
+                    border: solid 3px white;
+                    background: $mainColor;
+                    color: white;
+                }
+
+                .controlle{
+                    display: none;
+                    border: solid 3px $mainColor;
+                    background: white;
+                    color: $mainColor;
+                }
+            }
+
+
         }
 
         .move-wrapper{
@@ -92,32 +122,6 @@ body{
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                }
-            }
-        }
-
-        .remove{
-            position: absolute;
-            @include size(10%, 80%);
-            left: 1%;
-            top: 20%;
-            overflow: auto;
-            
-            li{
-                border: none;
-                @include size(100%, 10vmin);
-                @include flex(center, center, row);
-
-                button{
-                    @include submitBtn;
-                    @include size(80%, 50%);
-                    background: $mainColor;
-                    color: white;
-                    &:hover{
-                        box-shadow: 0 0 10px 5px white;
-                        border: solid 3px white;
-                        color: white;
-                    }
                 }
             }
         }
