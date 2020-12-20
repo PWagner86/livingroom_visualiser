@@ -126,7 +126,7 @@ function init(){
     sciFyBack.addEventListener("click", () => toBack(scify));
 
 
-    // Sci-Fy -------------------------------------------------------------------------->
+    // Lounge -------------------------------------------------------------------------->
     loungeBtn.addEventListener("click", () => {
         loader.load(`${path}/lounge/scene.gltf`, (gltf) => {
             scene.add(gltf.scene);
