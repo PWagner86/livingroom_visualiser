@@ -1,5 +1,7 @@
 // Verschiedene Variablen
 export const container = document.querySelector(".scene");
+export let containerWidth = container.clientWidth;
+export const mobileContainer = document.querySelector(".mobile");
 export const path = "../03_code/03_visualizer/3dmodels/";
 
 // Gaming Stuhl Container und Buttons
@@ -46,18 +48,32 @@ export const barLeft = document.querySelector(".bar .button-wrapper .left");
 export const barBack = document.querySelector(".bar .button-wrapper .back");
 export const barRemove = document.querySelector(".bar .button-wrapper .remove-model");
 
+// Wohnwand Container und Buttons
+export const wohnBtn = document.querySelector(".wohn-btn");
+export const wohnCtr = document.querySelector(".wohn-ctr");
+export const wohnControlles = document.querySelector(".wohn");
+export const wohnRight = document.querySelector(".wohn .button-wrapper .right");
+export const wohnFront = document.querySelector(".wohn .button-wrapper .front");
+export const wohnRotate = document.querySelector(".wohn .button-wrapper .rotate");
+export const wohnLeft = document.querySelector(".wohn .button-wrapper .left");
+export const wohnBack = document.querySelector(".wohn .button-wrapper .back");
+export const wohnRemove = document.querySelector(".wohn .button-wrapper .remove-model");
+
+
 export let controlles = [
     gamingControlles, 
     sciFyControlles,
     loungeControlles,
-    barControlles
+    barControlles,
+    wohnControlles
 ];
 
 let ctrs = [
     gamingCtr,
     sciFyCtr,
     loungeCtr,
-    barCtr
+    barCtr,
+    wohnCtr
 ];
 
 

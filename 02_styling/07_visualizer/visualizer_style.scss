@@ -136,5 +136,36 @@ body{
                 }
             }
         }
+
+        .mobile{
+            position: absolute;
+            @include size(100%, 100%);
+            background: black;
+
+            h5{
+                position: absolute;
+                left: 50%;
+                top: 10%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                text-align: center;
+                font-size: 2.5vmax;
+            }
+
+            .mobile-icon{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 20vmax;
+                animation: turn ease-in-out infinite 3s;
+            }
+
+            @keyframes turn {
+                0%{transform: rotateZ(0);}
+                100%{transform: rotateZ(-90deg);}
+            }
+        }
     }
 }

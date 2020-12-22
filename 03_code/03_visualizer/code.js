@@ -2,6 +2,8 @@ import GLTF from './GLTFLoader.js';
 import Controls from './OrbitControls.js';
 import {
     container,
+    containerWidth,
+    mobileContainer,
     path,
     gamingBtn,
     gamingCtr,
@@ -39,6 +41,15 @@ import {
     barLeft,
     barBack,
     barRemove,
+    wohnBtn,
+    wohnCtr,
+    wohnControlles,
+    wohnRight,
+    wohnFront,
+    wohnRotate,
+    wohnLeft,
+    wohnBack,
+    wohnRemove,
     btnShowHide,
     getCtr,
     toRight,
@@ -57,7 +68,8 @@ let gamingStuhl;
 let scify;
 let lounge;
 let bar;
-let modelScene;
+let wohn;
+
 
 
 
@@ -97,9 +109,9 @@ function init(){
             gamingStuhl.scale.x = 0.15;
             gamingStuhl.scale.y = 0.15;
             gamingStuhl.scale.z = 0.15;
-            gamingStuhl.position.x = -6;
-            gamingStuhl.position.z = 0;
-            gamingStuhl.rotation.y = -Math.PI/2;
+            gamingStuhl.position.x = -6.5;
+            gamingStuhl.position.z = -3;
+            gamingStuhl.rotation.y = -Math.PI/1.5;
         })
 
         btnShowHide(gamingBtn, gamingCtr);
@@ -193,6 +205,32 @@ function init(){
     barBack.addEventListener("click", () => toBack(bar));
     barRemove.addEventListener("click", () => removeModel(bar, barBtn, barCtr));
 
+    // Wohnwand -------------------------------------------------------------------------->
+    wohnBtn.addEventListener("click", () => {
+        loader.load(`${path}/wohnwand/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            wohn = gltf.scene;
+            wohn.castShadow = true;
+            wohn.receiveShadow = true;
+            wohn.scale.x = 1;
+            wohn.scale.y = 1;
+            wohn.scale.z = 1;
+            wohn.position.x = -2;
+            wohn.position.z = -4;
+            wohn.rotation.y = -Math.PI/0.5;
+        })
+
+        btnShowHide(wohnBtn, wohnCtr);
+    });
+
+    wohnCtr.addEventListener("click", () => getCtr(wohnControlles, wohnCtr));
+    wohnRight.addEventListener("click", () => toRight(wohn));
+    wohnFront.addEventListener("click", () => toFront(wohn));
+    wohnRotate.addEventListener("click", () => rotate(wohn));
+    wohnLeft.addEventListener("click", () => toLeft(wohn));
+    wohnBack.addEventListener("click", () => toBack(wohn));
+    wohnRemove.addEventListener("click", () => removeModel(wohn, wohnBtn, wohnCtr));
+    
     
     // Kamera
     let camera = new THREE.PerspectiveCamera(
@@ -216,6 +254,12 @@ function init(){
     update(renderer, scene, camera, controls);
 
     return scene;
+}
+
+if(containerWidth < 500){
+    mobileContainer.style.display = "block";
+}else{
+    mobileContainer.style.display = "none";
 }
 
 init();

@@ -61,6 +61,7 @@ function createCtrWrapper($wrapp, $titel){
             <?=createBtnWrapper("scify", "Sci-Fy Möbel"); ?>
             <?=createBtnWrapper("lounge", "Lounge"); ?>
             <?=createBtnWrapper("bar", "Bar"); ?>
+            <?=createBtnWrapper("wohn", "Wohnwand"); ?>
 
 
 
@@ -70,8 +71,20 @@ function createCtrWrapper($wrapp, $titel){
         <?=createCtrWrapper("sci-fy", "Sci-Fy"); ?>
         <?=createCtrWrapper("lounge", "Lounge"); ?>
         <?=createCtrWrapper("bar", "Bar"); ?>
+        <?=createCtrWrapper("wohn", "Wohnwand"); ?>
+
+        <div class="mobile">
+            <h5>
+                Bildbreite nicht ausreichend.
+                Bitte drehen Sie ihr Gerät, um den Visualizer 
+                zu sehen.
+            </h5>
+
+            <i class="fas fa-mobile-alt mobile-icon"></i>
+        </div>
 
     </div>
+
     <!-- footer ------------------------------------------------------------------>
     <?php echo createFooter('#', '#')?>
 </body>

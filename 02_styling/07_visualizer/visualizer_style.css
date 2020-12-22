@@ -722,4 +722,56 @@ body .scene .move-wrapper .button-wrapper .remove-model {
 body .scene .move-wrapper .button-wrapper .remove-model i {
   color: #cc1b1b;
 }
+
+body .scene .mobile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+body .scene .mobile h5 {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+  font-size: 2.5vmax;
+}
+
+body .scene .mobile .mobile-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20vmax;
+  -webkit-animation: turn ease-in-out infinite 3s;
+          animation: turn ease-in-out infinite 3s;
+}
+
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(-90deg);
+            transform: rotateZ(-90deg);
+  }
+}
+
+@keyframes turn {
+  0% {
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(-90deg);
+            transform: rotateZ(-90deg);
+  }
+}
 /*# sourceMappingURL=visualizer_style.css.map */
