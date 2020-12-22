@@ -63,7 +63,7 @@ if( isset($_POST['registrieren'])){
     }else{
         $adresse = trim($_POST['adresse']);
         if(!filter_var($adresse, $sanitize['string'])){
-            $errors['adresse'] = 'Bitte gültigen Adresse eingeben';
+            $errors['adresse'] = 'Bitte gültige Adresse eingeben';
         }else{
             sanitizing($adresse, 'string');
         }
@@ -75,7 +75,7 @@ if( isset($_POST['registrieren'])){
         $plz = trim($_POST['plz']);
         // Regex von hier: https://jonaswitmer.ch/projekte/18-regex-fuer-schweizer-postleitzahlen-und-telefonnummern
         if(!preg_match('/([1-468][0-9]|[57][0-7]|9[0-6])[0-9]{2}/', $plz)){
-            $errors['plz'] = 'Bitte gültigen Postleitzahl eingeben';
+            $errors['plz'] = 'Bitte gültige Postleitzahl eingeben';
         }else{
             sanitizing($plz, 'int');
         }
@@ -97,7 +97,7 @@ if( isset($_POST['registrieren'])){
     }else{
         $email = trim($_POST['email']);
         if(!filter_var($email, $sanitize['email'])){
-            $errors['email'] = 'Bitte gültigen E-Mail eingeben';
+            $errors['email'] = 'Bitte gültige E-Mail eingeben';
         }else{
             sanitizing($email, 'email');
         }

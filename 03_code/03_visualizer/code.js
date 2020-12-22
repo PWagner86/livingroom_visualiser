@@ -27,6 +27,14 @@ import {
     loungeRotate,
     loungeLeft,
     loungeBack,
+    barBtn,
+    barCtr,
+    barControlles,
+    barRight,
+    barFront,
+    barRotate,
+    barLeft,
+    barBack,
     btnShowHide,
     getCtr,
     toRight,
@@ -150,6 +158,32 @@ function init(){
     loungeRotate.addEventListener("click", () => rotate(lounge));
     loungeLeft.addEventListener("click", () => toLeft(lounge));
     loungeBack.addEventListener("click", () => toBack(lounge));
+
+    // Bar -------------------------------------------------------------------------->
+    barBtn.addEventListener("click", () => {
+        loader.load(`${path}/bar_einrichtung/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            bar = gltf.scene;
+            bar.castShadow = true;
+            bar.receiveShadow = true;
+            bar.scale.x = 0.75;
+            bar.scale.y = 0.75;
+            bar.scale.z = 0.75;
+            bar.position.x = 5;
+            bar.position.z = -2.5;
+            bar.rotation.y = -Math.PI;
+        })
+
+        btnShowHide(barBtn, barCtr);
+    });
+
+    barCtr.addEventListener("click", () => getCtr(barControlles));
+    barRight.addEventListener("click", () => toRight(bar));
+    barFront.addEventListener("click", () => toFront(bar));
+    barRotate.addEventListener("click", () => rotate(bar));
+    barLeft.addEventListener("click", () => toLeft(bar));
+    barBack.addEventListener("click", () => toBack(bar));
+
     
     // Kamera
     let camera = new THREE.PerspectiveCamera(

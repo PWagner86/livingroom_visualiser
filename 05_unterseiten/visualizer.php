@@ -54,57 +54,21 @@ function createCtrWrapper($wrapp, $titel){
 
     <div class="scene">
 
-        <div class="spawn">
+        <div class="spawn-wrapper">
 
             <?=createBtnWrapper("gaming", "Gaming Stuhl"); ?>
             <?=createBtnWrapper("scify", "Sci-Fy Möbel"); ?>
             <?=createBtnWrapper("lounge", "Lounge"); ?>
+            <?=createBtnWrapper("bar", "Bar"); ?>
+
 
 
         </div>
 
-        <!-- <div class="move-wrapper gaming">
-            <div class="title-wrapper">
-                <h6>Gaming Stuhl</h6>
-            </div>
-            <div class="button-wrapper">
-                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
-                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
-                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
-                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
-                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
-            </div>
-        </div> -->
         <?=createCtrWrapper("gaming", "Gaming Stuhl"); ?>
         <?=createCtrWrapper("sci-fy", "Sci-Fy"); ?>
         <?=createCtrWrapper("lounge", "Lounge"); ?>
-
-        <!-- <div class="move-wrapper sci-fy">
-            <div class="title-wrapper">
-                <h6>Sci-Fy</h6>
-            </div>
-            <div class="button-wrapper">
-                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
-                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
-                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
-                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
-                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
-            </div>
-        </div>
-
-        <div class="move-wrapper lounge">
-            <div class="title-wrapper">
-                <h6>Lounge</h6>
-            </div>
-            <div class="button-wrapper">
-                <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
-                <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
-                <button class="rotate"><i class="fas fa-undo-alt"></i></button>
-                <button class="left"><i class="fas fa-arrow-alt-circle-left"></i></button>
-                <button class="back"><i class="fas fa-arrow-alt-circle-up"></i></button>
-            </div>
-        </div> -->
-
+        <?=createCtrWrapper("bar", "Bar"); ?>
 
     </div>
     <!-- footer ------------------------------------------------------------------>

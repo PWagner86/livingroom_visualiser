@@ -32,11 +32,22 @@ export const loungeRotate = document.querySelector(".lounge .button-wrapper .rot
 export const loungeLeft = document.querySelector(".lounge .button-wrapper .left");
 export const loungeBack = document.querySelector(".lounge .button-wrapper .back");
 
+// Bar Container und Buttons
+export const barBtn = document.querySelector(".bar-btn");
+export const barCtr = document.querySelector(".bar-ctr");
+export const barControlles = document.querySelector(".bar");
+export const barRight = document.querySelector(".bar .button-wrapper .right");
+export const barFront = document.querySelector(".bar .button-wrapper .front");
+export const barRotate = document.querySelector(".bar .button-wrapper .rotate");
+export const barLeft = document.querySelector(".bar .button-wrapper .left");
+export const barBack = document.querySelector(".bar .button-wrapper .back");
+
 
 let controlles = [
     gamingControlles, 
     sciFyControlles,
-    loungeControlles
+    loungeControlles,
+    barControlles
 ];
 
 

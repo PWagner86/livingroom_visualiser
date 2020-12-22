@@ -520,7 +520,7 @@ body .scene {
   position: relative;
 }
 
-body .scene .spawn {
+body .scene .spawn-wrapper {
   position: absolute;
   width: 20%;
   height: 100%;
@@ -536,10 +536,9 @@ body .scene .spawn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border: solid 3px white;
 }
 
-body .scene .spawn .btn-wrapper {
+body .scene .spawn-wrapper .btn-wrapper {
   position: relative;
   width: 100%;
   height: 10%;
@@ -558,8 +557,8 @@ body .scene .spawn .btn-wrapper {
           flex-direction: row;
 }
 
-body .scene .spawn .btn-wrapper .spawn,
-body .scene .spawn .btn-wrapper .controlle {
+body .scene .spawn-wrapper .btn-wrapper .spawn,
+body .scene .spawn-wrapper .btn-wrapper .controlle {
   position: absolute;
   width: 70%;
   height: 90%;
@@ -585,19 +584,19 @@ body .scene .spawn .btn-wrapper .controlle {
   transition: ease-in-out 0.3s;
 }
 
-body .scene .spawn .btn-wrapper .spawn:hover,
-body .scene .spawn .btn-wrapper .controlle:hover {
+body .scene .spawn-wrapper .btn-wrapper .spawn:hover,
+body .scene .spawn-wrapper .btn-wrapper .controlle:hover {
   -webkit-box-shadow: 0 0 10px 10px #278ACC;
           box-shadow: 0 0 10px 10px #278ACC;
 }
 
-body .scene .spawn .btn-wrapper .spawn {
+body .scene .spawn-wrapper .btn-wrapper .spawn {
   border: solid 3px white;
   background: #278ACC;
   color: white;
 }
 
-body .scene .spawn .btn-wrapper .controlle {
+body .scene .spawn-wrapper .btn-wrapper .controlle {
   display: none;
   border: solid 3px #278ACC;
   background: white;

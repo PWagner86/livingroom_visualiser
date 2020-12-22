@@ -9,11 +9,10 @@ body{
         overflow: hidden;
         position: relative;
 
-        .spawn{
+        .spawn-wrapper{
             position: absolute;
             @include size(20%, 100%);
             @include flex(space-around, center, column);
-            border: solid 3px white;
 
             .btn-wrapper{
                 position: relative;
