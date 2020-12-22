@@ -603,6 +603,11 @@ body .scene .spawn-wrapper .btn-wrapper .controlle {
   color: #278ACC;
 }
 
+body .scene .spawn-wrapper .btn-wrapper .active {
+  -webkit-box-shadow: 0 0 10px 10px #278ACC;
+          box-shadow: 0 0 10px 10px #278ACC;
+}
+
 body .scene .move-wrapper {
   display: none;
   position: absolute;
@@ -708,5 +713,13 @@ body .scene .move-wrapper .button-wrapper .back {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+body .scene .move-wrapper .button-wrapper .remove-model {
+  right: 0;
+}
+
+body .scene .move-wrapper .button-wrapper .remove-model i {
+  color: #cc1b1b;
 }
 /*# sourceMappingURL=visualizer_style.css.map */

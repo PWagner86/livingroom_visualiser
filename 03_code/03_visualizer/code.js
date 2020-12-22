@@ -11,6 +11,7 @@ import {
     gamingRotate,
     gamingLeft,
     gamingBack,
+    gamingRemove,
     sciFyBtn,
     sciFyCtr,
     sciFyControlles,
@@ -19,6 +20,7 @@ import {
     sciFyRotate,
     sciFyLeft,
     sciFyBack,
+    sciFyRemove,
     loungeBtn,
     loungeCtr,
     loungeControlles,
@@ -27,6 +29,7 @@ import {
     loungeRotate,
     loungeLeft,
     loungeBack,
+    loungeRemove,
     barBtn,
     barCtr,
     barControlles,
@@ -35,6 +38,7 @@ import {
     barRotate,
     barLeft,
     barBack,
+    barRemove,
     btnShowHide,
     getCtr,
     toRight,
@@ -42,6 +46,7 @@ import {
     rotate,
     toLeft,
     toBack,
+    controlles
 
 } from './variables&functions.js';
 
@@ -100,12 +105,13 @@ function init(){
         btnShowHide(gamingBtn, gamingCtr);
     });
 
-    gamingCtr.addEventListener("click", () => getCtr(gamingControlles));
+    gamingCtr.addEventListener("click", () => getCtr(gamingControlles, gamingCtr));
     gamingRight.addEventListener("click", () => toRight(gamingStuhl));
     gamingFront.addEventListener("click", () => toFront(gamingStuhl));
     gamingRotate.addEventListener("click", () => rotate(gamingStuhl));
     gamingLeft.addEventListener("click", () => toLeft(gamingStuhl));
     gamingBack.addEventListener("click", () => toBack(gamingStuhl));
+    gamingRemove.addEventListener("click", () => removeModel(gamingStuhl, gamingBtn, gamingCtr));
 
 
     // Sci-Fy -------------------------------------------------------------------------->
@@ -126,13 +132,13 @@ function init(){
         btnShowHide(sciFyBtn, sciFyCtr);
     });
 
-    sciFyCtr.addEventListener("click", () => getCtr(sciFyControlles));
+    sciFyCtr.addEventListener("click", () => getCtr(sciFyControlles, sciFyCtr));
     sciFyRight.addEventListener("click", () => toRight(scify));
     sciFyFront.addEventListener("click", () => toFront(scify));
     sciFyRotate.addEventListener("click", () => rotate(scify));
     sciFyLeft.addEventListener("click", () => toLeft(scify));
     sciFyBack.addEventListener("click", () => toBack(scify));
-
+    sciFyRemove.addEventListener("click", () => removeModel(scify, sciFyBtn, sciFyCtr));
 
     // Lounge -------------------------------------------------------------------------->
     loungeBtn.addEventListener("click", () => {
@@ -152,12 +158,14 @@ function init(){
         btnShowHide(loungeBtn, loungeCtr);
     });
 
-    loungeCtr.addEventListener("click", () => getCtr(loungeControlles));
+    loungeCtr.addEventListener("click", () => getCtr(loungeControlles, loungeCtr));
     loungeRight.addEventListener("click", () => toRight(lounge));
     loungeFront.addEventListener("click", () => toFront(lounge));
     loungeRotate.addEventListener("click", () => rotate(lounge));
     loungeLeft.addEventListener("click", () => toLeft(lounge));
     loungeBack.addEventListener("click", () => toBack(lounge));
+    loungeRemove.addEventListener("click", () => removeModel(lounge, loungeBtn, loungeCtr));
+
 
     // Bar -------------------------------------------------------------------------->
     barBtn.addEventListener("click", () => {
@@ -177,12 +185,13 @@ function init(){
         btnShowHide(barBtn, barCtr);
     });
 
-    barCtr.addEventListener("click", () => getCtr(barControlles));
+    barCtr.addEventListener("click", () => getCtr(barControlles, barCtr));
     barRight.addEventListener("click", () => toRight(bar));
     barFront.addEventListener("click", () => toFront(bar));
     barRotate.addEventListener("click", () => rotate(bar));
     barLeft.addEventListener("click", () => toLeft(bar));
     barBack.addEventListener("click", () => toBack(bar));
+    barRemove.addEventListener("click", () => removeModel(bar, barBtn, barCtr));
 
     
     // Kamera
@@ -242,5 +251,15 @@ function getPointLight(intensity){
     var light = new THREE.PointLight(0xffffff, intensity);
 
     return light;
+}
+
+function removeModel(model, show, hide){
+    scene.remove(model);
+    controlles.forEach(ctr => {
+        ctr.style.display = "none";
+    })
+    show.style.display = "flex";
+    hide.style.display = "none";
+    
 }
 

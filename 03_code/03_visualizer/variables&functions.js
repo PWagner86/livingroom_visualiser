@@ -11,6 +11,7 @@ export const gamingFront = document.querySelector(".gaming .button-wrapper .fron
 export const gamingRotate = document.querySelector(".gaming .button-wrapper .rotate");
 export const gamingLeft = document.querySelector(".gaming .button-wrapper .left");
 export const gamingBack = document.querySelector(".gaming .button-wrapper .back");
+export const gamingRemove = document.querySelector(".gaming .button-wrapper .remove-model");
 
 // Sci-Fy Container und Buttons
 export const sciFyBtn = document.querySelector(".scify-btn");
@@ -21,6 +22,7 @@ export const sciFyFront = document.querySelector(".sci-fy .button-wrapper .front
 export const sciFyRotate = document.querySelector(".sci-fy .button-wrapper .rotate");
 export const sciFyLeft = document.querySelector(".sci-fy .button-wrapper .left");
 export const sciFyBack = document.querySelector(".sci-fy .button-wrapper .back");
+export const sciFyRemove = document.querySelector(".sci-fy .button-wrapper .remove-model");
 
 // Lounge Container und Buttons
 export const loungeBtn = document.querySelector(".lounge-btn");
@@ -31,6 +33,7 @@ export const loungeFront = document.querySelector(".lounge .button-wrapper .fron
 export const loungeRotate = document.querySelector(".lounge .button-wrapper .rotate");
 export const loungeLeft = document.querySelector(".lounge .button-wrapper .left");
 export const loungeBack = document.querySelector(".lounge .button-wrapper .back");
+export const loungeRemove = document.querySelector(".lounge .button-wrapper .remove-model");
 
 // Bar Container und Buttons
 export const barBtn = document.querySelector(".bar-btn");
@@ -41,13 +44,20 @@ export const barFront = document.querySelector(".bar .button-wrapper .front");
 export const barRotate = document.querySelector(".bar .button-wrapper .rotate");
 export const barLeft = document.querySelector(".bar .button-wrapper .left");
 export const barBack = document.querySelector(".bar .button-wrapper .back");
+export const barRemove = document.querySelector(".bar .button-wrapper .remove-model");
 
-
-let controlles = [
+export let controlles = [
     gamingControlles, 
     sciFyControlles,
     loungeControlles,
     barControlles
+];
+
+let ctrs = [
+    gamingCtr,
+    sciFyCtr,
+    loungeCtr,
+    barCtr
 ];
 
 
@@ -58,11 +68,15 @@ export function btnShowHide(hide, show){
 
 }
 
-export function getCtr(ctrWrapper){
+export function getCtr(ctrWrapper, ctr){
     controlles.forEach(ctr => {
         ctr.style.display = "none";
     })
     ctrWrapper.style.display = "block";
+    ctrs.forEach(ct => {
+        ct.classList.remove("active");
+    })
+    ctr.classList.add("active");
 }
 
 export function toRight(model){

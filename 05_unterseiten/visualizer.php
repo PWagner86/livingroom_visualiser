@@ -22,6 +22,7 @@ function createCtrWrapper($wrapp, $titel){
                 <h6>'.$titel.'</h6>
             </div>
             <div class="button-wrapper">
+                <button class="remove-model"><i class="fas fa-times-circle"></i></button>
                 <button class="right"><i class="fas fa-arrow-alt-circle-right"></i></button>
                 <button class="front"><i class="fas fa-arrow-alt-circle-down"></i></button>
                 <button class="rotate"><i class="fas fa-undo-alt"></i></button>

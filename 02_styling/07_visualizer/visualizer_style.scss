@@ -47,6 +47,10 @@ body{
                     background: white;
                     color: $mainColor;
                 }
+
+                .active{
+                    box-shadow: 0 0 10px 10px $mainColor;
+                }
             }
 
 
@@ -121,6 +125,14 @@ body{
                     top: 0;
                     left: 50%;
                     transform: translateX(-50%);
+                }
+
+                .remove-model{
+                    right: 0;
+                    
+                    i{
+                        color: $errorColor;
+                    }
                 }
             }
         }
