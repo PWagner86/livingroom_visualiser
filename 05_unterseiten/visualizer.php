@@ -74,13 +74,16 @@ function createCtrWrapper($wrapp, $titel){
         <?=createCtrWrapper("wohn", "Wohnwand"); ?>
 
         <div class="mobile">
-            <h5>
-                Bildbreite nicht ausreichend.
-                Bitte drehen Sie ihr Gerät, um den Visualizer 
-                zu sehen.
-            </h5>
-
-            <i class="fas fa-mobile-alt mobile-icon"></i>
+            <div class="text-wrapper">
+                <h5>
+                    Bildbreite nicht ausreichend.
+                    Bitte drehen Sie ihr Gerät, um den Visualizer 
+                    zu sehen.
+                </h5>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-mobile-alt mobile-icon"></i>
+            </div>
         </div>
 
     </div>

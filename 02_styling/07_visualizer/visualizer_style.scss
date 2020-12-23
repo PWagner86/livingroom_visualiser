@@ -4,6 +4,17 @@
 
 body{
 
+    header{
+
+        .visualizer-link{
+
+            a{
+                @include activeLink;
+            }
+        }
+    }
+
+
     .scene{
         @include size(100%, 70vh);
         overflow: hidden;
@@ -142,29 +153,34 @@ body{
             @include size(100%, 100%);
             background: black;
 
-            h5{
-                position: absolute;
-                left: 50%;
-                top: 10%;
-                transform: translate(-50%, -50%);
-                width: 50%;
-                text-align: center;
-                font-size: 2.5vmax;
+            .text-wrapper,
+            .icon-wrapper{
+                @include size(100%, 50%);
+                @include flex(center, center, row);
             }
 
-            .mobile-icon{
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                color: white;
-                font-size: 20vmax;
-                animation: turn ease-in-out infinite 3s;
+            .text-wrapper{
+
+                h5{ 
+                    text-align: center;
+                    width: 50%;
+                    font-size: 2.5vmax;
+                }
             }
 
-            @keyframes turn {
-                0%{transform: rotateZ(0);}
-                100%{transform: rotateZ(-90deg);}
+            .icon-wrapper{
+
+                .mobile-icon{
+                    color: white;
+                    text-align: center;
+                    font-size: 20vmax;
+                    animation: turn ease-in-out infinite 3s;
+                }
+
+                @keyframes turn {
+                    0%{transform: rotateZ(0);}
+                    100%{transform: rotateZ(-90deg);}
+                }    
             }
         }
     }

@@ -3,6 +3,16 @@
 @import '../01_variables_&_rules/variables';
 
 body{
+    header{
+
+        .benutzer-link{
+
+            a{
+                @include activeLink;
+            }
+        }
+    }
+
 
     main{
         @include size(100%, 70vh);
