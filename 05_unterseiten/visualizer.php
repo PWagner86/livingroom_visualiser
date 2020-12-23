@@ -51,7 +51,7 @@ function createCtrWrapper($wrapp, $titel){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#','./über.php', './news.php');?>
+    <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#', './benutzer.php', './über.php', './news.php');?>
 
     <div class="scene">
 

@@ -25,23 +25,38 @@ if(isset($_POST['login'])){
     sanitizing($email, 'email');
     sanitizing($password, 'string');
 
-    $query = "SELECT * FROM `user` WHERE `email` = '$email'";
-    $rs = mysqli_query($conn, $query);
-    $numRows = mysqli_num_rows($rs);
-
-    // echo $query;
-    // echo $numRows;
-
-    if($numRows == 1){
-        $row = mysqli_fetch_assoc($rs);
-        if(password_verify($password, $row['passwort'])){
-            $_SESSION['state'] = 'Loged in';
-            header("Location: ../index.php");
+    if($email == "admin@lrv.com"){
+        $query = "SELECT * FROM `admin` WHERE `email` = '$email'";
+        $rs = mysqli_query($conn, $query);
+        $numRows = mysqli_num_rows($rs);
+        // Adminpasswort ist Admin-lrv-123;
+        if($numRows == 1){
+            $row = mysqli_fetch_assoc($rs);
+            if(password_verify($password, $row['passwort'])){
+                $_SESSION['state'] = 'Loged in as Admin';
+                header("Location: ../index.php");
+            }else{
+                $loginErr = "E-Mail oder Passwort ist falsch";
+            }
         }else{
             $loginErr = "E-Mail oder Passwort ist falsch";
         }
     }else{
-        $loginErr = "E-Mail oder Passwort ist falsch";
+        $query = "SELECT * FROM `user` WHERE `email` = '$email'";
+        $rs = mysqli_query($conn, $query);
+        $numRows = mysqli_num_rows($rs);
+
+        if($numRows == 1){
+            $row = mysqli_fetch_assoc($rs);
+            if(password_verify($password, $row['passwort'])){
+                $_SESSION['state'] = 'Loged in as User';
+                header("Location: ../index.php");
+            }else{
+                $loginErr = "E-Mail oder Passwort ist falsch";
+            }
+        }else{
+            $loginErr = "E-Mail oder Passwort ist falsch";
+        }
     }
 }
 
@@ -60,7 +75,7 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '#', './registrieren.php', '#','./über.php', './news.php');?>
+    <?php echo createHeader('../index.php', '#', '#', './registrieren.php', '#', '#', '#','./über.php', './news.php');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>

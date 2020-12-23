@@ -1,6 +1,7 @@
 <?php
 
-function createNav($login, $logout, $register, $visualizer, $about, $news){
+
+function createNav($login, $logout, $register, $visualizer, $benutzer, $about, $news){
     if(!$_SESSION){
         $nav = '
             <nav id="header-nav-mobile">
@@ -12,12 +13,24 @@ function createNav($login, $logout, $register, $visualizer, $about, $news){
                 </ul>
             </nav>
         ';
-    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in'){
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as User'){
         $nav = '
             <nav id="header-nav-mobile">
                 <ul>
                     <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
-                    <li class="registrieren-link"><a href='.$visualizer.'>Visualizer</a></li>
+                    <li class="visualizer-link"><a href='.$visualizer.'>Visualizer</a></li>
+                    <li class="about-link"><a href='.$about.'>Über</a></li>
+                    <li class="news-link"><a href='.$news.'>News</a></li>
+                </ul>
+            </nav>
+        ';
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
+        $nav = '
+            <nav id="header-nav-mobile">
+                <ul>
+                    <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
+                    <li class="visualizer-link"><a href='.$visualizer.'>Visualizer</a></li>
+                    <li class="benutzer-link"><a href='.$benutzer.'>Benutzer</a></li>
                     <li class="about-link"><a href='.$about.'>Über</a></li>
                     <li class="news-link"><a href='.$news.'>News</a></li>
                 </ul>
@@ -29,7 +42,7 @@ function createNav($login, $logout, $register, $visualizer, $about, $news){
 }
 
 
-function createHeader($main, $login, $logout, $register, $visualizer, $about, $news){
+function createHeader($main, $login, $logout, $register, $visualizer, $benutzer, $about, $news){
 
     if(!$_SESSION){
         $header = '
@@ -49,7 +62,7 @@ function createHeader($main, $login, $logout, $register, $visualizer, $about, $n
                 </div>
             </header>
         ';
-    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in'){
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as User'){
         $header = '
             <header>
                 <div class="fade">
@@ -59,7 +72,26 @@ function createHeader($main, $login, $logout, $register, $visualizer, $about, $n
                     <nav id="header-nav-mobile">;
                         <ul>
                             <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
-                            <li class="registrieren-link"><a href='.$visualizer.'>Visualizer</a></li>
+                            <li class="visualizer-link"><a href='.$visualizer.'>Visualizer</a></li>
+                            <li class="about-link"><a href='.$about.'>Über</a></li>
+                            <li class="news-link"><a href='.$news.'>News</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        ';
+    }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
+        $header = '
+            <header>
+                <div class="fade">
+                    <div class="back-to-main">
+                        <a href="'.$main.'"><i class="fas fa-caret-left"></i>Startseite</a>
+                    </div>
+                    <nav id="header-nav-mobile">;
+                        <ul>
+                            <li class="login-link"><a href='.$logout.'><i class="fas fa-lock-open"></i></i>Log Out</a></li>
+                            <li class="visualizer-link"><a href='.$visualizer.'>Visualizer</a></li>
+                            <li class="benutzer-link"><a href='.$benutzer.'>Benutzer</a></li>
                             <li class="about-link"><a href='.$about.'>Über</a></li>
                             <li class="news-link"><a href='.$news.'>News</a></li>
                         </ul>

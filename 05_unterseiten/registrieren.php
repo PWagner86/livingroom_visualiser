@@ -165,7 +165,7 @@ in die Datenbank übertragen.
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '#', '#', './visualizer.php','./über.php', './news.php');?>
+    <?php echo createHeader('../index.php', './login.php', '#', '#', './visualizer.php', '#','./über.php', './news.php');?>
 
     <!-- main -------------------------------------------------------------------->
     <main>
