@@ -17,5 +17,47 @@ body{
     main{
         @include size(100%, 70vh);
         background: $darkGrey;
+        overflow: auto;
+
+        .title-container{
+            @include size(100%, 5vmin);
+            display: flex;
+
+            .info{
+                @include size(15%, 100%);
+                @include flex(center, center, row);
+
+                p{
+                    color: $mainColor;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+            }
+
+            .small{
+                @include size(5%, 100%);
+            }
+        }
+
+        .user-container{
+            @include size(100%, 5vmin);
+            border: solid 3px $mainColor;
+            display: flex;
+
+            .user-info{
+                @include size(15%, 100%);
+                @include flex(center, center, row);
+                border-right: solid 3px $mainColor;
+
+                p{
+                    color: white;
+                }
+            }
+
+            .id-info,
+            .plz-info{
+                @include size(5%, 100%);
+            }
+        }
     }
 }

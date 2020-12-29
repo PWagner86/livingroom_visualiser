@@ -52,6 +52,13 @@ span{
     color: $mainColor;
 }
 
+button{
+
+    &:focus{
+        outline: 0;
+    }
+}
+
 ul{
     list-style: none;
 }

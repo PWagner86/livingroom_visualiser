@@ -51,6 +51,10 @@ span {
   color: #278ACC;
 }
 
+button:focus {
+  outline: 0;
+}
+
 ul {
   list-style: none;
 }
