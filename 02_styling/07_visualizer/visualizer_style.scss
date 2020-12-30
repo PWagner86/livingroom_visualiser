@@ -19,6 +19,8 @@ body{
         @include size(100%, 70vh);
         overflow: hidden;
         position: relative;
+        border-top: solid 3px white;
+        border-bottom: solid 3px white;
 
         .spawn-wrapper{
             position: absolute;

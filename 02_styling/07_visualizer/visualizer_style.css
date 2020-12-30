@@ -530,6 +530,8 @@ body .scene {
   height: 70vh;
   overflow: hidden;
   position: relative;
+  border-top: solid 3px white;
+  border-bottom: solid 3px white;
 }
 
 body .scene .spawn-wrapper {

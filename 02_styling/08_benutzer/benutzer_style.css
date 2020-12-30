@@ -529,10 +529,46 @@ body main {
   width: 100%;
   height: 70vh;
   background: #221f1f;
+  border-top: solid 3px white;
+  border-bottom: solid 3px white;
+}
+
+body main .user-title-wrapper {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main .user-title-wrapper h3 {
+  color: #278ACC;
+}
+
+body main .user-wrapper {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: auto;
 }
 
-body main .title-container {
+body main .user-wrapper .title-container {
   width: 100%;
   height: 5vmin;
   display: -webkit-box;
@@ -540,7 +576,7 @@ body main .title-container {
   display: flex;
 }
 
-body main .title-container .info {
+body main .user-wrapper .title-container .info {
   width: 15%;
   height: 100%;
   display: -webkit-box;
@@ -558,18 +594,19 @@ body main .title-container .info {
           flex-direction: row;
 }
 
-body main .title-container .info p {
+body main .user-wrapper .title-container .info p {
+  font-size: 2vmin;
   color: #278ACC;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-body main .title-container .small {
+body main .user-wrapper .title-container .small {
   width: 5%;
   height: 100%;
 }
 
-body main .user-container {
+body main .user-wrapper .user-container {
   width: 100%;
   height: 5vmin;
   border: solid 3px #278ACC;
@@ -578,7 +615,7 @@ body main .user-container {
   display: flex;
 }
 
-body main .user-container .user-info {
+body main .user-wrapper .user-container .user-info {
   width: 15%;
   height: 100%;
   display: -webkit-box;
@@ -597,13 +634,69 @@ body main .user-container .user-info {
   border-right: solid 3px #278ACC;
 }
 
-body main .user-container .user-info p {
+body main .user-wrapper .user-container .user-info p {
   color: white;
+  font-size: 1.8vmin;
 }
 
-body main .user-container .id-info,
-body main .user-container .plz-info {
+body main .user-wrapper .user-container .id-info,
+body main .user-wrapper .user-container .plz-info {
   width: 5%;
   height: 100%;
+}
+
+@media screen and (max-width: 1700px) {
+  main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main #mobile-user-title {
+    width: 100%;
+    height: 20%;
+  }
+  main #mobile-user-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    overflow: auto;
+  }
+  main #mobile-user-wrapper #mobile-title {
+    width: 30vmin;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main #mobile-user-wrapper #mobile-title .info {
+    width: 100%;
+    height: 15%;
+  }
+  main #mobile-user-wrapper #mobile-title .small {
+    width: 100%;
+    height: 5%;
+  }
+  main #mobile-user-wrapper #mobile-user {
+    width: 40vmin;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main #mobile-user-wrapper #mobile-user .user-info {
+    width: 100%;
+    height: 15%;
+    border-bottom: solid 3px #278ACC;
+  }
+  main #mobile-user-wrapper #mobile-user .id-info,
+  main #mobile-user-wrapper #mobile-user .plz-info {
+    width: 100%;
+    height: 5%;
+  }
 }
 /*# sourceMappingURL=benutzer_style.css.map */

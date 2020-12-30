@@ -17,47 +17,126 @@ body{
     main{
         @include size(100%, 70vh);
         background: $darkGrey;
-        overflow: auto;
+        border-top: solid 3px white;
+        border-bottom: solid 3px white;
 
-        .title-container{
-            @include size(100%, 5vmin);
-            display: flex;
+        .user-title-wrapper{
+            @include size(100%, 20%);
+            @include flex(center, center, row);
 
-            .info{
-                @include size(15%, 100%);
-                @include flex(center, center, row);
-
-                p{
-                    color: $mainColor;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                }
-            }
-
-            .small{
-                @include size(5%, 100%);
+            h3{
+                color: $mainColor
             }
         }
 
-        .user-container{
-            @include size(100%, 5vmin);
-            border: solid 3px $mainColor;
+        .user-wrapper{
+            @include size(100%, 80%);
             display: flex;
+            flex-direction: column;
+            overflow: auto;
 
-            .user-info{
-                @include size(15%, 100%);
-                @include flex(center, center, row);
-                border-right: solid 3px $mainColor;
-
-                p{
-                    color: white;
+            .title-container{
+                @include size(100%, 5vmin);
+                display: flex;
+    
+                .info{
+                    @include size(15%, 100%);
+                    @include flex(center, center, row);
+    
+                    p{  
+                        font-size: 2vmin;
+                        color: $mainColor;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+                }
+    
+                .small{
+                    @include size(5%, 100%);
                 }
             }
-
-            .id-info,
-            .plz-info{
-                @include size(5%, 100%);
+    
+            .user-container{
+                @include size(100%, 5vmin);
+                border: solid 3px $mainColor;
+                display: flex;
+    
+                .user-info{
+                    @include size(15%, 100%);
+                    @include flex(center, center, row);
+                    border-right: solid 3px $mainColor;
+    
+                    p{
+                        color: white;
+                        font-size: 1.8vmin;
+                    }
+                }
+    
+                .id-info,
+                .plz-info{
+                    @include size(5%, 100%);
+                }
             }
         }
     }
+}
+
+@media screen and (max-width: 1700px){
+        
+    main{
+        display: flex;
+        flex-wrap: wrap;
+
+        #mobile-user-title{
+            @include size(100%, 20%);
+        }
+
+        #mobile-user-wrapper{
+            flex-direction: row;
+            overflow: auto;
+
+            #mobile-title{
+                @include size(30vmin, 100%);
+                flex-direction: column;
+            }
+    
+            #mobile-title{
+    
+                .info{
+                    @include size(100%, 15%);
+                }
+    
+                .small{
+                    @include size(100%, 5%);
+                }
+            }
+    
+            #mobile-user{
+                @include size(40vmin, 100%);
+                flex-direction: column;
+    
+                .user-info{
+                    @include size(100%, 15%);
+                    border-bottom: solid 3px $mainColor;
+                }
+    
+                .id-info,
+                .plz-info{
+                    @include size(100%, 5%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px){
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+@media screen and (max-width: 576px){
+
 }

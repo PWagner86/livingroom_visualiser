@@ -33,36 +33,45 @@ if($resultatUser != false){
 
     <main>
 
-        <div class="title-container">
-            <div class="info small"><p>ID</p></div>
-            <div class="info"><p>Vorname</p></div>
-            <div class="info"><p>Nachname</p></div>
-            <div class="info"><p>Adresse</p></div>
-            <div class="info small"><p>PLZ</p></div>
-            <div class="info"><p>Ort</p></div>
-            <div class="info"><p>E-Mail</p></div>
-            <div class="info"><p>Registriert</p></div>
+        <div class="user-title-wrapper" id="mobile-user-title">
+            <h3>Registrierte Benutzer</h3>
         </div>
 
-        <?php
+        <div class="user-wrapper" id="mobile-user-wrapper">
 
-        if(count($datenUser) > 0){
-            foreach($datenUser as $user){
-        ?>
-        <div class="user-container">
-            <div class="user-info id-info"><p><?=$user['ID']?></p></div>
-            <div class="user-info firstname-info"><p><?=$user['vorname']?></p></div>
-            <div class="user-info lastname-info"><p><?=$user['nachname']?></p></div>
-            <div class="user-info adresse-info"><p><?=$user['adresse']?></p></div>
-            <div class="user-info plz-info"><p><?=$user['plz']?></p></div>
-            <div class="user-info ort-info"><p><?=$user['ort']?></p></div>
-            <div class="user-info email-info"><p><?=$user['email']?></p></div>
-            <div class="user-info time-info"><p><?=$user['registriert']?></p></div>
-        </div>  
-        <?php    
+            <div class="title-container" id="mobile-title">
+                <div class="info small"><p>ID</p></div>
+                <div class="info"><p>Vorname</p></div>
+                <div class="info"><p>Nachname</p></div>
+                <div class="info"><p>Adresse</p></div>
+                <div class="info small"><p>PLZ</p></div>
+                <div class="info"><p>Ort</p></div>
+                <div class="info"><p>E-Mail</p></div>
+                <div class="info"><p>Registriert</p></div>
+            </div>
+
+            <?php
+
+            if(count($datenUser) > 0){
+                foreach($datenUser as $user){
+            ?>
+            <div class="user-container" id="mobile-user">
+                <div class="user-info id-info"><p><?=$user['ID']?></p></div>
+                <div class="user-info firstname-info"><p><?=$user['vorname']?></p></div>
+                <div class="user-info lastname-info"><p><?=$user['nachname']?></p></div>
+                <div class="user-info adresse-info"><p><?=$user['adresse']?></p></div>
+                <div class="user-info plz-info"><p><?=$user['plz']?></p></div>
+                <div class="user-info ort-info"><p><?=$user['ort']?></p></div>
+                <div class="user-info email-info"><p><?=$user['email']?></p></div>
+                <div class="user-info time-info"><p><?=$user['registriert']?></p></div>
+            </div>  
+            <?php    
+                }
             }
-        }
-        ?>
+            ?>
+
+        </div>
+
         
 
     
