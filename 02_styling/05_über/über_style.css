@@ -34,7 +34,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.5vmax;
+  font-size: 3vmin;
   letter-spacing: 0.1rem;
   margin: 2rem;
   color: white;
@@ -412,7 +412,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.5vmax;
+  font-size: 3vmin;
   letter-spacing: 0.1rem;
   margin: 2rem;
   color: white;
@@ -588,8 +588,8 @@ body main .about-wrapper {
 }
 
 body main .about-wrapper .pic-wrapper {
-  width: 12vmax;
-  height: 12vmax;
+  width: 10vmax;
+  height: 10vmax;
   background: url(../../01_pics_&_logo/ich.jpg);
   background-position: center center;
   background-size: cover;

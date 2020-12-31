@@ -34,7 +34,7 @@ h4 {
 }
 
 h5 {
-  font-size: 1.5vmax;
+  font-size: 3vmin;
   letter-spacing: 0.1rem;
   margin: 2rem;
   color: white;
@@ -280,6 +280,47 @@ body main .intro-text-wrapper {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+body main .intro-text-wrapper h5 a {
+  -webkit-animation-name: glow;
+          animation-name: glow;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    text-shadow: none;
+    color: white;
+  }
+  50% {
+    text-shadow: 0 0 20px #278ACC;
+    color: #278ACC;
+  }
+  100% {
+    text-shadow: none;
+    color: white;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: none;
+    color: white;
+  }
+  50% {
+    text-shadow: 0 0 20px #278ACC;
+    color: #278ACC;
+  }
+  100% {
+    text-shadow: none;
+    color: white;
+  }
 }
 
 body .impressions-wrapper {

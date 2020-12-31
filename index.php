@@ -46,8 +46,11 @@ require('./04_includes/header_nav.php');
         <div class="intro-text-wrapper">
             <h5>
                 Wir sind <span>Livingroom Visualizer</span>. Mit unserer App können Sie Ihr Wohnzimmer in einer 3D Umgebung 
-                gestallten und einrichten. Der Fantasie sind keine Grenzen gesetzt. Ihre Vision wird auf Ihrem Profil 
-                gespeichert und Sie können genau bestimmen, wie Sie Ihr künftiges Wohnzimmer einrichten wollen. Melden Sie sich noch heute an.
+                gestallten und einrichten. Der Fantasie sind keine Grenzen gesetzt. Sie können genau bestimmen, wie Sie Ihr künftiges 
+                Wohnzimmer einrichten wollen. <br> 
+                <br>
+                <a href="./05_unterseiten/registrieren.php">Melden Sie sich noch heute an.</a>
+                
             </h5>
         </div>
     </main>

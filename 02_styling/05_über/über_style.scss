@@ -32,7 +32,7 @@ body{
             @include flex(space-around, center, column);
 
             .pic-wrapper{
-                @include size(12vmax, 12vmax);
+                @include size(10vmax, 10vmax);
                 background: url(../../01_pics_&_logo/ich.jpg);
                 background-position: center center;
                 background-size: cover;

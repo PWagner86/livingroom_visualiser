@@ -31,12 +31,15 @@ if($resultatUser != false){
     <!-- header ------------------------------------------------------------------>
     <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', './visualizer.php', '#', './über.php', './news.php');?>
 
+    <!-- Main -------------------------------------------------------------------->
     <main>
 
+        <!-- Container für Titel ------------------------------------------------->
         <div class="user-title-wrapper" id="mobile-user-title">
             <h3>Registrierte Benutzer</h3>
         </div>
 
+        <!-- Container für versch. Kategorien ------------------------------------>
         <div class="user-wrapper" id="mobile-user-wrapper">
 
             <div class="title-container" id="mobile-title">
@@ -50,25 +53,36 @@ if($resultatUser != false){
                 <div class="info"><p>Registriert</p></div>
             </div>
 
-            <?php
+            <!-- Container welcher die registrierten Benutzer anzeigt ----------->
+            <div class="user-container-wrapper">
 
-            if(count($datenUser) > 0){
-                foreach($datenUser as $user){
-            ?>
-            <div class="user-container" id="mobile-user">
-                <div class="user-info id-info"><p><?=$user['ID']?></p></div>
-                <div class="user-info firstname-info"><p><?=$user['vorname']?></p></div>
-                <div class="user-info lastname-info"><p><?=$user['nachname']?></p></div>
-                <div class="user-info adresse-info"><p><?=$user['adresse']?></p></div>
-                <div class="user-info plz-info"><p><?=$user['plz']?></p></div>
-                <div class="user-info ort-info"><p><?=$user['ort']?></p></div>
-                <div class="user-info email-info"><p><?=$user['email']?></p></div>
-                <div class="user-info time-info"><p><?=$user['registriert']?></p></div>
-            </div>  
-            <?php    
+                <?php
+
+                /*
+                ----------------------------------------------------------------->
+                Hier werden alle Benutzer aus der Datenbank in
+                eine Liste eingetragen.
+                ----------------------------------------------------------------->
+                */
+                if(count($datenUser) > 0){
+                    foreach($datenUser as $user){
+                ?>
+                <div class="user-container" id="mobile-user">
+                    <div class="user-info id-info"><p><?=$user['ID']?></p></div>
+                    <div class="user-info firstname-info"><p><?=$user['vorname']?></p></div>
+                    <div class="user-info lastname-info"><p><?=$user['nachname']?></p></div>
+                    <div class="user-info adresse-info"><p><?=$user['adresse']?></p></div>
+                    <div class="user-info plz-info"><p><?=$user['plz']?></p></div>
+                    <div class="user-info ort-info"><p><?=$user['ort']?></p></div>
+                    <div class="user-info email-info"><p><?=$user['email']?></p></div>
+                    <div class="user-info time-info"><p><?=$user['registriert']?></p></div>
+                </div>  
+                <?php    
+                    }
                 }
-            }
-            ?>
+                ?>
+            </div>
+
 
         </div>
 

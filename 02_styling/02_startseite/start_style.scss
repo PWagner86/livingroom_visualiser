@@ -55,6 +55,31 @@ body{
         .intro-text-wrapper{
             @include size(50%, 100%);
             @include flex(center, center, row);
+
+            h5{
+
+                a{
+                    animation-name: glow;
+                    animation-duration: 3s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: ease-in-out;
+
+                    @keyframes glow {
+                        0%{
+                            text-shadow: none;
+                            color: white;
+                        }
+                        50%{
+                            text-shadow: 0 0 20px $mainColor;
+                            color: $mainColor;
+                        }
+                        100%{
+                            text-shadow: none;
+                            color: white;
+                        }
+                    }
+                }               
+            }
         }
     }
 

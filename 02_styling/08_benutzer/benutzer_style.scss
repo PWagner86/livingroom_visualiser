@@ -33,10 +33,9 @@ body{
             @include size(100%, 80%);
             display: flex;
             flex-direction: column;
-            overflow: auto;
 
             .title-container{
-                @include size(100%, 5vmin);
+                @include size(100%, 10%);
                 display: flex;
     
                 .info{
@@ -55,26 +54,34 @@ body{
                     @include size(5%, 100%);
                 }
             }
-    
-            .user-container{
-                @include size(100%, 5vmin);
-                border: solid 3px $mainColor;
-                display: flex;
-    
-                .user-info{
-                    @include size(15%, 100%);
-                    @include flex(center, center, row);
-                    border-right: solid 3px $mainColor;
-    
-                    p{
-                        color: white;
-                        font-size: 1.8vmin;
+
+            .user-container-wrapper{
+                @include size(100%, 90%);
+                overflow: auto;
+
+                .user-container{
+                    @include size(100%, 100px);
+                    border: solid 3px $mainColor;
+                    border-top: none;
+                    display: flex;
+        
+                    .user-info{
+                        @include size(15%, 100%);
+                        @include flex(center, center, row);
+                        border-right: solid 3px $mainColor;
+                        text-align: center;
+        
+                        p{
+                            color: white;
+                            font-size: 1.8vmin;
+                            padding: 1rem
+                        }
                     }
-                }
-    
-                .id-info,
-                .plz-info{
-                    @include size(5%, 100%);
+        
+                    .id-info,
+                    .plz-info{
+                        @include size(5%, 100%);
+                    }
                 }
             }
         }
@@ -93,10 +100,9 @@ body{
 
         #mobile-user-wrapper{
             flex-direction: row;
-            overflow: auto;
 
             #mobile-title{
-                @include size(30vmin, 100%);
+                @include size(20%, 100%);
                 flex-direction: column;
             }
     
@@ -110,19 +116,25 @@ body{
                     @include size(100%, 5%);
                 }
             }
-    
-            #mobile-user{
-                @include size(40vmin, 100%);
-                flex-direction: column;
-    
-                .user-info{
-                    @include size(100%, 15%);
-                    border-bottom: solid 3px $mainColor;
-                }
-    
-                .id-info,
-                .plz-info{
-                    @include size(100%, 5%);
+
+            .user-container-wrapper{
+                @include size(80%, 100%);
+                display: flex;
+
+                #mobile-user{
+                    @include size(auto, 100%);
+                    flex-direction: column;
+        
+                    .user-info{
+                        @include size(100%, 15%);
+                        border-bottom: solid 3px $mainColor;
+                        border-right: none;
+                    }
+        
+                    .id-info,
+                    .plz-info{
+                        @include size(100%, 5%);
+                    }
                 }
             }
         }
