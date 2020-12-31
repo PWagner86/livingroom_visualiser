@@ -49,7 +49,17 @@ require('./04_includes/header_nav.php');
                 gestallten und einrichten. Der Fantasie sind keine Grenzen gesetzt. Sie können genau bestimmen, wie Sie Ihr künftiges 
                 Wohnzimmer einrichten wollen. <br> 
                 <br>
-                <a href="./05_unterseiten/registrieren.php">Melden Sie sich noch heute an.</a>
+
+                <?php
+                /*
+                --------------------------------------------------------------------------------------------------------------------->
+                Link soll nur angezeigt werden, wenn User noch nicht eingeloggt ist.
+                --------------------------------------------------------------------------------------------------------------------->
+                */
+                if(!$_SESSION){
+                    echo "<a href='./05_unterseiten/registrieren.php'>Melden Sie sich noch heute an.</a>";
+                }
+                ?>
                 
             </h5>
         </div>
