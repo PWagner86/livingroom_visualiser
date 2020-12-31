@@ -90,7 +90,7 @@ require('./04_includes/header_nav.php');
             </div>
 
             <div class="carousel-wrapper">
-                <img class="preview" src="./01_pics_&_logo/01_impressionen/imp1.jpg" alt="Bild von Wohnzimmereinrichtung">
+                <img class="preview" src="./01_pics_&_logo/01_impressionen/imp0.jpg" alt="Bild von Wohnzimmereinrichtung">
             </div>
 
             <div class="carousel-right">

@@ -554,9 +554,8 @@ body main .news-titel-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -568,6 +567,16 @@ body main .news-titel-wrapper {
 
 body main .news-titel-wrapper h3 {
   color: #278ACC;
+}
+
+body main .news-titel-wrapper h4 a {
+  -webkit-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+
+body main .news-titel-wrapper h4 a:hover {
+  color: #278ACC;
+  text-shadow: 0 0 20px #278ACC;
 }
 
 body main .news-wrapper {
