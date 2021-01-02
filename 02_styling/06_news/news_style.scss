@@ -37,42 +37,95 @@ body{
                 }
             }
         }
-
+        // Styling für news.php
         .news-wrapper{
             @include size(100%, 80%);
             overflow: auto;
+            // display: flex;
+            // flex-direction: column-reverse;
 
-            .news-container{
+            .article{
                 @include size(100%, auto);
-                @include flex(space-around, center, row);
-                margin-bottom: 3rem;
-                border-bottom: dotted $mainColor 3px;
+                @include flex(center, center, row);
+                flex-wrap: wrap;
+                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+                border-bottom: dashed white 3px;
 
-                .pic-container,
-                .text-container{
-                    @include size(40%, 90%);
-                    @include flex(center, center, column);
-                }
-
-                .pic-container{
-
-                    img{
-                        @include size(90%, auto);
-                        margin-bottom: 1rem;
-                    }
-                }
-
-                .text-container{
-                    @include flex(space-around, center, column);
-
+                .news-title-wrapper,
+                .news-date-wrapper{
+                    @include size(50%, 30%);
+                    padding-bottom: 2rem;
+                    
                     h6{
                         color: $mainColor;
-                        margin-bottom: 1rem;
+                        font-size: 3vmin;
                     }
+                }
+
+                .news-title-wrapper{
+                    @include flex(flex-end, center, row);
+
+                    h6{
+                        margin-right: 2rem;
+                    }
+                }
+
+                .news-date-wrapper{
+                    @include flex(flex-start, center, row);
+
+                    h6{
+                        margin-left: 2rem;
+                    }
+                }
+
+                .news-text{
+                    @include size(80%, 70%);
+                    @include flex(center, center, column);
 
                     p{
                         color: white;
-                        font-size: 2vmin;
+                        font-size: 3vmin;
+                        margin-top: 1rem
+                    }
+                }
+            }
+        }
+        // Styling für news_schreiben.php
+        .write-wrapper{
+            @include flex(center, center, row);
+
+            .write{
+                @include size(80%, 80%);
+                @include flex(center, center, row);
+                flex-wrap: wrap;
+
+                .title-wrapper,
+                .date-wrapper{
+                    @include size(50%, 20%);
+                    @include flex(center, center, row);
+
+                    label{
+                        padding-right: 3rem;
+                    }
+                }
+
+                .text-wrapper{
+                    @include size(100%, 60%);
+                    @include flex(center, center, column);
+
+                    label{
+                        padding-bottom: 1rem
+                    }
+                }
+
+                .btn-wrapper{
+                    @include size(100%, 20%);
+                    @include flex(center, center, row);
+
+                    input{
+                        cursor: pointer;
+                        @include submitBtn;
                     }
                 }
             }

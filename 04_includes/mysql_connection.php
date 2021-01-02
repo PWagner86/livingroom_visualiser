@@ -16,6 +16,7 @@ $conn = mysqli_connect(DBSERVER, DBUSER, DBPASSWORT, DBNAME) OR die('DB verbindu
 $sanitize = array(
     'string' => FILTER_SANITIZE_STRING,
     'int' => FILTER_VALIDATE_INT,
+    'float' => FILTER_SANITIZE_NUMBER_FLOAT,
     'email' => FILTER_VALIDATE_EMAIL
 );
 
