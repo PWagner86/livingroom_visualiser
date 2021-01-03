@@ -586,7 +586,6 @@ body main .news-wrapper {
 }
 
 body main .news-wrapper .article {
-  position: relative;
   width: 100%;
   height: auto;
   padding-bottom: 2rem;
@@ -595,7 +594,6 @@ body main .news-wrapper .article {
 }
 
 body main .news-wrapper .article form {
-  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -636,9 +634,9 @@ body main .news-wrapper .article form .news-title-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -666,9 +664,33 @@ body main .news-wrapper .article form .news-date-wrapper {
           flex-direction: row;
 }
 
+body main .news-wrapper .article form .news-text {
+  width: 80%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .news-wrapper .article form .news-text p {
+  color: white;
+  font-size: 3vmin;
+  margin-top: 1rem;
+}
+
 body main .news-wrapper .article form .edit {
-  width: 15vmin;
-  height: 18vmin;
+  width: 20%;
+  height: 10vmin;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,19 +699,16 @@ body main .news-wrapper .article form .edit {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 body main .news-wrapper .article form .edit button,
 body main .news-wrapper .article form .edit a {
-  width: 90%;
-  height: 30%;
+  width: 40%;
+  height: 80%;
   font-size: 3vmin;
   cursor: pointer;
   border: solid white 3px;
@@ -731,30 +750,6 @@ body main .news-wrapper .article form .edit .delete-btn:hover {
   background: #cc1b1b;
   border: solid black 3px;
   color: black;
-}
-
-body main .news-wrapper .article form .news-text {
-  width: 80%;
-  height: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-body main .news-wrapper .article form .news-text p {
-  color: white;
-  font-size: 3vmin;
-  margin-top: 1rem;
 }
 
 body main .write-wrapper {

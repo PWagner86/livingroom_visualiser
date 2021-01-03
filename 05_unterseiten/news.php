@@ -95,7 +95,7 @@ if(isset($_POST['delete'])){
                                 <div class="news-text">
                                     <?=$article['artikel']?>
                                 </div>
-                                <div class='edit'>
+                                <div class="edit">
                                     <a href="./news_update.php?id=<?=$article['ID']?>"><i class='fas fa-edit'></i></a>
                                     <button value="<?=$article['ID']?>" class="delete-btn" type='submit' name='delete'><i class='fas fa-trash-alt'></i></button>
                                 </div>
