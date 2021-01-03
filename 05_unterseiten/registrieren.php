@@ -3,6 +3,7 @@
 session_start();
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
+require('../04_includes/favicon.php');
 
 // Leere Variablen um am Anfang nicht im Form anzuzeigen.----------------------->
 $vorname = "";
@@ -158,6 +159,7 @@ in die Datenbank übertragen.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once('../04_includes/meta_tag.php');?>
+    <?=createFavicon("../01_pics_&_logo/02_favicon")?>
     <title>Registrieren</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/04_registrieren/registrieren_style.css">

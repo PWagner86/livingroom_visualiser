@@ -3,6 +3,7 @@ session_start();
 require_once('../04_includes/access.php');
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
+require('../04_includes/favicon.php');
 
 function createBtnWrapper($wrapp, $name){
     $wrapper = '
@@ -43,6 +44,7 @@ function createCtrWrapper($wrapp, $titel){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once('../04_includes/meta_tag.php');?>
+    <?=createFavicon("../01_pics_&_logo/02_favicon")?>
     <title>Visualizer</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/07_visualizer/visualizer_style.css">

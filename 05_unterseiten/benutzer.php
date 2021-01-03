@@ -3,6 +3,7 @@ session_start();
 require_once('../04_includes/access.php');
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
+require('../04_includes/favicon.php');
 
 $queryUser = "SELECT * FROM `user`";
 $resultatUser = mysqli_query($conn, $queryUser);
@@ -23,6 +24,7 @@ if($resultatUser != false){
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once('../04_includes/meta_tag.php');?>
+    <?=createFavicon("../01_pics_&_logo/02_favicon")?>
     <title>Benutzer</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/08_benutzer/benutzer_style.css">

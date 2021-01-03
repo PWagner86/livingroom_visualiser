@@ -3,6 +3,7 @@
 session_start();
 require('../04_includes/mysql_connection.php');
 require('../04_includes/header_nav.php');
+require('../04_includes/favicon.php');
 
 $query = "SELECT * FROM news";
 $result = mysqli_query($conn, $query);
@@ -29,6 +30,7 @@ if(isset($_POST['delete'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once('../04_includes/meta_tag.php');?>
+    <?=createFavicon("../01_pics_&_logo/02_favicon")?>
     <title>News</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/06_news/news_style.css">
