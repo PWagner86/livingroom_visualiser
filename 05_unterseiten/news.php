@@ -12,6 +12,15 @@ if($result != false){
     $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
 
+if(isset($_POST['delete'])){
+    $cleanId = sanitizing($_POST['delete'], 'string');
+    // echo $cleanId;
+    $sqldelete = "DELETE FROM news WHERE id=".$cleanId;
+    $resultDelete = mysqli_query($conn, $sqldelete);
+    header('location: news.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,34 +58,56 @@ if($result != false){
             }elseif($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
                 echo "<h3>News</h3>";
                 echo "<h4><a href='./news_schreiben.php'>Neuer Artikel</a></h4>";
-                echo "<h4><a href='./news_update.php'>Artikel editieren</a></h4>";
             }
+
             ?>
         </div>
         <div class="news-wrapper">
             <?php
             if(count($news) > 0){
                 foreach($news as $article){
-            ?>
-            <div class="article">
-                <div class="news-title-wrapper">
-                    <h6><?=$article['titel']?></h6>
-                </div>
-                <div class="news-date-wrapper">
-                    <h6><?=$article['datum']?></h6>
-                </div>
-                <div class="news-text">
-                    <?=$article['artikel']?>
-                </div>
-            </div>
-            <?php
+                    if(!$_SESSION || $_SESSION['state'] && $_SESSION['state'] === 'Loged in as User'){?>
+                        <div class="article">
+                            <form action="news.php" method="post">
+                                <div class="news-title-wrapper">
+                                    <h6><?=$article['titel']?></h6>
+                                </div>
+                                <div class="news-date-wrapper">
+                                    <h6><?=$article['datum']?></h6>
+                                </div>
+                                <div class="news-text">
+                                    <?=$article['artikel']?>
+                                </div>
+                            </form>
+                        </div>
+                    <?php
+                    }elseif($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
+                    ?>
+                        <div class="article">
+                            <form action="news.php" method="post">
+                                <div class="news-title-wrapper">
+                                    <input type="hidden" name="hiddenID" value="<?=$article['ID']?>">
+                                    <h6><?=$article['titel']?></h6>
+                                </div>
+                                <div class="news-date-wrapper">
+                                    <h6><?=$article['datum']?></h6>
+                                </div>
+                                <div class="news-text">
+                                    <?=$article['artikel']?>
+                                </div>
+                                <div class='edit'>
+                                    <a href="./news_update.php?id=<?=$article['ID']?>"><i class='fas fa-edit'></i></a>
+                                    <button value="<?=$article['ID']?>" class="delete-btn" type='submit' name='delete'><i class='fas fa-trash-alt'></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    <?php
+                    }
                 }
             }
             ?>
-
         </div>
     </main>
-
 
     <!-- footer ------------------------------------------------------------------>
     <?php echo createFooter('#', '#')?>

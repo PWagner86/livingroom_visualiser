@@ -45,48 +45,88 @@ body{
             // flex-direction: column-reverse;
 
             .article{
+                position: relative;
                 @include size(100%, auto);
-                @include flex(center, center, row);
-                flex-wrap: wrap;
                 padding-bottom: 2rem;
                 margin-bottom: 2rem;
                 border-bottom: dashed white 3px;
 
-                .news-title-wrapper,
-                .news-date-wrapper{
-                    @include size(50%, 30%);
-                    padding-bottom: 2rem;
+                form{
+                    position: relative;
+                    @include size(100%, 100%);
+                    @include flex(center, center, row);
+                    flex-wrap: wrap;
+                    border: none;
                     
-                    h6{
-                        color: $mainColor;
-                        font-size: 3vmin;
+                    .news-title-wrapper,
+                    .news-date-wrapper{
+                        @include size(50%, 30%);
+                        padding-bottom: 2rem;
+                        
+                        h6{
+                            color: $mainColor;
+                            font-size: 3vmin;
+                            margin-right: 2rem;
+                        }
                     }
-                }
-
-                .news-title-wrapper{
-                    @include flex(flex-end, center, row);
-
-                    h6{
-                        margin-right: 2rem;
+    
+                    .news-title-wrapper{
+                        @include size(70%, 30%);
+                        @include flex(flex-end, center, row);
                     }
-                }
-
-                .news-date-wrapper{
-                    @include flex(flex-start, center, row);
-
-                    h6{
-                        margin-left: 2rem;
+    
+                    .news-date-wrapper{
+                        @include size(30%, 30%);
+                        @include flex(flex-end, center, row);
                     }
-                }
+    
+                    .edit{
+                        @include size(15vmin, 18vmin);
+                        @include flex(space-around, center, column);
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+    
+                        button,
+                        a{
+                            @include size(90%, 30%);
+                            font-size: 3vmin;
+                            cursor: pointer;
+                            border: solid white 3px;
+                            border-radius: 1rem;
+                            background: $darkGrey;
+                            transition: ease-in-out 0.3s;
+                            color: $mainColor;
+                            &:hover{
+                                background: $mainColor;
+                                border: solid black 3px;
+                                color: black;
+                            }
+                        }
 
-                .news-text{
-                    @include size(80%, 70%);
-                    @include flex(center, center, column);
+                        a{
+                            @include flex(center, center, row);
+                        }
 
-                    p{
-                        color: white;
-                        font-size: 3vmin;
-                        margin-top: 1rem
+                        .delete-btn{
+                            color: $errorColor;
+                            &:hover{
+                                background: $errorColor;
+                                border: solid black 3px;
+                                color: black;
+                            }
+                        }
+                    }
+    
+                    .news-text{
+                        @include size(80%, 70%);
+                        @include flex(flex-start, center, column);
+    
+                        p{
+                            color: white;
+                            font-size: 3vmin;
+                            margin-top: 1rem
+                        }
                     }
                 }
             }

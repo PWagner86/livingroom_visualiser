@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once('../04_includes/access_admin.php');
 require('../04_includes/mysql_connection.php');
 require('../04_includes/header_nav.php');
 
