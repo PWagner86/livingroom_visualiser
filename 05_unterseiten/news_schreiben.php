@@ -38,7 +38,7 @@ if(isset($_POST['enter'])){
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php');?>
+    <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php')?>
 
     <!-- main -->
     <main>
@@ -74,7 +74,7 @@ if(isset($_POST['enter'])){
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 
 </body>
 </html>

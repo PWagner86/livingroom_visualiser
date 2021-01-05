@@ -59,13 +59,36 @@ export const wohnLeft = document.querySelector(".wohn .button-wrapper .left");
 export const wohnBack = document.querySelector(".wohn .button-wrapper .back");
 export const wohnRemove = document.querySelector(".wohn .button-wrapper .remove-model");
 
+// Kaffee-Shop Container und Buttons
+export const kaffeeBtn = document.querySelector(".kaffee-btn");
+export const kaffeeCtr = document.querySelector(".kaffee-ctr");
+export const kaffeeControlles = document.querySelector(".kaffee");
+export const kaffeeRight = document.querySelector(".kaffee .button-wrapper .right");
+export const kaffeeFront = document.querySelector(".kaffee .button-wrapper .front");
+export const kaffeeRotate = document.querySelector(".kaffee .button-wrapper .rotate");
+export const kaffeeLeft = document.querySelector(".kaffee .button-wrapper .left");
+export const kaffeeBack = document.querySelector(".kaffee .button-wrapper .back");
+export const kaffeeRemove = document.querySelector(".kaffee .button-wrapper .remove-model");
+
+// Liege-Sofa Container und Buttons
+export const sofaBtn = document.querySelector(".sofa-btn");
+export const sofaCtr = document.querySelector(".sofa-ctr");
+export const sofaControlles = document.querySelector(".sofa");
+export const sofaRight = document.querySelector(".sofa .button-wrapper .right");
+export const sofaFront = document.querySelector(".sofa .button-wrapper .front");
+export const sofaRotate = document.querySelector(".sofa .button-wrapper .rotate");
+export const sofaLeft = document.querySelector(".sofa .button-wrapper .left");
+export const sofaBack = document.querySelector(".sofa .button-wrapper .back");
+export const sofaRemove = document.querySelector(".sofa .button-wrapper .remove-model");
 
 export let controlles = [
     gamingControlles, 
     sciFyControlles,
     loungeControlles,
     barControlles,
-    wohnControlles
+    wohnControlles,
+    kaffeeControlles,
+    sofaControlles
 ];
 
 let ctrs = [
@@ -73,7 +96,9 @@ let ctrs = [
     sciFyCtr,
     loungeCtr,
     barCtr,
-    wohnCtr
+    wohnCtr,
+    kaffeeCtr,
+    sofaCtr
 ];
 
 

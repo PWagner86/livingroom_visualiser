@@ -33,7 +33,7 @@ require('./04_includes/favicon.php');
         <div class="fade">
 
             <!-- navigation ---------------------------------------------------------------------------------------------------------->      
-            <?php echo createNav('./05_unterseiten/login.php', './04_includes/logout.php', './05_unterseiten/registrieren.php', './05_unterseiten/visualizer.php', './05_unterseiten/benutzer.php', './05_unterseiten/über.php', './05_unterseiten/news.php');?>
+            <?=createNav('./05_unterseiten/login.php', './04_includes/logout.php', './05_unterseiten/registrieren.php', './05_unterseiten/visualizer.php', './05_unterseiten/benutzer.php', './05_unterseiten/über.php', './05_unterseiten/news.php')?>
 
             <!-- Titel-Container ----------------------------------------------------------------------------------------------------->
             <div class="titel-wrapper">
@@ -98,7 +98,7 @@ require('./04_includes/favicon.php');
             </div>
 
             <div class="carousel-wrapper">
-                <img class="preview" src="./01_pics_&_logo/01_impressionen/imp0.jpg" alt="Bild von Wohnzimmereinrichtung">
+                <img class="preview" src="./01_pics_&_logo/01_impression/imp0.jpg" alt="Bild von Visualizer App">
             </div>
 
             <div class="carousel-right">
@@ -111,6 +111,6 @@ require('./04_includes/favicon.php');
 
 
     <!-- footer ---------------------------------------------------------------------------------------------------------------------->
-    <?php echo createFooter('#', '#');?>
+    <?=createFooter('#', '#')?>
 </body>
 </html>

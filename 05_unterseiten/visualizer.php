@@ -53,27 +53,31 @@ function createCtrWrapper($wrapp, $titel){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#', './benutzer.php', './über.php', './news.php');?>
+    <?=createHeader('../index.php', '#', '../04_includes/logout.php', '#', '#', './benutzer.php', './über.php', './news.php')?>
 
     <div class="scene">
 
         <div class="spawn-wrapper">
 
-            <?=createBtnWrapper("gaming", "Gaming Stuhl"); ?>
-            <?=createBtnWrapper("scify", "Sci-Fy Möbel"); ?>
-            <?=createBtnWrapper("lounge", "Lounge"); ?>
-            <?=createBtnWrapper("bar", "Bar"); ?>
-            <?=createBtnWrapper("wohn", "Wohnwand"); ?>
+            <?=createBtnWrapper("gaming", "Gaming Stuhl")?>
+            <?=createBtnWrapper("scify", "Sci-Fy Möbel")?>
+            <?=createBtnWrapper("lounge", "Lounge")?>
+            <?=createBtnWrapper("bar", "Bar")?>
+            <?=createBtnWrapper("wohn", "Wohnwand")?>
+            <?=createBtnWrapper("kaffee", "Kaffee-Shop")?>
+            <?=createBtnWrapper("sofa", "Liege-Sofa")?>
 
 
 
         </div>
 
-        <?=createCtrWrapper("gaming", "Gaming Stuhl"); ?>
-        <?=createCtrWrapper("sci-fy", "Sci-Fy"); ?>
-        <?=createCtrWrapper("lounge", "Lounge"); ?>
-        <?=createCtrWrapper("bar", "Bar"); ?>
-        <?=createCtrWrapper("wohn", "Wohnwand"); ?>
+        <?=createCtrWrapper("gaming", "Gaming Stuhl")?>
+        <?=createCtrWrapper("sci-fy", "Sci-Fy")?>
+        <?=createCtrWrapper("lounge", "Lounge")?>
+        <?=createCtrWrapper("bar", "Bar")?>
+        <?=createCtrWrapper("wohn", "Wohnwand")?>
+        <?=createCtrWrapper("kaffee", "Kaffee-Shop")?>
+        <?=createCtrWrapper("sofa", "Liege-Sofa")?>
 
         <div class="mobile">
             <div class="text-wrapper">
@@ -91,6 +95,6 @@ function createCtrWrapper($wrapp, $titel){
     </div>
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 </body>
 </html>

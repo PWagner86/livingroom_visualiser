@@ -20,7 +20,7 @@ require('../04_includes/favicon.php');
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', '#', './news.php');?>
+    <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', '#', './news.php')?>
 
     <!-- main -->
     <main>
@@ -46,7 +46,7 @@ require('../04_includes/favicon.php');
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 
 </body>
 </html>

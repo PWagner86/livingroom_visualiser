@@ -29,7 +29,7 @@ right.forEach(item => {
         if(count > 9){
             count = 0;
         }
-        prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
+        prev.setAttribute("src", `./01_pics_&_logo/01_impression/imp${count}.jpg`);
     })
 })
 
@@ -41,7 +41,7 @@ left.forEach(item => {
         if(count < 0){
             count = 9;
         }
-        prev.setAttribute("src", `./01_pics_&_logo/01_impressionen/imp${count}.jpg`);
+        prev.setAttribute("src", `./01_pics_&_logo/01_impression/imp${count}.jpg`);
     })
 })
  

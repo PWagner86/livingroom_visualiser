@@ -77,7 +77,7 @@ if(isset($_POST['login'])){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '#', './registrieren.php', '#', '#', '#','./über.php', './news.php');?>
+    <?=createHeader('../index.php', '#', '#', './registrieren.php', '#', '#', '#','./über.php', './news.php')?>
 
     <!-- main -------------------------------------------------------------------->
     <main>
@@ -112,6 +112,6 @@ if(isset($_POST['login'])){
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 </body>
 </html>

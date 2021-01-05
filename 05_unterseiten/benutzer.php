@@ -31,7 +31,7 @@ if($resultatUser != false){
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', '#', '../04_includes/logout.php', '#', './visualizer.php', '#', './über.php', './news.php');?>
+    <?=createHeader('../index.php', '#', '../04_includes/logout.php', '#', './visualizer.php', '#', './über.php', './news.php')?>
 
     <!-- Main -------------------------------------------------------------------->
     <main>
@@ -84,16 +84,10 @@ if($resultatUser != false){
                 }
                 ?>
             </div>
-
-
         </div>
-
-        
-
-    
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 </body>
 </html>

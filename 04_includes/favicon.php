@@ -1,5 +1,11 @@
 <?php
 
+/*
+---------------------------------------------------------------------------->
+Erstellt die ganzen Favicons auf 
+den verschiedenen Seiten.
+---------------------------------------------------------------------------->
+*/
 function createFavicon($path){
     $favicon = "
         <link rel='apple-touch-icon' sizes='57x57' href='$path/apple-icon-57x57.png'>
@@ -22,6 +28,5 @@ function createFavicon($path){
     ";
     return $favicon;
 }
-
 
 ?>

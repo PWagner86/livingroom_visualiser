@@ -167,7 +167,7 @@ in die Datenbank übertragen.
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '#', '#', './visualizer.php', '#','./über.php', './news.php');?>
+    <?=createHeader('../index.php', './login.php', '#', '#', './visualizer.php', '#','./über.php', './news.php')?>
 
     <!-- main -------------------------------------------------------------------->
     <main>
@@ -182,11 +182,11 @@ in die Datenbank übertragen.
             <!-- Vorname ----------------------------------------------------------->
             <div class="first-name-wrapper reg-wrapper" id="mobile-first-name">
                 <div class="error">
-                    <?php echo '<p>'.$errors["vorname"].'</p>'?>
+                    <?='<p>'.$errors["vorname"].'</p>'?>
                 </div>
                 <div class="first-name-input-wrapper input-wrapper">
                     <label for="vorname">Vorname :</label>
-                    <input type="text" name="vorname" value="<?php echo $vorname?>">
+                    <input type="text" name="vorname" value="<?=$vorname?>">
                 </div>
             </div>
             </div>
@@ -194,12 +194,12 @@ in die Datenbank übertragen.
             <!-- Nachname ----------------------------------------------------------->
             <div class="last-name-wrapper reg-wrapper" id="mobile-last-name">
                 <div class="error">
-                    <?php echo '<p>'.$errors["nachname"].'</p>'?>
+                    <?='<p>'.$errors["nachname"].'</p>'?>
                 </div>
 
                 <div class="last-name-input-wrapper input-wrapper">
                     <label for="nachname">Nachname :</label>
-                    <input type="text" name="nachname" value="<?php echo $nachname?>">
+                    <input type="text" name="nachname" value="<?=$nachname?>">
                 </div>
             </div>
 
@@ -210,12 +210,12 @@ in die Datenbank übertragen.
             <!-- Adresse ----------------------------------------------------------->
             <div class="adresse-wrapper reg-wrapper" id="mobile-adresse">
                 <div class="error">
-                    <?php echo '<p>'.$errors["adresse"].'</p>'?>
+                    <?='<p>'.$errors["adresse"].'</p>'?>
                 </div>
 
                 <div class="adresse-input-wrapper input-wrapper">
                     <label for="adresse">Adresse :</label>
-                    <input type="text" name="adresse" value="<?php echo $adresse?>">
+                    <input type="text" name="adresse" value="<?=$adresse?>">
                 </div>
             </div>
             </div>
@@ -223,12 +223,12 @@ in die Datenbank übertragen.
             <!-- Postleitzahl ----------------------------------------------------------->
             <div class="plz-wrapper reg-wrapper" id="mobile-plz">
                 <div class="error">
-                    <?php echo '<p>'.$errors["plz"].'</p>'?>
+                    <?='<p>'.$errors["plz"].'</p>'?>
                 </div>
 
                 <div class="plz-name-input-wrapper input-wrapper">
                     <label for="plz">PLZ :</label>
-                    <input type="number" name="plz" value="<?php echo $plz?>" placeholder="z.B. 8400">
+                    <input type="number" name="plz" value="<?=$plz?>" placeholder="z.B. 8400">
                 </div>
             </div>
             </div>
@@ -236,12 +236,12 @@ in die Datenbank übertragen.
             <!-- Ort ----------------------------------------------------------->
             <div class="city-wrapper reg-wrapper" id="mobile-city">
                 <div class="error">
-                    <?php echo '<p>'.$errors["ort"].'</p>'?>
+                    <?='<p>'.$errors["ort"].'</p>'?>
                 </div>
 
                 <div class="city-input-wrapper input-wrapper">
                     <label for="ort">Ort :</label>
-                    <input type="text" name="ort" value="<?php echo $ort?>">
+                    <input type="text" name="ort" value="<?=$ort?>">
                 </div>
             </div>
             </div>
@@ -249,12 +249,12 @@ in die Datenbank übertragen.
             <!-- E-Mail ----------------------------------------------------------->
             <div class="email-wrapper reg-wrapper" id="mobile-email">
                 <div class="error">
-                    <?php echo '<p>'.$errors["email"].'</p>'?>
+                    <?='<p>'.$errors["email"].'</p>'?>
                 </div>
 
                 <div class="email-input-wrapper input-wrapper">
                     <label for="email">E-Mail :</label>
-                    <input type="email" name="email" value="<?php echo $email?>">
+                    <input type="email" name="email" value="<?=$email?>">
                 </div>
             </div>
             </div>
@@ -262,7 +262,7 @@ in die Datenbank übertragen.
             <!-- Passwort ----------------------------------------------------------->
             <div class="password-wrapper reg-wrapper" id="mobile-password">
                 <div class="error">
-                    <?php echo '<p>'.$errors["passwort"].'</p>'?>
+                    <?='<p>'.$errors["passwort"].'</p>'?>
                 </div>
                 <div class="password-input-wrapper input-wrapper">
                     <label for="passwort">Passwort :</label>
@@ -273,7 +273,7 @@ in die Datenbank übertragen.
             <!-- Passwort erneut ----------------------------------------------------------->
             <div class="second-password-wrapper reg-wrapper" id="mobile-second-password">
                 <div class="error">
-                    <?php echo '<p>'.$errors["passwort2"].'</p>'?>
+                    <?='<p>'.$errors["passwort2"].'</p>'?>
                 </div>
                 <div class="second-password-input-wrapper input-wrapper">
                     <label for="passwort2">Passwort <br> wiederholen :</label>
@@ -284,7 +284,7 @@ in die Datenbank übertragen.
             <!-- AGB ----------------------------------------------------------->
             <div class="agb-wrapper reg-wrapper" id="mobile-agb">
                 <div class="error">
-                    <?php echo '<p>'.$errors["agb"].'</p>'?>
+                    <?='<p>'.$errors["agb"].'</p>'?>
                 </div>
                 <div class="agb-input-wrapper input-wrapper">
                     <label for="agb">Ich habe die AGB gelesen :</label>
@@ -304,7 +304,7 @@ in die Datenbank übertragen.
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
     
 </body>
 </html>

@@ -38,7 +38,7 @@ if(isset($_POST['delete'])){
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', '#');?>
+    <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', '#')?>
 
     <!-- main -------------------------------------------------------------------->
     <main>
@@ -112,7 +112,7 @@ if(isset($_POST['delete'])){
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
     
     <!-- script ------------------------------------------------------------------>
     <script>

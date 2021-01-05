@@ -60,7 +60,7 @@ if(mysqli_num_rows($result1) > 0){
 <body>
 
     <!-- header ------------------------------------------------------------------>
-    <?php echo createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php');?>
+    <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php');?>
 
     <!-- main -->
     <main>
@@ -96,7 +96,7 @@ if(mysqli_num_rows($result1) > 0){
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?php echo createFooter('#', '#')?>
+    <?=createFooter('#', '#')?>
 
 </body>
 </html>

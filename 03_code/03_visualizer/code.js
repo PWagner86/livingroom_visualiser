@@ -50,6 +50,24 @@ import {
     wohnLeft,
     wohnBack,
     wohnRemove,
+    kaffeeBtn,
+    kaffeeCtr,
+    kaffeeControlles,
+    kaffeeRight,
+    kaffeeFront,
+    kaffeeRotate,
+    kaffeeLeft,
+    kaffeeBack,
+    kaffeeRemove,
+    sofaBtn,
+    sofaCtr,
+    sofaControlles,
+    sofaRight,
+    sofaFront,
+    sofaRotate,
+    sofaLeft,
+    sofaBack,
+    sofaRemove,
     btnShowHide,
     getCtr,
     toRight,
@@ -69,6 +87,8 @@ let scify;
 let lounge;
 let bar;
 let wohn;
+let kaffee;
+let sofa;
 
 
 
@@ -137,7 +157,7 @@ function init(){
             scify.scale.y = 0.008;
             scify.scale.z = 0.008;
             scify.position.x = -2;
-            scify.position.z = 2;
+            scify.position.z = 0;
             scify.rotation.y = -Math.PI/0.5;
         })
 
@@ -231,7 +251,58 @@ function init(){
     wohnBack.addEventListener("click", () => toBack(wohn));
     wohnRemove.addEventListener("click", () => removeModel(wohn, wohnBtn, wohnCtr));
     
-    
+    // Kaffee-Shop ------------------------------------------------------------------------>
+    kaffeeBtn.addEventListener("click", () => {
+        loader.load(`${path}/coffee_shop/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            kaffee = gltf.scene;
+            kaffee.castShadow = true;
+            kaffee.receiveShadow = true;
+            kaffee.scale.x = 0.01;
+            kaffee.scale.y = 0.01;
+            kaffee.scale.z = 0.01;
+            kaffee.position.x = -5;
+            kaffee.position.z = 0;
+            kaffee.rotation.y = -Math.PI;
+        })
+
+        btnShowHide(kaffeeBtn, kaffeeCtr);
+    });
+
+    kaffeeCtr.addEventListener("click", () => getCtr(kaffeeControlles, kaffeeCtr));
+    kaffeeRight.addEventListener("click", () => toRight(kaffee));
+    kaffeeFront.addEventListener("click", () => toFront(kaffee));
+    kaffeeRotate.addEventListener("click", () => rotate(kaffee));
+    kaffeeLeft.addEventListener("click", () => toLeft(kaffee));
+    kaffeeBack.addEventListener("click", () => toBack(kaffee));
+    kaffeeRemove.addEventListener("click", () => removeModel(kaffee, kaffeeBtn, kaffeeCtr));
+
+    // Liege-Sofa ------------------------------------------------------------------------>
+    sofaBtn.addEventListener("click", () => {
+        loader.load(`${path}/liege_sofa/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            sofa = gltf.scene;
+            sofa.castShadow = true;
+            sofa.receiveShadow = true;
+            sofa.scale.x = 0.01;
+            sofa.scale.y = 0.01;
+            sofa.scale.z = 0.01;
+            sofa.position.x = -5;
+            sofa.position.z = 2.5;
+            sofa.rotation.y = -Math.PI/0.5;
+        })
+
+        btnShowHide(sofaBtn, sofaCtr);
+    });
+
+    sofaCtr.addEventListener("click", () => getCtr(sofaControlles, sofaCtr));
+    sofaRight.addEventListener("click", () => toRight(sofa));
+    sofaFront.addEventListener("click", () => toFront(sofa));
+    sofaRotate.addEventListener("click", () => rotate(sofa));
+    sofaLeft.addEventListener("click", () => toLeft(sofa));
+    sofaBack.addEventListener("click", () => toBack(sofa));
+    sofaRemove.addEventListener("click", () => removeModel(sofa, sofaBtn, sofaCtr));
+
     // Kamera
     let camera = new THREE.PerspectiveCamera(
         45,
@@ -240,8 +311,8 @@ function init(){
         1000
     );
     camera.position.x = 5;
-    camera.position.y = 10;
-    camera.position.z = 16;
+    camera.position.y = 8;
+    camera.position.z = 12;
 
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
