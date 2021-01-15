@@ -26,6 +26,6 @@ Livingroom Visualizer is a schoolproject about a CMS written in PHP, mySQL, Java
 
 >Admin Login
 
-E-Mail: admin@lrv.com
+E-Mail: admin@lrv.com  
 Password: Admin-lrv-123
 
