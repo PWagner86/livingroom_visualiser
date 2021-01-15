@@ -66,6 +66,7 @@ function createCtrWrapper($wrapp, $titel){
             <?=createBtnWrapper("wohn", "Wohnwand")?>
             <?=createBtnWrapper("kaffee", "Kaffee-Shop")?>
             <?=createBtnWrapper("sofa", "Liege-Sofa")?>
+            <?=createBtnWrapper("fort", "Kinder-Fort")?>
 
 
 
@@ -78,12 +79,15 @@ function createCtrWrapper($wrapp, $titel){
         <?=createCtrWrapper("wohn", "Wohnwand")?>
         <?=createCtrWrapper("kaffee", "Kaffee-Shop")?>
         <?=createCtrWrapper("sofa", "Liege-Sofa")?>
+        <?=createCtrWrapper("fort", "Kinder-Fort")?>
 
         <div class="mobile">
             <div class="text-wrapper">
                 <h5>
                     Bildbreite nicht ausreichend.
-                    Bitte drehen Sie ihr Gerät, um den Visualizer 
+                    Bitte drehen Sie ihr Gerät und 
+                    aktualisieren Sie die Seite,
+                    um den Visualizer 
                     zu sehen.
                 </h5>
             </div>

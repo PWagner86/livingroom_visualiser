@@ -34,6 +34,7 @@ if(isset($_POST['delete'])){
     <title>News</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/06_news/news_style.css">
+    <script src="../03_code/04_news/news.js" defer></script>
 </head>
 <body>
 
@@ -114,34 +115,5 @@ if(isset($_POST['delete'])){
     <!-- footer ------------------------------------------------------------------>
     <?=createFooter('#', '#')?>
     
-    <!-- script ------------------------------------------------------------------>
-    <script>
-
-        let news = document.querySelector(".news-wrapper");
-        let newsDate = document.querySelectorAll(".news-date-wrapper h6");
-        let year = [];
-        let month = [];
-        let day = [];
-        // console.log(newsDate);
-        // Dieser Code stellt das Datum in die richtige Reihenfolge -------------->
-        newsDate.forEach(date => {
-            let dateInfo = date.innerHTML
-            dateInfo = dateInfo.split('');
-            // console.log(dateInfo);
-            year = dateInfo.splice(0, 4);
-            month = dateInfo.splice(0, 4);
-            day = dateInfo.splice(0, 2);
-            // console.log(year);
-            // console.log(month);
-            // console.log(day);
-
-            dateInfo = day.concat(month, year).join('');
-            // console.log(dateInfo);
-            date.innerHTML = dateInfo;
-        })
-
-
-
-    </script>
 </body>
 </html>

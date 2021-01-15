@@ -81,6 +81,18 @@ export const sofaLeft = document.querySelector(".sofa .button-wrapper .left");
 export const sofaBack = document.querySelector(".sofa .button-wrapper .back");
 export const sofaRemove = document.querySelector(".sofa .button-wrapper .remove-model");
 
+// Kinder-Fort Container und Buttons
+export const fortBtn = document.querySelector(".fort-btn");
+export const fortCtr = document.querySelector(".fort-ctr");
+export const fortControlles = document.querySelector(".fort");
+export const fortRight = document.querySelector(".fort .button-wrapper .right");
+export const fortFront = document.querySelector(".fort .button-wrapper .front");
+export const fortRotate = document.querySelector(".fort .button-wrapper .rotate");
+export const fortLeft = document.querySelector(".fort .button-wrapper .left");
+export const fortBack = document.querySelector(".fort .button-wrapper .back");
+export const fortRemove = document.querySelector(".fort .button-wrapper .remove-model");
+
+
 export let controlles = [
     gamingControlles, 
     sciFyControlles,
@@ -88,7 +100,8 @@ export let controlles = [
     barControlles,
     wohnControlles,
     kaffeeControlles,
-    sofaControlles
+    sofaControlles,
+    fortControlles
 ];
 
 let ctrs = [
@@ -98,7 +111,8 @@ let ctrs = [
     barCtr,
     wohnCtr,
     kaffeeCtr,
-    sofaCtr
+    sofaCtr,
+    fortCtr
 ];
 
 

@@ -68,6 +68,15 @@ import {
     sofaLeft,
     sofaBack,
     sofaRemove,
+    fortBtn,
+    fortCtr,
+    fortControlles,
+    fortRight,
+    fortFront,
+    fortRotate,
+    fortLeft,
+    fortBack,
+    fortRemove,
     btnShowHide,
     getCtr,
     toRight,
@@ -89,9 +98,7 @@ let bar;
 let wohn;
 let kaffee;
 let sofa;
-
-
-
+let fort;
 
 // Funktion was alles geladen werden soll
 function init(){
@@ -279,6 +286,8 @@ function init(){
 
     // Liege-Sofa ------------------------------------------------------------------------>
     sofaBtn.addEventListener("click", () => {
+        console.log("clicked")
+
         loader.load(`${path}/liege_sofa/scene.gltf`, (gltf) => {
             scene.add(gltf.scene);
             sofa = gltf.scene;
@@ -302,6 +311,33 @@ function init(){
     sofaLeft.addEventListener("click", () => toLeft(sofa));
     sofaBack.addEventListener("click", () => toBack(sofa));
     sofaRemove.addEventListener("click", () => removeModel(sofa, sofaBtn, sofaCtr));
+
+    // Kinder-Fort ------------------------------------------------------------------------>
+    fortBtn.addEventListener("click", () => {
+        loader.load(`${path}/kinder_fort/scene.gltf`, (gltf) => {
+            scene.add(gltf.scene);
+            fort = gltf.scene;
+            fort.castShadow = true;
+            fort.receiveShadow = true;
+            fort.scale.x = 0.5;
+            fort.scale.z = 0.5;
+            fort.scale.y = 0.5;
+            fort.position.x = -3;
+            fort.position.z = 2.5;
+            fort.rotation.y = -Math.PI/0.5;
+        })
+
+        btnShowHide(fortBtn, fortCtr);
+    });
+
+    fortCtr.addEventListener("click", () => getCtr(fortControlles, fortCtr));
+    fortRight.addEventListener("click", () => toRight(fort));
+    fortFront.addEventListener("click", () => toFront(fort));
+    fortRotate.addEventListener("click", () => rotate(fort));
+    fortLeft.addEventListener("click", () => toLeft(fort));
+    fortBack.addEventListener("click", () => toBack(fort));
+    fortRemove.addEventListener("click", () => removeModel(fort, fortBtn, fortCtr));
+    
 
     // Kamera
     let camera = new THREE.PerspectiveCamera(
