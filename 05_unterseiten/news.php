@@ -113,7 +113,7 @@ if(isset($_POST['delete'])){
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
     
 </body>
 </html>

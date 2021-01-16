@@ -96,7 +96,7 @@ if(mysqli_num_rows($result1) > 0){
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 
 </body>
 </html>

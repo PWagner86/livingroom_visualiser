@@ -304,7 +304,7 @@ in die Datenbank übertragen.
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
     
 </body>
 </html>

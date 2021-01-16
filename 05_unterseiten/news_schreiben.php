@@ -74,7 +74,7 @@ if(isset($_POST['enter'])){
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 
 </body>
 </html>

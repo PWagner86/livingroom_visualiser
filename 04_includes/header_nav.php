@@ -116,8 +116,8 @@ function createFooter($agb, $kontakt){
             </div>
             <nav>
                 <ul>
-                    <li><a href="'.$agb.'">AGB</a></li>
-                    <li><a href="'.$kontakt.'">Kontakt</a></li>
+                    <li class="agb-link"><a href="'.$agb.'">AGB</a></li>
+                    <li class="kontakt-link"><a href="'.$kontakt.'">Kontakt</a></li>
                 </ul>
             </nav>
             <div class="copyright-wrapper">

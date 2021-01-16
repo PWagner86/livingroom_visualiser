@@ -99,6 +99,6 @@ function createCtrWrapper($wrapp, $titel){
     </div>
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 </body>
 </html>

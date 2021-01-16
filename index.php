@@ -111,6 +111,6 @@ require('./04_includes/favicon.php');
 
 
     <!-- footer ---------------------------------------------------------------------------------------------------------------------->
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./05_unterseiten/agb.php', './05_unterseiten/kontakt.php')?>
 </body>
 </html>

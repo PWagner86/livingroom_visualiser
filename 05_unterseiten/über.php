@@ -46,7 +46,7 @@ require('../04_includes/favicon.php');
 
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 
 </body>
 </html>

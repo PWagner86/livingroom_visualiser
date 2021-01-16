@@ -112,6 +112,6 @@ if(isset($_POST['login'])){
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 </body>
 </html>

@@ -88,6 +88,6 @@ if($resultatUser != false){
     </main>
 
     <!-- footer ------------------------------------------------------------------>
-    <?=createFooter('#', '#')?>
+    <?=createFooter('./agb.php', './kontakt.php')?>
 </body>
 </html>
