@@ -1,2 +1,0 @@
-benutzer: Test1234
-admin: Admin-lrv-123

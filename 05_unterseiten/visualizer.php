@@ -49,7 +49,7 @@ function createCtrWrapper($wrapp, $titel){
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/07_visualizer/visualizer_style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" defer></script>
-    <script type="module" src="../03_code/03_visualizer/code.js"></script>
+    <script type="module" src="../03_code/02_visualizer/code.js"></script>
 </head>
 <body>
     <!-- header ------------------------------------------------------------------>

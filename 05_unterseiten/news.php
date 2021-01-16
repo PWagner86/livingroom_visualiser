@@ -34,7 +34,7 @@ if(isset($_POST['delete'])){
     <title>News</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/06_news/news_style.css">
-    <script src="../03_code/04_news/news.js" defer></script>
+    <script src="../03_code/03_news/news.js" defer></script>
 </head>
 <body>
 
