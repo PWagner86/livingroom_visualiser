@@ -6,6 +6,26 @@ body{
 
     main{
         @include main;
+        flex-direction: column;
+
+        .kontakt-title-wrapper{
+            @include size(100%, 20%);
+            @include flex(center, center, row);
+
+            h3{
+                color: $mainColor;
+            }
+        }
+
+        .kontakt-wrapper{
+            @include size(100%, 80%);
+            @include flex(center, center, row);
+
+            h5{
+                @include size(50%, 80%);
+                @include flex(center, center, column);
+            }
+        }
     }
 
     footer{

@@ -6,6 +6,27 @@ body{
 
     main{
         @include main;
+        flex-direction: column;
+
+        .agb-title-wrapper{
+            @include size(100%, 20%);
+            @include flex(center, center, row);
+
+            h3{
+                color: $mainColor;
+            }
+        }
+
+        .agb-wrapper{
+            @include size(100%, 80%);
+            overflow: auto;
+
+            p{
+                color: white;
+                font-size: 1.8vmin;
+                padding: 1rem
+            }
+        }
     }
 
     footer{

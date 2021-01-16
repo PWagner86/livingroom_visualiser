@@ -23,7 +23,23 @@ require('../04_includes/favicon.php');
     
     <!-- main -->
     <main>
-    
+        <div class="kontakt-title-wrapper">
+            <h3>Kontakt</h3>
+        </div>
+
+        <div class="kontakt-wrapper">
+            <h5>
+               <span>Livingroom Visualizer AG</span> <br>
+                <br>
+                Peter Wagner <br>
+                <br>
+                +00 0123 45 67 89 <br>
+                <br>
+                Reicheleutestrasse $$$ <br>
+                <br>
+                9000 Richcity
+            </h5>
+        </div>
     </main>
 
     <!-- footer ------------------------------------------------------------------>
