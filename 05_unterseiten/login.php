@@ -1,5 +1,11 @@
 <?php
 
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier wird die Session gestartet und 
+die Includes geladen
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
 session_start();
 require('../04_includes/header_nav.php');
 require_once('../04_includes/mysql_connection.php');
@@ -30,7 +36,6 @@ if(isset($_POST['login'])){
         $query = "SELECT * FROM `admin` WHERE `email` = '$email'";
         $rs = mysqli_query($conn, $query);
         $numRows = mysqli_num_rows($rs);
-        // Adminpasswort ist Admin-lrv-123;
         if($numRows == 1){
             $row = mysqli_fetch_assoc($rs);
             if(password_verify($password, $row['passwort'])){
@@ -60,7 +65,6 @@ if(isset($_POST['login'])){
         }
     }
 }
-
 
 ?>
 

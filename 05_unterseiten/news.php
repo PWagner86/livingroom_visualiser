@@ -1,5 +1,11 @@
 <?php
 
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier wird die Session gestartet und 
+die Includes geladen
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
 session_start();
 require('../04_includes/mysql_connection.php');
 require('../04_includes/header_nav.php');
@@ -20,7 +26,6 @@ if(isset($_POST['delete'])){
     $resultDelete = mysqli_query($conn, $sqldelete);
     header('location: news.php');
 }
-
 
 ?>
 

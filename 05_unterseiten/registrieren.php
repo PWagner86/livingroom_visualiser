@@ -1,5 +1,12 @@
 <?php
 
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier wird die Session gestartet und 
+die Includes geladen
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
+
 session_start();
 require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
@@ -31,7 +38,7 @@ $errors = array(
 --------------------------------------------------------------------------------->
 Wenn der Registrierbutton gedrückt wird, werden sämtliche Eingaben geprüft.
 Gibt es Fehler werden diese im Formular angezeigt, ansonsten wird der Benutzer auf
-die Log In Seite transferiert
+zur Log In Seite transferiert
 --------------------------------------------------------------------------------->
 */
 
@@ -149,7 +156,6 @@ in die Datenbank übertragen.
         header('Location: login.php');
     }
 }
-
 
 ?>
 
@@ -300,8 +306,6 @@ in die Datenbank übertragen.
         </form>
 
     </main>
-
-
 
     <!-- footer ------------------------------------------------------------------>
     <?=createFooter('./agb.php', './kontakt.php')?>

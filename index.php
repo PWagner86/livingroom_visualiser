@@ -10,7 +10,6 @@ session_start();
 require('./04_includes/header_nav.php');
 require('./04_includes/favicon.php');
 
-
 ?>
 
 
@@ -108,7 +107,6 @@ require('./04_includes/favicon.php');
         </div>
 
     </section>
-
 
     <!-- footer ---------------------------------------------------------------------------------------------------------------------->
     <?=createFooter('./05_unterseiten/agb.php', './05_unterseiten/kontakt.php')?>
