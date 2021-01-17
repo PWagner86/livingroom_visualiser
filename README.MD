@@ -37,5 +37,6 @@ for admins.
 
 Go to folder 04_includes which contains all the helper php files.  
 Here you go to mysql_connection.php. There you can change the  
-database connection.
+database connection. The exportet database(sql file) is in the  
+folder 06_sql_db
 
