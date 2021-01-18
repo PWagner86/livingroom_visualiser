@@ -12,6 +12,12 @@ require('../04_includes/header_nav.php');
 require('../04_includes/mysql_connection.php');
 require('../04_includes/favicon.php');
 
+/*
+-------------------------------------------------------------------------------------------------------------------------------------->
+Funktionen um die Divs mit den
+darin entahlenen Buttons zu erstellen
+-------------------------------------------------------------------------------------------------------------------------------------->
+*/
 function createBtnWrapper($wrapp, $name){
     $wrapper = '
         <div class="'.$wrapp.'-wrapper btn-wrapper">
@@ -64,6 +70,11 @@ function createCtrWrapper($wrapp, $titel){
 
     <div class="scene">
 
+    <!-- ------------------------------------------------------------------------->
+    <!--Mit diesen Buttons werden einerseits die Modelle 
+    in die Szene geladen und andererseits die Controlles 
+    hervorgerufen -->
+    <!-- ------------------------------------------------------------------------->
         <div class="spawn-wrapper">
 
             <?=createBtnWrapper("gaming", "Gaming Stuhl")?>

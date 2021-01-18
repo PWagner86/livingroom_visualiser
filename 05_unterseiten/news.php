@@ -11,6 +11,12 @@ require('../04_includes/mysql_connection.php');
 require('../04_includes/header_nav.php');
 require('../04_includes/favicon.php');
 
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier werden die News von der Datenbank in 
+die Seite geladen.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
 $query = "SELECT * FROM news";
 $result = mysqli_query($conn, $query);
 $news = array();
@@ -18,6 +24,13 @@ $news = array();
 if($result != false){
     $news = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier wird festgelegt, wie man einen
+Newseintrag löscht.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
 
 if(isset($_POST['delete'])){
     $cleanId = sanitizing($_POST['delete'], 'string');

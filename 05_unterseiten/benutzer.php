@@ -7,9 +7,9 @@ die Includes geladen
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
-require_once('../04_includes/access.php');
-require('../04_includes/header_nav.php');
+require_once('../04_includes/access_admin.php');
 require('../04_includes/mysql_connection.php');
+require('../04_includes/header_nav.php');
 require('../04_includes/favicon.php');
 
 $queryUser = "SELECT * FROM `user`";

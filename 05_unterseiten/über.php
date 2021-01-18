@@ -28,7 +28,7 @@ require('../04_includes/favicon.php');
     <!-- header ------------------------------------------------------------------>
     <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', '#', './news.php')?>
 
-    <!-- main -->
+    <!-- main mit Bild und Beschrieb der Seite ------------------------------------>
     <main>
         <div class="about-titel-wrapper">
             <h3>Über</h3>

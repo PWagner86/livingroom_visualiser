@@ -38,7 +38,8 @@ $errors = array(
 --------------------------------------------------------------------------------->
 Wenn der Registrierbutton gedrückt wird, werden sämtliche Eingaben geprüft.
 Gibt es Fehler werden diese im Formular angezeigt, ansonsten wird der Benutzer auf
-zur Log In Seite transferiert
+die Log In Seite transferiert. (Das Array $sanitize und die Funktion sanitizing sind 
+im mysql_connection.php file)
 --------------------------------------------------------------------------------->
 */
 
