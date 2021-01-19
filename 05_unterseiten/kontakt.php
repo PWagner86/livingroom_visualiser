@@ -3,11 +3,11 @@
 /*
 --------------------------------------------------------------------------------------------------------------------------------------->
 Hier wird die Session gestartet und 
-die Includes geladen
+die Includes geladen.
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
-require('../04_includes/header_nav.php');
+require('../04_includes/header_footer_nav.php');
 require('../04_includes/favicon.php');
 
 ?>
@@ -27,7 +27,7 @@ require('../04_includes/favicon.php');
     <!-- header ------------------------------------------------------------------>
     <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php')?>
     
-    <!-- main -->
+    <!-- main -------------------------------------------------------------------->
     <main>
         <div class="kontakt-title-wrapper">
             <h3>Kontakt</h3>

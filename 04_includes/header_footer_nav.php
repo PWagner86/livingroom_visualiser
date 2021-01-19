@@ -1,6 +1,6 @@
 <?php
 
-
+// Navigation für unregistrierte User auf Startseite.
 function createNav($login, $logout, $register, $visualizer, $benutzer, $about, $news){
     if(!$_SESSION){
         $nav = '
@@ -13,6 +13,7 @@ function createNav($login, $logout, $register, $visualizer, $benutzer, $about, $
                 </ul>
             </nav>
         ';
+    // Navigation für registrierte User auf Startseite.
     }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as User'){
         $nav = '
             <nav id="header-nav-mobile">
@@ -24,6 +25,7 @@ function createNav($login, $logout, $register, $visualizer, $benutzer, $about, $
                 </ul>
             </nav>
         ';
+    // Navigation für Admin-Ansicht auf Startseite.
     }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
         $nav = '
             <nav id="header-nav-mobile">
@@ -44,6 +46,7 @@ function createNav($login, $logout, $register, $visualizer, $benutzer, $about, $
 
 function createHeader($main, $login, $logout, $register, $visualizer, $benutzer, $about, $news){
 
+    // Header für unregistrierte User.
     if(!$_SESSION){
         $header = '
             <header>
@@ -62,6 +65,7 @@ function createHeader($main, $login, $logout, $register, $visualizer, $benutzer,
                 </div>
             </header>
         ';
+    // Header für registrierte User.
     }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as User'){
         $header = '
             <header>
@@ -80,6 +84,7 @@ function createHeader($main, $login, $logout, $register, $visualizer, $benutzer,
                 </div>
             </header>
         ';
+    // Header für Admin-Ansicht.
     }else if($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
         $header = '
             <header>
@@ -107,7 +112,8 @@ function createHeader($main, $login, $logout, $register, $visualizer, $benutzer,
 
 
 function createFooter($agb, $kontakt){
-
+    
+    // Footer für alle User und Admin
     $footer = '
         <footer>
             <div class="social-media-wrapper">

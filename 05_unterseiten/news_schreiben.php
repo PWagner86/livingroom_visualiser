@@ -3,14 +3,35 @@
 /*
 --------------------------------------------------------------------------------------------------------------------------------------->
 Hier wird die Session gestartet und 
-die Includes geladen
+die Includes geladen.
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
-require_once('../04_includes/access_admin.php');
 require('../04_includes/mysql_connection.php');
-require('../04_includes/header_nav.php');
+require('../04_includes/header_footer_nav.php');
 require('../04_includes/favicon.php');
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Dieser Code sorgt dafür, dass diese Seite
+nur durch den Admin aufgerufen werden kann.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
+
+if(!$_SESSION){
+    header('Location: login.php');
+}elseif($_SESSION['state'] !== 'Loged in as Admin'){
+    die('Seite konnte nicht gefunden werden!');
+}
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier wird geprüft ob die Eingabefelder
+nicht leer gelassen wurden und dann werden
+die Eingaben in die Datenbank gespeichert.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
+
 
 if(isset($_POST['enter'])){
 
@@ -38,15 +59,15 @@ if(isset($_POST['enter'])){
     <title>News</title>
     <?php require_once('../04_includes/font_links.php');?>
     <link rel="stylesheet" href="../02_styling/06_news/news_style.css">
-    <script src="../03_code/04_news/ckeditor/ckeditor.js" defer></script>
-    <script src="../03_code/04_news/edit.js" defer></script>
+    <script src="../03_code/03_news/ckeditor/ckeditor.js" defer></script>
+    <script src="../03_code/03_news/edit.js" defer></script>
 </head>
 <body>
 
     <!-- header ------------------------------------------------------------------>
     <?=createHeader('../index.php', './login.php', '../04_includes/logout.php', './registrieren.php', './visualizer.php', './benutzer.php', './über.php', './news.php')?>
 
-    <!-- main -->
+    <!-- main -------------------------------------------------------------------->
     <main>
         <div class="news-titel-wrapper">
             <h3>Neuer Artikel schreiben</h3>

@@ -3,14 +3,33 @@
 /*
 --------------------------------------------------------------------------------------------------------------------------------------->
 Hier wird die Session gestartet und 
-die Includes geladen
+die Includes geladen.
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
-require_once('../04_includes/access_admin.php');
 require('../04_includes/mysql_connection.php');
-require('../04_includes/header_nav.php');
+require('../04_includes/header_footer_nav.php');
 require('../04_includes/favicon.php');
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Dieser Code sorgt dafür, dass diese Seite
+nur durch den Admin aufgerufen werden kann.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
+
+if(!$_SESSION){
+    header('Location: login.php');
+}elseif($_SESSION['state'] !== 'Loged in as Admin'){
+    die('Seite konnte nicht gefunden werden!');
+}
+
+/*
+--------------------------------------------------------------------------------------------------------------------------------------->
+Hier werden die User-Daten aus der Datenbank
+herausgeholt.
+--------------------------------------------------------------------------------------------------------------------------------------->
+*/
 
 $queryUser = "SELECT * FROM `user`";
 $resultatUser = mysqli_query($conn, $queryUser);

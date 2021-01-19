@@ -3,12 +3,12 @@
 /*
 --------------------------------------------------------------------------------------------------------------------------------------->
 Hier wird die Session gestartet und 
-die Includes geladen
+die Includes geladen.
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
 require('../04_includes/mysql_connection.php');
-require('../04_includes/header_nav.php');
+require('../04_includes/header_footer_nav.php');
 require('../04_includes/favicon.php');
 
 /*
@@ -84,6 +84,7 @@ if(isset($_POST['delete'])){
             ?>
         </div>
         <div class="news-wrapper">
+        <!-- Ansicht für unregistrierte und registrierte User -->
             <?php
             if(count($news) > 0){
                 foreach($news as $article){
@@ -102,6 +103,7 @@ if(isset($_POST['delete'])){
                             </form>
                         </div>
                     <?php
+                    // Ansicht für den Admin
                     }elseif($_SESSION['state'] && $_SESSION['state'] === 'Loged in as Admin'){
                     ?>
                         <div class="article">

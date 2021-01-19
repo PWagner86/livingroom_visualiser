@@ -1,7 +1,12 @@
 <?php
 
-// Datenbank verbinden
-//DB Verbindung
+/*
+-------------------------------------------------------------------------------------->
+Hier findet die Datanbank-
+Verbindung statt.
+-------------------------------------------------------------------------------------->
+*/
+
 define("DBSERVER", 'localhost');
 define("DBUSER", 'root');
 define("DBPASSWORT", '');
@@ -11,7 +16,13 @@ $conn = mysqli_connect(DBSERVER, DBUSER, DBPASSWORT, DBNAME) OR die('DB verbindu
 
 // var_dump($conn);
 
-// Desinfektions-Funktion
+/*
+-------------------------------------------------------------------------------------->
+Diese Funktion "desifiziert"
+User-Input und macht ihn sicher
+für die Datenbank.
+-------------------------------------------------------------------------------------->
+*/
 
 $sanitize = array(
     'string' => FILTER_SANITIZE_STRING,
@@ -28,7 +39,5 @@ function sanitizing($var, $sani){
     $var = filter_var($var, $sanitize[$sani]);
     return $var;
 }
-
-
 
 ?>

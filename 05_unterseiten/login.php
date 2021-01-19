@@ -3,18 +3,18 @@
 /*
 --------------------------------------------------------------------------------------------------------------------------------------->
 Hier wird die Session gestartet und 
-die Includes geladen
+die Includes geladen.
 --------------------------------------------------------------------------------------------------------------------------------------->
 */
 session_start();
-require('../04_includes/header_nav.php');
+require('../04_includes/header_footer_nav.php');
 require_once('../04_includes/mysql_connection.php');
 require_once('../04_includes/favicon.php');
 
 $loginErr = "";
 /*
 -------------------------------------------------------------------------------------------->
-Login Prozess wird hier gestartet
+Login Prozess wird hier gestartet.
 -------------------------------------------------------------------------------------------->
 */
 
@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
     /*
     -------------------------------------------------------------------------------------------->
     Userinput wird desinfiziert und mit 
-    Datenbank verglichen
+    Datenbank verglichen.
     -------------------------------------------------------------------------------------------->
     */
     
