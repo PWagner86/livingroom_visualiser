@@ -4,6 +4,7 @@
 
 body{
 
+    // header------------------------------------------------------------------------------------------------>
     header{
 
         .news-link{
@@ -14,6 +15,7 @@ body{
         }
     }
 
+    // header------------------------------------------------------------------------------------------------>
     main{
         @include main;
         flex-direction: column;
@@ -37,7 +39,8 @@ body{
                 }
             }
         }
-        // Styling für news.php
+        
+        // Styling für news.php -------------------------------------------------------------------------->
         .news-wrapper{
             @include size(100%, 80%);
             overflow: auto;
@@ -124,7 +127,8 @@ body{
                 }
             }
         }
-        // Styling für news_schreiben.php
+
+        // Styling für news_schreiben.php ---------------------------------------------------------------------------------------->
         .write-wrapper{
             @include flex(center, center, row);
 

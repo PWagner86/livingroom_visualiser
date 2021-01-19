@@ -29,7 +29,8 @@ allArticles.forEach(article => {
 
 // ----------------------------------------------------------------------->
 /*
-Dieser Code stellt das Datum in die richtige Reihenfolge.
+Dieser Code stellt das Datum in die richtige Reihenfolge
+und ersetzt den Strich mit einem Punkt.
 */
 // console.log(newsDate);
 newsDate.forEach(date => {

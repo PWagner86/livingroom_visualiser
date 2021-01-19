@@ -3,6 +3,7 @@
 @import './rules';
 @import './variables';
 
+// header--------------------------------------------------------------------------->
 header{
     @include size(100%, 20vh);
     @include flex(space-between, center, row);
@@ -51,6 +52,7 @@ header{
     }
 }
 
+// footer ----------------------------------------------------------------------------------------------------->
 footer{
     @include size(100%, 10vh);
     display: flex;

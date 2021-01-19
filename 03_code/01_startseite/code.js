@@ -15,7 +15,7 @@ let count = 1;
 
 // Events
 
-// Paralaxeffekt im header und footer
+// Paralaxeffekt im header
 window.addEventListener("scroll", () => {
     const offsetY = window.pageYOffset;
     header.style.backgroundPositionY = `${offsetY * 0.7}px`;
@@ -44,5 +44,3 @@ left.forEach(item => {
         prev.setAttribute("src", `./01_pics_&_logo/01_impression/imp${count}.jpg`);
     })
 })
- 
-// Funktionen

@@ -117,12 +117,15 @@ let ctrs = [
 
 
 // Funktionen
+
+// Funktion um Buttons zu zeigen, resp. zu verbergen.
 export function btnShowHide(hide, show){
     hide.style.display = "none";
     show.style.display = "flex";
 
 }
 
+// Funktion um die Controlles zu holen.
 export function getCtr(ctrWrapper, ctr){
     controlles.forEach(ctr => {
         ctr.style.display = "none";
@@ -134,6 +137,7 @@ export function getCtr(ctrWrapper, ctr){
     ctr.classList.add("active");
 }
 
+// Funktionen um Modelle zu bewegen.
 export function toRight(model){
     let move = 0.1;
     model.position.x += move;
