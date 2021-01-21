@@ -36,7 +36,7 @@ require('./04_includes/favicon.php');
 
             <!-- Titel-Container ----------------------------------------------------------------------------------------------------->
             <div class="titel-wrapper">
-                <h1>Livingroom Viszalizer</h1>
+                <h1>Livingroom Visualizer</h1>
             </div>
         </div>
     </header>
