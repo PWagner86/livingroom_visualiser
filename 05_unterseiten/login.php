@@ -36,6 +36,7 @@ if(isset($_POST['login'])){
         $query = "SELECT * FROM `admin` WHERE `email` = '$email'";
         $rs = mysqli_query($conn, $query);
         $numRows = mysqli_num_rows($rs);
+        
         if($numRows == 1){
             $row = mysqli_fetch_assoc($rs);
             if(password_verify($password, $row['passwort'])){
@@ -92,21 +93,15 @@ if(isset($_POST['login'])){
                 <h3>Log In</h3>
             </div>
             <div class="email-wrapper">
-                <div class="error">
-
-                </div>
                 <div class="email-input-wrapper input-wrapper">
                     <label for="email">E-Mail :</label>
-                    <input type="email" name="email" id="">
+                    <input type="email" name="email">
                 </div>
             </div>
             <div class="password-wrapper">
-                <div class="error">
-
-                </div>
                 <div class="password-input-wrapper input-wrapper">
                     <label for="passwort">Passwort :</label>
-                    <input type="password" name="passwort" id="">
+                    <input type="password" name="passwort">
                 </div>
             </div>
             <div class="submit-wrapper">
